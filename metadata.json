@@ -1,0 +1,8 @@
+{
+  "name": "Remix Spotify Mood \u0026 Weather Playlist Generator",
+  "description": "Application académique ML \u0026 Full-Stack générant des playlists Spotify selon l\u0027humeur, la météo et le profil utilisateur.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
