@@ -1,6 +1,6 @@
 import React from 'react';
-import { Music, Radio, Youtube, User, LogIn, UserPlus } from 'lucide-react';
-import { UserProfile, ServiceAuthStatus } from '../types';
+import { Music, Radio, Youtube, User, LogIn, UserPlus, Sparkles } from 'lucide-react';
+import { UserProfile, ServiceAuthStatus, AiStatusState } from '../types';
 
 interface TopBarProps {
   profile: UserProfile | null;
@@ -10,6 +10,8 @@ interface TopBarProps {
   onOpenSignUp: () => void;
   onOpenLogin: () => void;
   onLogout: () => void;
+  aiStatus: AiStatusState;
+  onOpenAiTest: () => void;
 }
 
 export const TopBar: React.FC<TopBarProps> = ({
@@ -20,6 +22,8 @@ export const TopBar: React.FC<TopBarProps> = ({
   onOpenSignUp,
   onOpenLogin,
   onLogout,
+  aiStatus,
+  onOpenAiTest,
 }) => {
   return (
     <header className="sticky top-0 z-30 flex items-center justify-between gap-8 border-b border-slate-200/80 bg-white/85 px-6 py-3.5 backdrop-blur-md shadow-xs">
@@ -74,8 +78,22 @@ export const TopBar: React.FC<TopBarProps> = ({
         )}
       </nav>
 
-      {/* Zone 3: 1 Primary Action / Auth Buttons */}
+      {/* Zone 3: AI Test + Auth Buttons */}
       <div className="flex items-center gap-2.5 shrink-0">
+        <button
+          type="button"
+          onClick={onOpenAiTest}
+          title="Ouvrir la console de test de l'IA Gemini (Google AI Studio)"
+          className="flex items-center gap-1.5 rounded-xl border border-violet-200/90 bg-violet-50/80 hover:bg-violet-100 px-3 py-1.5 text-xs font-bold text-violet-800 shadow-2xs transition-all hover:scale-102"
+        >
+          <Sparkles className="h-3.5 w-3.5 text-violet-600 animate-pulse" />
+          <span className="hidden sm:inline">IA Gemini</span>
+          <span className="inline-flex items-center gap-1 text-[10px] bg-emerald-100 text-emerald-800 px-1.5 py-0.5 rounded-full font-extrabold">
+            <span className="h-1.5 w-1.5 rounded-full bg-emerald-500" />
+            Test
+          </span>
+        </button>
+
         {profile ? (
           <div className="flex items-center gap-2">
             <button

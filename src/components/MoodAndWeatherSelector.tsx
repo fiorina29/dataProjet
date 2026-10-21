@@ -37,6 +37,8 @@ interface MoodAndWeatherSelectorProps {
   onUpdateWeather: (newWeather: LiveWeatherState) => void;
   onGenerate: () => void;
   isLoading: boolean;
+  isAiMode?: boolean;
+  onOpenAiTest?: () => void;
 }
 
 export const MoodAndWeatherSelector: React.FC<MoodAndWeatherSelectorProps> = ({
@@ -49,6 +51,8 @@ export const MoodAndWeatherSelector: React.FC<MoodAndWeatherSelectorProps> = ({
   onUpdateWeather,
   onGenerate,
   isLoading,
+  isAiMode = true,
+  onOpenAiTest,
 }) => {
   const [cityInput, setCityInput] = useState(profile.ville);
   const [isChangingCity, setIsChangingCity] = useState(false);
@@ -263,15 +267,17 @@ export const MoodAndWeatherSelector: React.FC<MoodAndWeatherSelectorProps> = ({
               Cliquez sur l'émotion qui correspond à votre énergie actuelle
             </p>
           </div>
-          <span className="text-xs font-bold px-3 py-1 rounded-full bg-violet-100 text-violet-700 capitalize self-start sm:self-auto">
-            Humeur active : {selectedMood}
+          <span className={`text-xs font-bold px-3 py-1 rounded-full capitalize self-start sm:self-auto ${
+            selectedMood ? 'bg-violet-100 text-violet-700' : 'bg-amber-100 text-amber-800'
+          }`}>
+            {selectedMood ? `Humeur choisie : ${selectedMood}` : 'Étape 1 : Choisissez une humeur'}
           </span>
         </div>
 
         {/* 12 Diverse, clean, joyful Mood Cards */}
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3">
           {MOOD_OPTIONS.map((mood) => {
-            const isSelected = selectedMood.toLowerCase() === mood.id.toLowerCase();
+            const isSelected = selectedMood && selectedMood.toLowerCase() === mood.id.toLowerCase();
             return (
               <button
                 key={mood.id}
@@ -304,15 +310,17 @@ export const MoodAndWeatherSelector: React.FC<MoodAndWeatherSelectorProps> = ({
               Voiture, enfants, soirée festive, séance de sport... Le rythme s'adapte à votre situation
             </p>
           </div>
-          <span className="text-xs font-bold px-3 py-1 rounded-full bg-pink-100 text-pink-700 capitalize self-start sm:self-auto">
-            Contexte actif : {selectedContext}
+          <span className={`text-xs font-bold px-3 py-1 rounded-full capitalize self-start sm:self-auto ${
+            selectedContext ? 'bg-pink-100 text-pink-700' : 'bg-amber-100 text-amber-800'
+          }`}>
+            {selectedContext ? `Contexte choisi : ${selectedContext}` : 'Étape 2 : Choisissez un contexte'}
           </span>
         </div>
 
         {/* 10 Situational Context Buttons */}
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3">
           {CONTEXT_OPTIONS.map((ctx) => {
-            const isSelected = selectedContext.toLowerCase() === ctx.id.toLowerCase();
+            const isSelected = selectedContext && selectedContext.toLowerCase() === ctx.id.toLowerCase();
             return (
               <button
                 key={ctx.id}
@@ -336,19 +344,55 @@ export const MoodAndWeatherSelector: React.FC<MoodAndWeatherSelectorProps> = ({
 
       {/* Primary Action Button: Générer la playlist */}
       <div className="flex flex-col sm:flex-row items-center justify-between gap-4 pt-2">
-        <div className="text-xs text-slate-500 text-center sm:text-left">
-          Météo en direct : <strong className="text-slate-800 capitalize">{weatherState.conditionId} ({weatherState.temperature}°C)</strong> · 
-          Humeur : <strong className="text-violet-600 capitalize">{selectedMood}</strong> · 
-          Contexte : <strong className="text-pink-600 capitalize">{selectedContext}</strong>
+        <div className="text-xs text-slate-500 text-center sm:text-left space-y-1">
+          <div>
+            Météo : <strong className="text-slate-800 capitalize">{weatherState.conditionId} ({weatherState.temperature}°C)</strong> · 
+            Humeur : <strong className="text-violet-600 capitalize">{selectedMood || 'À choisir'}</strong> · 
+            Contexte : <strong className="text-pink-600 capitalize">{selectedContext || 'À choisir'}</strong>
+          </div>
+          <div className="flex items-center gap-2 justify-center sm:justify-start text-[11px] text-slate-600">
+            <span className="flex items-center gap-1 font-semibold text-violet-700">
+              <Sparkles className="h-3 w-3 text-violet-500" />
+              Moteur : {isAiMode ? 'Google AI Studio (Gemini 3.8 Flash)' : 'Algorithme Local'}
+            </span>
+            <span className="px-2 py-0.5 rounded-full bg-emerald-50 text-emerald-700 font-bold border border-emerald-200">
+              20 titres min.
+            </span>
+            {onOpenAiTest && (
+              <button
+                type="button"
+                onClick={onOpenAiTest}
+                className="text-violet-600 underline hover:text-violet-800 font-bold ml-1"
+              >
+                Tester l'API
+              </button>
+            )}
+          </div>
         </div>
 
         <button
           onClick={onGenerate}
-          disabled={isLoading}
-          className="w-full sm:w-auto flex items-center justify-center gap-3 rounded-2xl bg-gradient-to-r from-violet-600 via-pink-600 to-amber-500 px-8 py-4 text-sm font-black text-white shadow-xl shadow-pink-500/25 hover:opacity-95 hover:scale-[1.02] active:scale-[0.98] transition-all disabled:opacity-50"
+          disabled={isLoading || !selectedMood || !selectedContext}
+          className={`w-full sm:w-auto flex items-center justify-center gap-3 rounded-2xl px-8 py-4 text-sm font-black transition-all ${
+            selectedMood && selectedContext
+              ? 'bg-gradient-to-r from-violet-600 via-pink-600 to-amber-500 text-white shadow-xl shadow-pink-500/25 hover:opacity-95 hover:scale-[1.02] active:scale-[0.98]'
+              : 'bg-slate-200 text-slate-400 cursor-not-allowed shadow-none'
+          } disabled:opacity-60`}
         >
-          <Sparkles className="h-5 w-5 text-yellow-300" />
-          <span>{isLoading ? 'Composition musicale en cours...' : 'Générer Votre Playlist Idéale'}</span>
+          <Sparkles className={`h-5 w-5 ${selectedMood && selectedContext ? 'text-yellow-300 animate-pulse' : 'text-slate-400'}`} />
+          <span>
+            {isLoading
+              ? 'Génération des 20 titres par l\'IA...'
+              : !selectedMood && !selectedContext
+              ? '1. Choisissez une humeur & un contexte'
+              : !selectedMood
+              ? '1. Choisissez une humeur'
+              : !selectedContext
+              ? '2. Choisissez un contexte'
+              : isAiMode
+              ? 'Générer la Playlist (20 titres min.)'
+              : 'Générer Votre Playlist (20 titres)'}
+          </span>
         </button>
       </div>
     </div>

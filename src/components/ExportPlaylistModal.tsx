@@ -10,6 +10,8 @@ interface ExportPlaylistModalProps {
   humeur: string;
   contexteActivite: string;
   meteo: string;
+  suggestedTitle?: string;
+  suggestedDescription?: string;
 }
 
 export const ExportPlaylistModal: React.FC<ExportPlaylistModalProps> = ({
@@ -20,14 +22,21 @@ export const ExportPlaylistModal: React.FC<ExportPlaylistModalProps> = ({
   humeur,
   contexteActivite,
   meteo,
+  suggestedTitle,
+  suggestedDescription,
 }) => {
   const [platform, setPlatform] = useState<'spotify' | 'youtube'>('spotify');
-  const [playlistTitle, setPlaylistTitle] = useState(
-    `MoodWave • ${humeur} [${contexteActivite}] & ${meteo}`
-  );
-  const [playlistDescription, setPlaylistDescription] = useState(
+  
+  const initialTitle = (suggestedTitle || `MoodWave • ${humeur} [${contexteActivite}] & ${meteo}`)
+    .replace(/mistral/gi, 'Vibes');
+  
+  const initialDesc = (
+    suggestedDescription ||
     `Playlist générée par MoodWave selon mon humeur (${humeur}), mon moment (${contexteActivite}) et la météo (${meteo}) à ${ville}.`
-  );
+  ).replace(/mistral/gi, 'rythme');
+
+  const [playlistTitle, setPlaylistTitle] = useState(initialTitle);
+  const [playlistDescription, setPlaylistDescription] = useState(initialDesc);
   const [isExporting, setIsExporting] = useState(false);
   const [exportSuccess, setExportSuccess] = useState(false);
   const [targetUrl, setTargetUrl] = useState('');
@@ -192,9 +201,34 @@ export const ExportPlaylistModal: React.FC<ExportPlaylistModalProps> = ({
               />
             </div>
 
-            <div className="rounded-2xl bg-slate-50 p-3 text-xs text-slate-600 border border-slate-200/80 flex items-center justify-between">
-              <span>Morceaux à exporter :</span>
-              <strong className="font-mono text-slate-900">{selectedTracks.length} titres sélectionnés</strong>
+            <div className="rounded-2xl bg-slate-50 p-3 text-xs text-slate-600 border border-slate-200/80 space-y-2">
+              <div className="flex items-center justify-between">
+                <span className="font-semibold text-slate-700">Contenu de la playlist :</span>
+                <strong className="font-mono text-slate-900 bg-white px-2.5 py-0.5 rounded-lg border border-slate-200/80 shadow-2xs">
+                  {selectedTracks.length} titres {selectedTracks.length >= 20 ? '✅ (20 min.)' : ''}
+                </strong>
+              </div>
+
+              {selectedTracks.length > 0 && (
+                <div className="max-h-32 overflow-y-auto divide-y divide-slate-100 bg-white rounded-xl border border-slate-200/60 p-2">
+                  {selectedTracks.slice(0, 20).map((t, idx) => (
+                    <div key={idx} className="flex items-center justify-between text-[11px] py-1">
+                      <span className="truncate max-w-[280px] font-medium text-slate-800">
+                        <span className="text-slate-400 font-mono mr-1.5">{idx + 1}.</span>
+                        {t.track_name} <span className="text-slate-500 font-normal">· {t.artists}</span>
+                      </span>
+                      <span className="text-slate-400 font-mono text-[10px] shrink-0">
+                        {Math.floor(t.duration_ms / 60000)}:{String(Math.floor((t.duration_ms % 60000) / 1000)).padStart(2, '0')}
+                      </span>
+                    </div>
+                  ))}
+                  {selectedTracks.length > 20 && (
+                    <div className="text-[10px] text-center text-slate-400 italic pt-1">
+                      + {selectedTracks.length - 20} autres titres inclus dans l'export
+                    </div>
+                  )}
+                </div>
+              )}
             </div>
 
             <div className="pt-2 flex items-center justify-end gap-3 border-t border-slate-100">

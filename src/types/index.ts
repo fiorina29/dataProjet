@@ -82,6 +82,8 @@ export interface SpotifyTrack {
   time_signature: number;
   track_genre: string;
   similarity_score?: number;
+  is_curated?: boolean;
+  curation_reason?: string;
 }
 
 export interface ServiceAuthStatus {
@@ -93,4 +95,44 @@ export interface ServiceAuthStatus {
     isConnected: boolean;
     displayName: string;
   };
+}
+
+export interface CuratedTrackSuggestion {
+  track_name: string;
+  artists: string;
+  reason: string;
+  genre?: string;
+}
+
+export interface AiPlaylistResult {
+  success: boolean;
+  isAiGenerated: boolean;
+  model: string;
+  durationMs?: number;
+  playlist_title?: string;
+  playlist_description?: string;
+  ai_reasoning?: string;
+  spotify_audio_features_targets: AudioFeaturesTargets;
+  genres_recommandes: string[];
+  vibe_keywords?: string[];
+  curated_tracks?: CuratedTrackSuggestion[];
+  error?: string;
+}
+
+export interface AiStatusState {
+  status: 'online' | 'unconfigured' | 'checking';
+  hasKey: boolean;
+  primaryModel: string;
+  fallbackModel: string;
+  lastChecked?: string;
+}
+
+export interface AiTestResult {
+  success: boolean;
+  model?: string;
+  prompt: string;
+  response?: string;
+  durationMs?: number;
+  error?: string;
+  timestamp?: string;
 }
