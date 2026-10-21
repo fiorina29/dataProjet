@@ -95,8 +95,8 @@ Ouvrez votre navigateur web et rendez-vous sur :
 | :--- | :--- |
 | `npm run dev` | Démarre le serveur local de dev sur `http://localhost:3000` |
 | `npm run build` | Compile l'application React et le bundle client dans `dist/` |
-| `npm run start` | Lance le serveur Express en mode production avec `tsx server.ts` |
-| `npm run lint` | Lance la vérification TypeScript (`tsc --noEmit`) |
+| `npm run start` | Lance le serveur Express en mode production avec `tsx server.jsx` |
+| `npm run lint` | Vérifie la syntaxe du serveur |
 | `npm run clean` | Supprime le dossier de build `dist/` |
 
 ---
@@ -107,12 +107,11 @@ Ouvrez votre navigateur web et rendez-vous sur :
 ├── .env.example              # Exemple de variables d'environnement
 ├── index.html                # Point d'entrée HTML
 ├── package.json              # Dépendances et scripts de build
-├── server.ts                 # Serveur Backend Express avec SDK @google/genai
+├── server.jsx                # Serveur Backend Express avec SDK @google/genai
 ├── src/
-│   ├── App.tsx               # Composant racine orchestrant l'état et l'affichage
+│   ├── App.jsx                # Composant racine orchestrant l'état et l'affichage
 │   ├── components/           # Composants UI React (Sélecteur météo, Table unique de morceaux, Modales)
 │   ├── data/                 # Dataset Kaggle (plus de 130 titres avec 20 caractéristiques audio)
 │   ├── services/             # Appels API (Gemini, Open-Meteo, Moteur de ranking)
-│   └── types/                # Types TypeScript
-└── vite.config.ts            # Configuration Vite & Tailwind CSS v4
+└── vite.config.jsx           # Configuration Vite & Tailwind CSS v4
 ```

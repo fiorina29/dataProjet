@@ -1,8 +1,7 @@
-import React, { useState } from 'react';
+import { useState } from "react";
 import {
   Sparkles,
   X,
-  Play,
   CheckCircle2,
   AlertCircle,
   Clock,
@@ -12,45 +11,33 @@ import {
   RefreshCw,
   Zap,
   Terminal
-} from 'lucide-react';
-import { AiStatusState, AiTestResult } from '../types';
-import { runAiTest } from '../services/geminiService';
-
-interface GeminiAiTestModalProps {
-  isOpen: boolean;
-  onClose: () => void;
-  aiStatus: AiStatusState;
-  onRefreshStatus: () => void;
-}
-
+} from "lucide-react";
+import { runAiTest } from "../services/geminiService";
 const PRESET_PROMPTS = [
   {
-    label: '✨ Test d\'harmonie Météo & Émotion',
-    prompt: "Donne une phrase courte et poétique sur la façon dont une pluie douce à Paris inspire une mélodie mélancolique.",
+    label: "\u2728 Test d'harmonie M\xE9t\xE9o & \xC9motion",
+    prompt: "Donne une phrase courte et po\xE9tique sur la fa\xE7on dont une pluie douce \xE0 Paris inspire une m\xE9lodie m\xE9lancolique."
   },
   {
-    label: '🎵 Test de recommandation musicale',
-    prompt: "Suggère 3 morceaux cultes de French Touch pour rouler sous le soleil, avec 1 phrase d'explication pour chacun.",
+    label: "\u{1F3B5} Test de recommandation musicale",
+    prompt: "Sugg\xE8re 3 morceaux cultes de French Touch pour rouler sous le soleil, avec 1 phrase d'explication pour chacun."
   },
   {
-    label: '⚡ Test de latence et connectivité',
-    prompt: "Réponds simplement par 'Connecté avec succès à Google AI Studio' suivi du modèle actif.",
-  },
+    label: "\u26A1 Test de latence et connectivit\xE9",
+    prompt: "R\xE9ponds simplement par 'Connect\xE9 avec succ\xE8s \xE0 Google AI Studio' suivi du mod\xE8le actif."
+  }
 ];
-
-export const GeminiAiTestModal: React.FC<GeminiAiTestModalProps> = ({
+export const GeminiAiTestModal = ({
   isOpen,
   onClose,
   aiStatus,
-  onRefreshStatus,
+  onRefreshStatus
 }) => {
   const [customPrompt, setCustomPrompt] = useState(PRESET_PROMPTS[0].prompt);
   const [isLoading, setIsLoading] = useState(false);
-  const [testResult, setTestResult] = useState<AiTestResult | null>(null);
-
+  const [testResult, setTestResult] = useState(null);
   if (!isOpen) return null;
-
-  const handleExecuteTest = async (promptToRun?: string) => {
+  const handleExecuteTest = async (promptToRun) => {
     const text = promptToRun || customPrompt;
     setIsLoading(true);
     setTestResult(null);
@@ -61,11 +48,11 @@ export const GeminiAiTestModal: React.FC<GeminiAiTestModalProps> = ({
       setIsLoading(false);
     }
   };
-
-  return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/60 backdrop-blur-sm animate-in fade-in duration-150">
+  return <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/60 backdrop-blur-sm animate-in fade-in duration-150">
       <div className="relative w-full max-w-2xl rounded-3xl bg-white border border-slate-100 shadow-2xl p-6 sm:p-7 max-h-[90vh] overflow-y-auto space-y-6">
-        {/* Header */}
+        {
+    /* Header */
+  }
         <div className="flex items-center justify-between border-b border-slate-100 pb-4">
           <div className="flex items-center gap-3">
             <div className="flex h-10 w-10 items-center justify-center rounded-2xl bg-gradient-to-tr from-violet-600 via-pink-600 to-amber-400 text-white shadow-md">
@@ -84,14 +71,16 @@ export const GeminiAiTestModal: React.FC<GeminiAiTestModalProps> = ({
             </div>
           </div>
           <button
-            onClick={onClose}
-            className="rounded-xl p-2 text-slate-400 hover:text-slate-600 hover:bg-slate-100 transition-colors"
-          >
+    onClick={onClose}
+    className="rounded-xl p-2 text-slate-400 hover:text-slate-600 hover:bg-slate-100 transition-colors"
+  >
             <X className="h-5 w-5" />
           </button>
         </div>
 
-        {/* Status Card */}
+        {
+    /* Status Card */
+  }
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 p-4 rounded-2xl bg-gradient-to-r from-violet-50 via-pink-50 to-amber-50 border border-violet-100/80">
           <div className="flex items-center gap-3">
             <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-white shadow-xs text-violet-600">
@@ -101,7 +90,7 @@ export const GeminiAiTestModal: React.FC<GeminiAiTestModalProps> = ({
               <div className="text-[11px] font-semibold text-slate-500">Statut API</div>
               <div className="flex items-center gap-1.5 font-bold text-xs text-emerald-700">
                 <span className="h-2 w-2 rounded-full bg-emerald-500 animate-pulse" />
-                {aiStatus.hasKey ? 'Clé Active' : 'En attente'}
+                {aiStatus.hasKey ? "Cl\xE9 Active" : "En attente"}
               </div>
             </div>
           </div>
@@ -131,128 +120,115 @@ export const GeminiAiTestModal: React.FC<GeminiAiTestModalProps> = ({
           </div>
         </div>
 
-        {/* Preset Prompts Selection */}
+        {
+    /* Preset Prompts Selection */
+  }
         <div className="space-y-2">
           <label className="text-xs font-bold text-slate-700">
             Exemples de tests prêts à l'emploi :
           </label>
           <div className="flex flex-wrap gap-2">
-            {PRESET_PROMPTS.map((preset, idx) => (
-              <button
-                key={idx}
-                type="button"
-                onClick={() => {
-                  setCustomPrompt(preset.prompt);
-                  handleExecuteTest(preset.prompt);
-                }}
-                className="text-xs text-left px-3 py-1.5 rounded-xl border border-slate-200 bg-white hover:bg-violet-50 hover:border-violet-300 text-slate-700 font-medium transition-all"
-              >
+            {PRESET_PROMPTS.map((preset, idx) => <button
+    key={idx}
+    type="button"
+    onClick={() => {
+      setCustomPrompt(preset.prompt);
+      handleExecuteTest(preset.prompt);
+    }}
+    className="text-xs text-left px-3 py-1.5 rounded-xl border border-slate-200 bg-white hover:bg-violet-50 hover:border-violet-300 text-slate-700 font-medium transition-all"
+  >
                 {preset.label}
-              </button>
-            ))}
+              </button>)}
           </div>
         </div>
 
-        {/* Custom Prompt Input */}
+        {
+    /* Custom Prompt Input */
+  }
         <div className="space-y-2">
           <label className="text-xs font-bold text-slate-700 flex items-center justify-between">
             <span>Prompt envoyé à Gemini :</span>
             <button
-              onClick={onRefreshStatus}
-              className="text-[11px] text-violet-600 hover:text-violet-700 flex items-center gap-1 font-semibold"
-            >
+    onClick={onRefreshStatus}
+    className="text-[11px] text-violet-600 hover:text-violet-700 flex items-center gap-1 font-semibold"
+  >
               <RefreshCw className="h-3 w-3" />
               Actualiser statut
             </button>
           </label>
           <textarea
-            value={customPrompt}
-            onChange={(e) => setCustomPrompt(e.target.value)}
-            rows={3}
-            className="w-full rounded-2xl border border-slate-200 p-3 text-xs text-slate-800 placeholder-slate-400 focus:border-violet-500 focus:outline-hidden focus:ring-2 focus:ring-violet-200"
-            placeholder="Tapez une question ou consigne pour tester Gemini..."
-          />
+    value={customPrompt}
+    onChange={(e) => setCustomPrompt(e.target.value)}
+    rows={3}
+    className="w-full rounded-2xl border border-slate-200 p-3 text-xs text-slate-800 placeholder-slate-400 focus:border-violet-500 focus:outline-hidden focus:ring-2 focus:ring-violet-200"
+    placeholder="Tapez une question ou consigne pour tester Gemini..."
+  />
         </div>
 
-        {/* Action Button */}
+        {
+    /* Action Button */
+  }
         <div className="flex justify-end gap-2">
           <button
-            type="button"
-            onClick={onClose}
-            className="px-4 py-2 text-xs font-semibold text-slate-600 hover:bg-slate-100 rounded-xl transition-colors"
-          >
+    type="button"
+    onClick={onClose}
+    className="px-4 py-2 text-xs font-semibold text-slate-600 hover:bg-slate-100 rounded-xl transition-colors"
+  >
             Fermer
           </button>
           <button
-            type="button"
-            disabled={isLoading || !customPrompt.trim()}
-            onClick={() => handleExecuteTest()}
-            className="flex items-center gap-2 px-5 py-2 rounded-xl bg-gradient-to-r from-violet-600 to-pink-600 text-white font-bold text-xs shadow-md hover:opacity-95 disabled:opacity-50 transition-all"
-          >
-            {isLoading ? (
-              <>
+    type="button"
+    disabled={isLoading || !customPrompt.trim()}
+    onClick={() => handleExecuteTest()}
+    className="flex items-center gap-2 px-5 py-2 rounded-xl bg-gradient-to-r from-violet-600 to-pink-600 text-white font-bold text-xs shadow-md hover:opacity-95 disabled:opacity-50 transition-all"
+  >
+            {isLoading ? <>
                 <RefreshCw className="h-3.5 w-3.5 animate-spin" />
                 <span>Exécution de l'appel Gemini en cours...</span>
-              </>
-            ) : (
-              <>
+              </> : <>
                 <Zap className="h-3.5 w-3.5" />
                 <span>Lancer le test IA en direct</span>
-              </>
-            )}
+              </>}
           </button>
         </div>
 
-        {/* Result Area */}
-        {testResult && (
-          <div className="border border-slate-200 rounded-2xl p-4 bg-slate-900 text-slate-100 space-y-3">
+        {
+    /* Result Area */
+  }
+        {testResult && <div className="border border-slate-200 rounded-2xl p-4 bg-slate-900 text-slate-100 space-y-3">
             <div className="flex items-center justify-between border-b border-slate-800 pb-2">
               <div className="flex items-center gap-2">
                 <Terminal className="h-4 w-4 text-violet-400" />
                 <span className="text-xs font-bold text-slate-300">
                   Résultat de l'appel en direct
                 </span>
-                {testResult.success ? (
-                  <span className="flex items-center gap-1 text-[11px] font-bold text-emerald-400">
+                {testResult.success ? <span className="flex items-center gap-1 text-[11px] font-bold text-emerald-400">
                     <CheckCircle2 className="h-3.5 w-3.5" />
                     200 OK
-                  </span>
-                ) : (
-                  <span className="flex items-center gap-1 text-[11px] font-bold text-rose-400">
+                  </span> : <span className="flex items-center gap-1 text-[11px] font-bold text-rose-400">
                     <AlertCircle className="h-3.5 w-3.5" />
                     Erreur
-                  </span>
-                )}
+                  </span>}
               </div>
-              {testResult.durationMs && (
-                <div className="flex items-center gap-1 text-[11px] text-slate-400 font-mono">
+              {testResult.durationMs && <div className="flex items-center gap-1 text-[11px] text-slate-400 font-mono">
                   <Clock className="h-3 w-3" />
                   {testResult.durationMs} ms
-                </div>
-              )}
+                </div>}
             </div>
 
-            {testResult.model && (
-              <div className="text-[11px] text-slate-400">
-                Modèle sollicité :{' '}
+            {testResult.model && <div className="text-[11px] text-slate-400">
+                Modèle sollicité :{" "}
                 <span className="text-pink-400 font-mono font-semibold">
                   {testResult.model}
                 </span>
-              </div>
-            )}
+              </div>}
 
-            {testResult.success ? (
-              <div className="p-3 rounded-xl bg-slate-800/80 border border-slate-700/50 text-xs text-slate-200 leading-relaxed font-sans whitespace-pre-wrap">
+            {testResult.success ? <div className="p-3 rounded-xl bg-slate-800/80 border border-slate-700/50 text-xs text-slate-200 leading-relaxed font-sans whitespace-pre-wrap">
                 {testResult.response}
-              </div>
-            ) : (
-              <div className="p-3 rounded-xl bg-rose-950/40 border border-rose-800/60 text-xs text-rose-300">
+              </div> : <div className="p-3 rounded-xl bg-rose-950/40 border border-rose-800/60 text-xs text-rose-300">
                 {testResult.error}
-              </div>
-            )}
-          </div>
-        )}
+              </div>}
+          </div>}
       </div>
-    </div>
-  );
+    </div>;
 };
