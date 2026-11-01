@@ -1,4 +1,5 @@
 import express from "express";
+import net from "node:net";
 import { createServer as createViteServer } from "vite";
 import dotenv from "dotenv";
 import { GoogleGenAI, Type } from "@google/genai";
@@ -10,6 +11,23 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const app = express();
 const PORT = Number(process.env.PORT) || 3e3;
+
+async function findAvailablePort(startPort, host = "0.0.0.0") {
+  for (let port = startPort; port <= 65535; port += 1) {
+    try {
+      await new Promise((resolve, reject) => {
+        const probe = net.createServer();
+        probe.once("error", reject);
+        probe.listen(port, host, () => probe.close(resolve));
+      });
+      return port;
+    } catch (err) {
+      if (err.code !== "EADDRINUSE") throw err;
+    }
+  }
+  throw new Error(`No available port found starting from ${startPort}.`);
+}
+
 app.use(express.json());
 const apiKey = process.env.GEMINI_API_KEY || "";
 const ai = new GoogleGenAI({
@@ -42,13 +60,13 @@ app.post("/api/ai/test", async (req, res) => {
   }
   try {
     const result = await ai.models.generateContent({
-      model: "gemini-3.8-flash",
+      model: "gemini-3.1-flash-lite",
       contents: prompt
     });
     const durationMs = Date.now() - startTime;
     return res.json({
       success: true,
-      model: "gemini-3.8-flash",
+      model: "gemini-3.1-flash-lite",
       prompt,
       response: (result.text || "").trim(),
       durationMs,
@@ -78,66 +96,66 @@ app.post("/api/ai/predict-playlist", async (req, res) => {
   const userCity = utilisateur?.ville || "Paris";
   const userWeather = contexte?.meteo || "Ensoleill\xE9";
   const userTemp = contexte?.temperature ?? 20;
-  const catalogue = KAGGLE_SPOTIFY_TRACKS.map(
+  const catalogue = KAGGLE_SPOTIFY_TRACKS.slice(0, 45).map(
     (t) => `- ${t.track_name} par ${t.artists} (Genre: ${t.track_genre})`
   ).join("\n");
-  const prompt = `Tu es un syst\xE8me de recommandation musicale d'\xE9lite pour Spotify. Ton r\xF4le est de convertir le profil d'un utilisateur, son humeur, son contexte et la m\xE9t\xE9o en une playlist de caract\xE9ristiques audio (Audio Features).
+  const prompt = `Tu es un système de recommandation musicale d'élite pour Spotify. Ton rôle est de convertir le profil d'un utilisateur, son humeur, son contexte et la météo en une playlist de caractéristiques audio (Audio Features).
 
-DONN\xC9ES DU PROFIL ET D'\xC9COUTE :
+DONNÉES DU PROFIL ET D'ÉCOUTE :
 - Utilisateur : ${utilisateur?.prenom || "Alexandre"} (${utilisateur?.age || 22} ans), Ville : ${userCity}
 - Genre musical favori : ${userGenre}
 - Artiste favori : ${userArtist}
 - Humeur actuelle : ${userMood}
-- Contexte d'activit\xE9 : ${userContext}
-- M\xE9t\xE9o locale : ${userWeather} (${userTemp}\xB0C, ${contexte?.weatherDescription || "Ciel d\xE9gag\xE9"})
+- Contexte d'activité : ${userContext}
+- Météo locale : ${userWeather} (${userTemp}°C, ${contexte?.weatherDescription || "Ciel dégagé"})
 
 DIRECTIVES OBLIGATOIRES EN MAJUSCULES :
-- FUSION DU GENRE OBLIGATOIRE : Tu NE DOIS PAS ignorer le genre et l'artiste favoris de l'utilisateur sous pr\xE9texte que le contexte est oppos\xE9. Si le genre est Pop, propose des balades Pop pour dormir, n'impose pas de Jazz. Adapte l'\xE9nergie, mais conserve le style.
-- R\xC8GLE DES 20 TITRES : Tu dois g\xE9n\xE9rer au MINIMUM 20 morceaux pertinents dans la liste 'curated_tracks'.
-- FORMAT STRICT ANTI-CRASH : Ta r\xE9ponse doit \xEAtre UNIQUEMENT un objet JSON brut et valide. N'utilise AUCUNE balise Markdown (ne commence jamais par \`\`\`json). Ne g\xE9n\xE8re aucun texte avant ou apr\xE8s les accolades du JSON.
-- CATALOGUE STRICT : Tu DOIS s\xE9lectionner tes 20 morceaux (curated_tracks) EXCLUSIVEMENT parmi la liste fournie ci-dessous. Adapte le choix des chansons de cette liste au contexte (triste, sport, etc.) et aux go\xFBts de l'utilisateur. IL EST STRICTEMENT INTERDIT D'INVENTER UNE CHANSON, UN ARTISTE OU DE CHOISIR UN MORCEAU HORS DE CETTE LISTE.
+- FUSION DU GENRE OBLIGATOIRE : Tu NE DOIS PAS ignorer le genre et l'artiste favoris de l'utilisateur sous prétexte que le contexte est opposé. Si le genre est Pop, propose des balades Pop pour dormir, n'impose pas de Jazz. Adapte l'énergie, mais conserve le style.
+- RÈGLE DES 20 TITRES : Tu dois générer au MINIMUM 20 morceaux pertinents dans la liste 'curated_tracks'.
+- FORMAT STRICT ANTI-CRASH : Ta réponse doit être UNIQUEMENT un objet JSON brut et valide. N'utilise AUCUNE balise Markdown (ne commence jamais par \`\`\`json). Ne génère aucun texte avant ou après les accolades du JSON.
+- CATALOGUE STRICT : Tu DOIS sélectionner tes 20 morceaux (curated_tracks) EXCLUSIVEMENT parmi la liste fournie ci-dessous. Adapte le choix des chansons de cette liste au contexte (triste, sport, etc.) et aux goûts de l'utilisateur. IL EST STRICTEMENT INTERDIT D'INVENTER UNE CHANSON, UN ARTISTE OU DE CHOISIR UN MORCEAU HORS DE CETTE LISTE.
 
-Voici les seules chansons autoris\xE9es :
+Voici les seules chansons autorisées :
 ${catalogue}
 
 Logique de conversion (Audio Features Spotify) :
-- target_valence : de 0.0 (triste/m\xE9lancolique) \xE0 1.0 (joyeux/euphorique).
-- target_energy : de 0.0 (calme/doux/sommeil) \xE0 1.0 (intense/rapide/sport).
-- target_danceability : de 0.0 (statique) \xE0 1.0 (tr\xE8s dansant/f\xEAte).
-- target_acousticness : de 0.0 (\xE9lectronique/synth\xE9tique) \xE0 1.0 (tr\xE8s acoustique/organique).
+- target_valence : de 0.0 (triste/mélancolique) à 1.0 (joyeux/euphorique).
+- target_energy : de 0.0 (calme/doux/sommeil) à 1.0 (intense/rapide/sport).
+- target_danceability : de 0.0 (statique) à 1.0 (très dansant/fête).
+- target_acousticness : de 0.0 (électronique/synthétique) à 1.0 (très acoustique/organique).
 
-R\xC8GLE POUR GENRES RECOMMAND\xC9S :
-Le premier \xE9l\xE9ment de 'genres_recommandes' DOIT OBLIGATOIREMENT \xCATRE LE GENRE FAVORI DE L'UTILISATEUR ('${userGenre}'), suivi de 2 \xE0 3 sous-genres contextuels.
+RÈGLE POUR GENRES RECOMMANDÉS :
+Le premier élément de 'genres_recommandes' DOIT OBLIGATOIREMENT ÊTRE LE GENRE FAVORI DE L'UTILISATEUR ('${userGenre}'), suivi de 2 à 3 sous-genres contextuels.
 
-R\xC8GLE DE TITRE :
-N'utilise jamais de clich\xE9 m\xE9t\xE9orologique comme "Mistral". Propose un titre moderne, styl\xE9 et dynamique.`;
+RÈGLE DE TITRE :
+N'utilise jamais de cliché météorologique comme "Mistral". Propose un titre moderne, stylé et dynamique.`;
   const schema = {
     type: Type.OBJECT,
     properties: {
       playlist_title: {
         type: Type.STRING,
-        description: "Titre cr\xE9atif, moderne et adapt\xE9"
+        description: "Titre créatif, moderne et adapté"
       },
       playlist_description: {
         type: Type.STRING,
-        description: "Description courte en fran\xE7ais"
+        description: "Description courte en français"
       },
       ai_reasoning: {
         type: Type.STRING,
-        description: "Explication expliquant comment tu as r\xE9ussi \xE0 adapter l'artiste/genre favori au contexte actuel \xE0 partir du catalogue"
+        description: "Explication expliquant comment tu as réussi à adapter l'artiste/genre favori au contexte actuel à partir du catalogue"
       },
       vibe_keywords: {
         type: Type.ARRAY,
         items: { type: Type.STRING },
-        description: "3 \xE0 5 mots-cl\xE9s d'ambiance"
+        description: "3 à 5 mots-clés d'ambiance"
       },
       spotify_audio_features_targets: {
         type: Type.OBJECT,
         properties: {
-          target_valence: { type: Type.NUMBER, description: "Float de 0.0 (triste/m\xE9lancolique) \xE0 1.0 (joyeux/euphorique)" },
-          target_energy: { type: Type.NUMBER, description: "Float de 0.0 (calme/doux/sommeil) \xE0 1.0 (intense/rapide/sport)" },
-          target_danceability: { type: Type.NUMBER, description: "Float de 0.0 (statique) \xE0 1.0 (tr\xE8s dansant/f\xEAte)" },
-          target_acousticness: { type: Type.NUMBER, description: "Float de 0.0 (\xE9lectronique) \xE0 1.0 (tr\xE8s acoustique)" }
+          target_valence: { type: Type.NUMBER, description: "Float de 0.0 (triste/mélancolique) à 1.0 (joyeux/euphorique)" },
+          target_energy: { type: Type.NUMBER, description: "Float de 0.0 (calme/doux/sommeil) à 1.0 (intense/rapide/sport)" },
+          target_danceability: { type: Type.NUMBER, description: "Float de 0.0 (statique) à 1.0 (très dansant/fête)" },
+          target_acousticness: { type: Type.NUMBER, description: "Float de 0.0 (électronique) à 1.0 (très acoustique)" }
         },
         required: ["target_valence", "target_energy", "target_danceability", "target_acousticness"]
       },
@@ -172,7 +190,7 @@ N'utilise jamais de clich\xE9 m\xE9t\xE9orologique comme "Mistral". Propose un t
   };
   try {
     const result = await ai.models.generateContent({
-      model: "gemini-3.8-flash",
+      model: "gemini-3.1-flash-lite",
       contents: prompt,
       config: {
         responseMimeType: "application/json",
@@ -208,7 +226,7 @@ N'utilise jamais de clich\xE9 m\xE9t\xE9orologique comme "Mistral". Propose un t
     }
     return res.json({
       success: true,
-      model: "gemini-3.8-flash",
+      model: "gemini-3.1-flash-lite",
       durationMs,
       ...parsed
     });
@@ -222,10 +240,17 @@ N'utilise jamais de clich\xE9 m\xE9t\xE9orologique comme "Mistral". Propose un t
 });
 async function startServer() {
   const isDev = process.env.NODE_ENV !== "production";
+  const port = await findAvailablePort(PORT);
   if (isDev) {
+    const hmrPort = process.env.DISABLE_HMR === "true"
+      ? undefined
+      : await findAvailablePort(24678, "::");
     const vite = await createViteServer({
       configFile: path.resolve(__dirname, "vite.config.jsx"),
-      server: { middlewareMode: true },
+      server: {
+        middlewareMode: true,
+        ...(hmrPort ? { ws: { port: hmrPort } } : {})
+      },
       appType: "spa"
     });
     app.use(vite.middlewares);
@@ -235,8 +260,11 @@ async function startServer() {
       res.sendFile(path.resolve(__dirname, "dist", "index.html"));
     });
   }
-  app.listen(PORT, "0.0.0.0", () => {
-    console.log(`MoodWave Server running at http://0.0.0.0:${PORT} (Gemini AI active - Strict Mode)`);
+  app.listen(port, "0.0.0.0", () => {
+    if (port !== PORT) {
+      console.warn(`Port ${PORT} is already in use; using ${port} instead.`);
+    }
+    console.log(`MoodWave Server running at http://0.0.0.0:${port} (Gemini AI active - Strict Mode)`);
   });
 }
 startServer().catch((err) => {

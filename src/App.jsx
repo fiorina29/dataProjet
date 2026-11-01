@@ -20,6 +20,13 @@ import {
   rankTracksFromDataset,
 } from './services/recommendationEngine';
 import { fetchAiStatus, fetchAiPlaylistPrediction } from './services/geminiService';
+import {
+  initAuth,
+  googleSignIn,
+  logout as googleLogout,
+  getAccessToken,
+  verifyYouTubeAccount,
+} from './services/authService';
 import { KAGGLE_SPOTIFY_TRACKS } from './data/kaggleSampleDataset';
 
 export default function App() {
@@ -45,6 +52,8 @@ export default function App() {
       genre_musical_prefere: 'Pas de préférence',
       artiste_prefere: 'Daft Punk',
       ville: 'Paris',
+      hasGoogleAuth: false,
+      hasYouTubeAccount: false,
     };
   });
 
@@ -70,11 +79,11 @@ export default function App() {
   const [authStatus, setAuthStatus] = useState({
     spotify: {
       isConnected: true,
-      displayName: userProfile ? `${userProfile.prenom} (Spotify Premium)` : 'Connecté',
+      displayName: userProfile ? `${userProfile.prenom} (Spotify)` : 'Connecté',
     },
     youtube: {
-      isConnected: true,
-      displayName: userProfile ? `${userProfile.prenom} (YouTube Music)` : 'Connecté',
+      isConnected: false,
+      displayName: 'Non connecté',
     },
   });
 
@@ -106,6 +115,92 @@ export default function App() {
     loadAiStatus();
   }, [loadAiStatus]);
 
+  // Handle Firebase Auth Listener on Mount
+  useEffect(() => {
+    const unsubscribe = initAuth(
+      async (user, token) => {
+        if (token) {
+          const account = await verifyYouTubeAccount(token, user);
+          setAuthStatus((prev) => ({
+            ...prev,
+            youtube: {
+              isConnected: Boolean(account.isConnected),
+              displayName: user.displayName || user.email || 'YouTube Connecté',
+            },
+          }));
+        }
+      },
+      () => {
+        setAuthStatus((prev) => ({
+          ...prev,
+          youtube: {
+            isConnected: false,
+            displayName: 'Non connecté',
+          },
+        }));
+      }
+    );
+
+    return () => {
+      if (typeof unsubscribe === 'function') unsubscribe();
+    };
+  }, []);
+
+  // Google Sign-In with YouTube scope handler
+  const handleGoogleSignIn = useCallback(async () => {
+    const authData = await googleSignIn();
+    if (authData?.user) {
+      const user = authData.user;
+      const account = authData.youtubeAccount;
+      const displayName = user.displayName || '';
+      const parts = displayName.trim().split(' ');
+      const first = parts[0] || 'Utilisateur';
+      const last = parts.slice(1).join(' ') || 'Google';
+
+      const updatedProfile = {
+        nom: userProfile?.nom && userProfile.nom !== 'Dupont' ? userProfile.nom : last,
+        prenom: userProfile?.prenom && userProfile.prenom !== 'Alexandre' ? userProfile.prenom : first,
+        email: user.email || userProfile?.email || '',
+        age: userProfile?.age || 22,
+        genre_musical_prefere: userProfile?.genre_musical_prefere || 'Pas de préférence',
+        artiste_prefere: userProfile?.artiste_prefere || 'Daft Punk',
+        ville: userProfile?.ville || 'Paris',
+        avatarUrl: user.photoURL,
+        hasGoogleAuth: true,
+        hasYouTubeAccount: Boolean(account?.isConnected),
+      };
+
+      setUserProfile(updatedProfile);
+      localStorage.setItem('moodwave_user_profile_v2', JSON.stringify(updatedProfile));
+
+      setAuthStatus((prev) => ({
+        ...prev,
+        youtube: {
+          isConnected: Boolean(account?.isConnected),
+          displayName: displayName || user.email || 'YouTube',
+        },
+      }));
+
+      return authData;
+    }
+  }, [userProfile]);
+
+  // Toggle YouTube Connection
+  const handleToggleYoutube = useCallback(async () => {
+    if (authStatus.youtube.isConnected) {
+      await googleLogout();
+      setAuthStatus((prev) => ({
+        ...prev,
+        youtube: {
+          isConnected: false,
+          displayName: 'Non connecté',
+        },
+      }));
+    } else {
+      await handleGoogleSignIn();
+    }
+  }, [authStatus.youtube.isConnected, handleGoogleSignIn]);
+
   // Save profile handler
   const handleSaveProfile = (profile) => {
     setUserProfile(profile);
@@ -113,8 +208,14 @@ export default function App() {
     setActiveTab('generator');
   };
 
-  const handleLogout = () => {
+  const handleLogout = async () => {
+    await googleLogout();
     setUserProfile(null);
+    setYoutubeAccountInfo(null);
+    setAuthStatus((prev) => ({
+      ...prev,
+      youtube: { isConnected: false, displayName: 'Non connecté' },
+    }));
     localStorage.removeItem('moodwave_user_profile_v2');
     setActiveTab('home');
   };
@@ -128,6 +229,8 @@ export default function App() {
       genre_musical_prefere: 'Pas de préférence',
       artiste_prefere: 'Daft Punk',
       ville: 'Paris',
+      hasGoogleAuth: false,
+      hasYouTubeAccount: false,
     };
     handleSaveProfile(newProfile);
   };
@@ -159,9 +262,11 @@ export default function App() {
 
     setIsGenerating(true);
     setGenerationError(null);
+    // Display the playlist immediately from the local recommendation engine
+    setHasGeneratedPlaylist(true);
 
-    try {
-      if (isAiMode) {
+    if (isAiMode) {
+      try {
         const result = await fetchAiPlaylistPrediction({
           utilisateur: {
             age: userProfile?.age || 22,
@@ -178,13 +283,13 @@ export default function App() {
           weatherDescription: weatherState.description,
         });
         setAiResult(result);
+      } catch (err) {
+        console.warn('Gemini AI call failed, keeping local ML playlist:', err);
+        setGenerationError(null); // Keep playlist generated smoothly!
+      } finally {
+        setIsGenerating(false);
       }
-      setHasGeneratedPlaylist(true);
-    } catch (err) {
-      console.error('Gemini AI call failed:', err);
-      setGenerationError(err.message || "Erreur de génération par l'IA");
-      setHasGeneratedPlaylist(false);
-    } finally {
+    } else {
       setIsGenerating(false);
     }
   }, [isAiMode, userProfile, weatherState, selectedMood, selectedContext]);
@@ -204,7 +309,7 @@ export default function App() {
     return mlOutput.genres_recommandes;
   }, [isAiMode, aiResult, mlOutput]);
 
-  // Ranked tracks adapting strictly to chosen context and user musical tastes (artist + genre) from retrieved database
+  // Ranked tracks adapting strictly to chosen context and user musical tastes (artist + genre)
   const rankedTracks = useMemo(() => {
     if (!hasGeneratedPlaylist) return [];
     return rankTracksFromDataset(
@@ -225,7 +330,7 @@ export default function App() {
     userProfile?.genre_musical_prefere,
     selectedContext,
     selectedMood,
-    aiResult?.curated_tracks
+    aiResult?.curated_tracks,
   ]);
 
   const handleOpenExportModal = (tracks) => {
@@ -293,7 +398,7 @@ export default function App() {
                 <div className="flex items-center gap-2">
                   <span className="text-base">⚠️</span>
                   <div>
-                    <strong className="font-bold">Erreur de génération IA (HTTP 500) :</strong> {generationError}
+                    <strong className="font-bold">Erreur de génération IA :</strong> {generationError}
                   </div>
                 </div>
                 <button
@@ -317,14 +422,26 @@ export default function App() {
                     Prêt à créer votre playlist sur-mesure ?
                   </h3>
                   <p className="text-xs text-slate-600 leading-relaxed">
-                    Sélectionnez votre <strong>humeur</strong> et votre <strong>contexte d'activité</strong> ci-dessus, puis cliquez sur <strong>« Générer la playlist »</strong>. L'IA sélectionnera les 20 meilleurs morceaux de notre base de données selon vos préférences d'inscription, votre humeur et la météo.
+                    Sélectionnez votre <strong>humeur</strong> et votre <strong>contexte d'activité</strong> ci-dessus, puis cliquez sur <strong>« Générer la playlist »</strong>. L'IA sélectionnera les 20 meilleurs morceaux selon vos préférences, votre humeur et la météo. Vous pourrez ensuite l'exporter en un clic dans vos playlists YouTube.
                   </p>
                 </div>
                 <div className="flex flex-wrap items-center justify-center gap-2 pt-1 text-xs">
-                  <span className={`px-3 py-1 rounded-full font-bold border transition-all ${selectedMood ? 'bg-violet-50 text-violet-700 border-violet-200 shadow-2xs' : 'bg-slate-100 text-slate-500 border-slate-200'}`}>
+                  <span
+                    className={`px-3 py-1 rounded-full font-bold border transition-all ${
+                      selectedMood
+                        ? 'bg-violet-50 text-violet-700 border-violet-200 shadow-2xs'
+                        : 'bg-slate-100 text-slate-500 border-slate-200'
+                    }`}
+                  >
                     {selectedMood ? `✓ Humeur : ${selectedMood}` : '1. Choisir une humeur'}
                   </span>
-                  <span className={`px-3 py-1 rounded-full font-bold border transition-all ${selectedContext ? 'bg-pink-50 text-pink-700 border-pink-200 shadow-2xs' : 'bg-slate-100 text-slate-500 border-slate-200'}`}>
+                  <span
+                    className={`px-3 py-1 rounded-full font-bold border transition-all ${
+                      selectedContext
+                        ? 'bg-pink-50 text-pink-700 border-pink-200 shadow-2xs'
+                        : 'bg-slate-100 text-slate-500 border-slate-200'
+                    }`}
+                  >
                     {selectedContext ? `✓ Contexte : ${selectedContext}` : '2. Choisir un contexte'}
                   </span>
                 </div>
@@ -372,15 +489,8 @@ export default function App() {
                   },
                 }))
               }
-              onToggleYoutube={() =>
-                setAuthStatus((prev) => ({
-                  ...prev,
-                  youtube: {
-                    ...prev.youtube,
-                    isConnected: !prev.youtube.isConnected,
-                  },
-                }))
-              }
+              onToggleYoutube={handleToggleYoutube}
+              onGoogleSignIn={handleGoogleSignIn}
               onGoToGenerator={() => setActiveTab('generator')}
             />
           </div>
@@ -389,7 +499,9 @@ export default function App() {
 
       {/* Footer */}
       <footer className="border-t border-slate-200/80 bg-white/70 px-6 py-6 text-center text-xs text-slate-500">
-        <p>MoodWave · Playlists sur-mesure Spotify &amp; YouTube adaptées à votre humeur, votre contexte et la météo en direct</p>
+        <p>
+          MoodWave · Playlists sur-mesure Spotify &amp; YouTube créées directement selon votre humeur, votre contexte et la météo en direct
+        </p>
       </footer>
 
       {/* Modals */}
@@ -398,6 +510,7 @@ export default function App() {
         onClose={() => setIsSignUpModalOpen(false)}
         initialProfile={userProfile || undefined}
         onSaveProfile={handleSaveProfile}
+        onGoogleSignIn={handleGoogleSignIn}
         isInitialSignUp={!userProfile}
       />
 
@@ -405,6 +518,7 @@ export default function App() {
         isOpen={isLoginModalOpen}
         onClose={() => setIsLoginModalOpen(false)}
         onLoginSuccess={handleLoginSuccess}
+        onGoogleSignIn={handleGoogleSignIn}
         onSwitchToSignUp={() => setIsSignUpModalOpen(true)}
       />
 
@@ -418,6 +532,10 @@ export default function App() {
         meteo={weatherState.conditionId}
         suggestedTitle={aiResult?.playlist_title}
         suggestedDescription={aiResult?.playlist_description}
+        authStatus={authStatus}
+        getAccessToken={getAccessToken}
+        onGoogleSignIn={handleGoogleSignIn}
+        userProfile={userProfile}
       />
 
       <GeminiAiTestModal

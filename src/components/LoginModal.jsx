@@ -1,14 +1,18 @@
 import React, { useState } from 'react';
-import { LogIn, Mail, Lock, X } from 'lucide-react';
+import { LogIn, Mail, Lock, X, AlertCircle } from 'lucide-react';
+import { GoogleSignInButton } from './GoogleSignInButton';
 
 export const LoginModal = ({
   isOpen,
   onClose,
   onLoginSuccess,
+  onGoogleSignIn,
   onSwitchToSignUp,
 }) => {
   const [email, setEmail] = useState('alexandre.dupont@email.com');
   const [password, setPassword] = useState('••••••••');
+  const [error, setError] = useState('');
+  const [isLoggingInGoogle, setIsLoggingInGoogle] = useState(false);
 
   if (!isOpen) return null;
 
@@ -18,9 +22,25 @@ export const LoginModal = ({
     onClose();
   };
 
+  const handleGoogleLogin = async () => {
+    setIsLoggingInGoogle(true);
+    setError('');
+    try {
+      if (onGoogleSignIn) {
+        await onGoogleSignIn();
+        onClose();
+      }
+    } catch (err) {
+      console.error('Google login error:', err);
+      setError(err.message || 'Erreur de connexion avec Google');
+    } finally {
+      setIsLoggingInGoogle(false);
+    }
+  };
+
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-slate-900/60 p-4 backdrop-blur-md">
-      <div className="w-full max-w-sm rounded-3xl border border-slate-200 bg-white p-6 shadow-2xl space-y-5 animate-in fade-in duration-200 text-slate-800">
+      <div className="w-full max-w-sm rounded-3xl border border-slate-200 bg-white p-6 shadow-2xl space-y-4 animate-in fade-in duration-200 text-slate-800">
         <div className="flex items-center justify-between pb-3 border-b border-slate-100">
           <div className="flex items-center gap-2.5">
             <div className="flex h-9 w-9 items-center justify-center rounded-2xl bg-violet-100 text-violet-600">
@@ -39,7 +59,31 @@ export const LoginModal = ({
           </button>
         </div>
 
-        <form onSubmit={handleSubmit} className="space-y-4">
+        {error && (
+          <div className="flex items-center gap-2 rounded-xl border border-rose-200 bg-rose-50 p-2.5 text-xs text-rose-700">
+            <AlertCircle className="h-4 w-4 shrink-0 text-rose-500" />
+            <span>{error}</span>
+          </div>
+        )}
+
+        {/* Google / YouTube One Click */}
+        <div className="space-y-2">
+          <GoogleSignInButton
+            onClick={handleGoogleLogin}
+            disabled={isLoggingInGoogle}
+            text={isLoggingInGoogle ? 'Connexion en cours...' : 'Se connecter avec Google / YouTube'}
+          />
+        </div>
+
+        <div className="relative flex py-1 items-center">
+          <div className="flex-grow border-t border-slate-200"></div>
+          <span className="flex-shrink mx-2 text-[10px] font-semibold text-slate-400 uppercase tracking-wider">
+            Ou avec mot de passe
+          </span>
+          <div className="flex-grow border-t border-slate-200"></div>
+        </div>
+
+        <form onSubmit={handleSubmit} className="space-y-3.5">
           <div>
             <label className="block text-xs font-semibold text-slate-700 mb-1">
               Adresse email

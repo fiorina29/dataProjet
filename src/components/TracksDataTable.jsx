@@ -11,8 +11,14 @@ import {
   Sparkles,
   Zap,
   Clock,
-  Flame
+  Flame,
+  Youtube,
+  ExternalLink,
+  AlertCircle,
+  CheckCircle2,
+  Loader2,
 } from 'lucide-react';
+import { getYouTubeToken, exportToYouTube } from '../services/youtubeExport';
 
 export const TracksDataTable = ({
   tracks,
@@ -25,6 +31,12 @@ export const TracksDataTable = ({
   const [sortField, setSortField] = useState('similarity');
   const [sortAsc, setSortAsc] = useState(false);
   const [playingTrackId, setPlayingTrackId] = useState(null);
+
+  // YouTube Direct Export State
+  const [isExportingYt, setIsExportingYt] = useState(false);
+  const [exportProgressYt, setExportProgressYt] = useState(null);
+  const [exportResultYt, setExportResultYt] = useState(null);
+  const [exportErrorYt, setExportErrorYt] = useState(null);
 
   // Filtered and sorted master track list
   const sortedTracks = useMemo(() => {
@@ -172,6 +184,52 @@ export const TracksDataTable = ({
     onOpenExportModal(top20.length >= 20 ? top20 : displayedTracks);
   };
 
+  // Direct export to YouTube with getYouTubeToken and exportToYouTube
+  const handleExportYouTube = async () => {
+    setIsExportingYt(true);
+    setExportProgressYt(null);
+    setExportResultYt(null);
+    setExportErrorYt(null);
+
+    try {
+      // 1) D'abord la popup Google, immédiatement dans le clic
+      const token = await getYouTubeToken(import.meta.env.VITE_GOOGLE_CLIENT_ID);
+
+      // Titres de la playlist générée par l'IA (artist + title)
+      const targetTracks = selectedTracksList.length > 0 ? selectedTracksList : displayedTracks.slice(0, 20);
+      const ytTracks = targetTracks.map((t) => ({
+        title: t.track_name,
+        artist: t.artists,
+      }));
+
+      // 2) Ensuite l'export
+      const result = await exportToYouTube(token, ytTracks, {
+        title: `MoodWave – ${selectedContext || 'Playlist'} – ${new Date().toLocaleDateString('fr-FR')}`,
+        description: 'Playlist générée par MoodWave selon l\'humeur et la météo.',
+        onProgress: (done, total, current) => {
+          setExportProgressYt({ done, total, current });
+        },
+      });
+
+      setExportProgressYt(null);
+      setExportResultYt(result);
+      window.open(result.playlistUrl, '_blank');
+    } catch (e) {
+      setExportProgressYt(null);
+      let msg = e?.message || "Erreur lors de l'exportation vers YouTube.";
+      if (msg.includes('popup_closed') || msg.includes('annulée')) {
+        msg = "Connexion Google annulée. Veuillez autoriser l'accès à YouTube pour créer la playlist.";
+      } else if (msg.includes('Quota') || msg.includes('quotaExceeded')) {
+        msg = 'Quota YouTube du jour épuisé. Réessaie demain.';
+      } else if (msg.includes('chaîne') || msg.includes('youtubeSignupRequired')) {
+        msg = "Ce compte Google n'a pas de chaîne YouTube. Crée-en une puis réessaie.";
+      }
+      setExportErrorYt(msg);
+    } finally {
+      setIsExportingYt(false);
+    }
+  };
+
   // Compute playlist averages
   const playlistMetrics = useMemo(() => {
     const targetList = selectedTracksList.length > 0 ? selectedTracksList : displayedTracks;
@@ -216,10 +274,26 @@ export const TracksDataTable = ({
 
         {/* Action Controls & Fast Export */}
         <div className="flex flex-wrap items-center gap-2.5 w-full lg:w-auto">
+          {/* Main Requested Button: Exporter sur YouTube */}
+          <button
+            onClick={handleExportYouTube}
+            disabled={isExportingYt || displayedTracks.length === 0}
+            className="flex items-center gap-2 rounded-2xl bg-red-600 hover:bg-red-700 px-4 py-2.5 text-xs font-bold text-white shadow-md shadow-red-600/25 transition-all disabled:opacity-50 disabled:cursor-not-allowed hover:scale-[1.01] active:scale-[0.99]"
+            title="Exporter directement la playlist sur votre compte YouTube"
+          >
+            {isExportingYt ? (
+              <Loader2 className="h-4 w-4 animate-spin" />
+            ) : (
+              <Youtube className="h-4 w-4" />
+            )}
+            <span>Exporter sur YouTube</span>
+          </button>
+
           {/* Quick Instant Export Top 20 */}
           <button
             onClick={handleQuickExportTop20}
-            className="flex items-center gap-2 rounded-2xl bg-gradient-to-r from-violet-600 via-pink-600 to-amber-500 px-4 py-2.5 text-xs font-black text-white shadow-md shadow-pink-500/20 hover:opacity-95 hover:scale-[1.01] active:scale-[0.99] transition-all"
+            disabled={isExportingYt}
+            className="flex items-center gap-2 rounded-2xl bg-gradient-to-r from-violet-600 via-pink-600 to-amber-500 px-4 py-2.5 text-xs font-black text-white shadow-md shadow-pink-500/20 hover:opacity-95 hover:scale-[1.01] active:scale-[0.99] transition-all disabled:opacity-50"
             title="Créer rapidement la playlist de 20 titres minimum et l'exporter"
           >
             <Zap className="h-4 w-4 text-yellow-300" />
@@ -229,14 +303,102 @@ export const TracksDataTable = ({
           {/* Export custom selection */}
           <button
             onClick={() => onOpenExportModal(selectedTracksList)}
-            disabled={selectedTracksList.length === 0}
+            disabled={isExportingYt || selectedTracksList.length === 0}
             className="flex items-center gap-2 rounded-2xl bg-gradient-to-r from-emerald-600 via-teal-600 to-sky-600 px-4 py-2.5 text-xs font-bold text-white shadow-md hover:opacity-95 transition-all disabled:opacity-50"
           >
             <Share2 className="h-3.5 w-3.5" />
-            <span>Exporter ({selectedTracksList.length}) sur Spotify / YouTube</span>
+            <span>Options d'export ({selectedTracksList.length})</span>
           </button>
         </div>
       </div>
+
+      {/* Live YouTube Export Progress Bar (x/20 + titre en cours) */}
+      {isExportingYt && exportProgressYt && (
+        <div className="p-4 rounded-2xl bg-red-50 border border-red-200 text-xs text-red-900 space-y-2.5 animate-in fade-in">
+          <div className="flex items-center justify-between font-bold">
+            <span className="flex items-center gap-2 truncate">
+              <Loader2 className="h-4 w-4 animate-spin text-red-600 shrink-0" />
+              <span>
+                {exportProgressYt.done}/{exportProgressYt.total} · {exportProgressYt.current?.artist} – {exportProgressYt.current?.title}
+              </span>
+            </span>
+            <span className="font-mono text-red-700 ml-2">
+              {Math.round((exportProgressYt.done / (exportProgressYt.total || 1)) * 100)}%
+            </span>
+          </div>
+          <div className="w-full bg-red-200/80 rounded-full h-2.5 overflow-hidden">
+            <div
+              className="bg-red-600 h-2.5 rounded-full transition-all duration-300"
+              style={{
+                width: `${Math.round((exportProgressYt.done / (exportProgressYt.total || 1)) * 100)}%`,
+              }}
+            />
+          </div>
+        </div>
+      )}
+
+      {/* YouTube Export Success View */}
+      {exportResultYt && (
+        <div className="p-4 rounded-2xl bg-emerald-50 border border-emerald-200 text-xs text-emerald-900 space-y-3 animate-in fade-in">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+            <div className="flex items-center gap-2">
+              <CheckCircle2 className="h-5 w-5 text-emerald-600 shrink-0" />
+              <span className="font-bold text-sm">
+                Playlist créée avec succès sur votre compte YouTube ! ({exportResultYt.added.length} titres ajoutés)
+              </span>
+            </div>
+            <div className="flex items-center gap-2">
+              <a
+                href={exportResultYt.playlistUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-red-600 text-white font-bold hover:bg-red-700 shadow-sm transition-colors shrink-0"
+              >
+                <Youtube className="h-4 w-4" />
+                <span>Voir la playlist sur YouTube</span>
+                <ExternalLink className="h-3 w-3" />
+              </a>
+              <button
+                onClick={() => setExportResultYt(null)}
+                className="px-3 py-2 rounded-xl bg-white border border-emerald-200 text-emerald-800 font-bold hover:bg-emerald-100 transition-colors"
+              >
+                Fermer
+              </button>
+            </div>
+          </div>
+
+          {exportResultYt.notFound?.length > 0 && (
+            <div className="pt-2 border-t border-emerald-200/70 text-amber-900">
+              <span className="font-semibold text-amber-800">
+                ⚠️ {exportResultYt.notFound.length} titre(s) introuvable(s) sur YouTube :
+              </span>
+              <ul className="list-disc list-inside mt-1 space-y-0.5 text-[11px] text-amber-800">
+                {exportResultYt.notFound.map((t, idx) => (
+                  <li key={idx}>
+                    {t.artist} – {t.title}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
+        </div>
+      )}
+
+      {/* YouTube Export Error View */}
+      {exportErrorYt && (
+        <div className="p-3.5 rounded-2xl bg-rose-50 border border-rose-200 text-xs text-rose-800 flex items-center justify-between gap-3 animate-in fade-in">
+          <div className="flex items-center gap-2">
+            <AlertCircle className="h-4 w-4 text-rose-600 shrink-0" />
+            <span className="font-medium">{exportErrorYt}</span>
+          </div>
+          <button
+            onClick={() => setExportErrorYt(null)}
+            className="text-rose-600 hover:text-rose-800 font-bold px-2 py-1 rounded-lg hover:bg-rose-100 transition-colors shrink-0"
+          >
+            Fermer
+          </button>
+        </div>
+      )}
 
       {/* 2. Playlist Summary Ribbon */}
       <div className="grid grid-cols-2 sm:grid-cols-5 gap-3 p-4 rounded-2xl bg-gradient-to-r from-violet-50/70 via-white to-pink-50/70 border border-violet-100/90 text-xs shadow-2xs">
