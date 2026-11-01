@@ -2607,6 +2607,14 @@ const AVAILABLE_GENRES = [
   "Disco / Funk",
   "Musique pour Enfants (Kids / Disney)"
 ];
+const KAGGLE_GENRES = [...new Set(KAGGLE_SPOTIFY_TRACKS.map((track) => track.track_genre))]
+  .sort((a, b) => a.localeCompare(b, "fr"));
+const KAGGLE_ARTISTS = [
+  ...new Set(
+    KAGGLE_SPOTIFY_TRACKS.flatMap((track) => track.artists.split(",").map((artist) => artist.trim()))
+      .filter(Boolean)
+  )
+].sort((a, b) => a.localeCompare(b, "fr"));
 const MOOD_OPTIONS = [
   { id: "joyeux", label: "Joyeux / Solaire", emoji: "\u2600\uFE0F", color: "from-amber-400 to-orange-400" },
   { id: "triste", label: "M\xE9lancolique / Triste", emoji: "\u{1F327}\uFE0F", color: "from-blue-400 to-indigo-500" },
@@ -2644,6 +2652,8 @@ const WEATHER_OPTIONS = [
 export {
   AVAILABLE_GENRES,
   CONTEXT_OPTIONS,
+  KAGGLE_ARTISTS,
+  KAGGLE_GENRES,
   KAGGLE_SPOTIFY_TRACKS,
   MOOD_OPTIONS,
   WEATHER_OPTIONS

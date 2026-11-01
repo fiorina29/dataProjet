@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import {
   MapPin,
   Music2,
@@ -7,19 +7,15 @@ import {
   Sparkles,
   X,
   UserCheck,
-  Youtube,
-  CheckCircle2,
   AlertCircle,
 } from 'lucide-react';
-import { AVAILABLE_GENRES } from '../data/kaggleSampleDataset';
-import { GoogleSignInButton } from './GoogleSignInButton';
+import { KAGGLE_ARTISTS, KAGGLE_GENRES } from '../data/kaggleSampleDataset';
 
 export const RegistrationModal = ({
   isOpen,
   onClose,
   initialProfile,
   onSaveProfile,
-  onGoogleSignIn,
   isInitialSignUp = false,
 }) => {
   const [nom, setNom] = useState(initialProfile?.nom || 'Dupont');
@@ -28,61 +24,32 @@ export const RegistrationModal = ({
   const [age, setAge] = useState(initialProfile?.age || 22);
   const [ville, setVille] = useState(initialProfile?.ville || 'Paris');
   const [genre, setGenre] = useState(
-    initialProfile?.genre_musical_prefere || 'Pas de préférence'
+    KAGGLE_GENRES.includes(initialProfile?.genre_musical_prefere)
+      ? initialProfile.genre_musical_prefere
+      : ''
   );
   const [artistePref, setArtistePref] = useState(
     initialProfile?.artiste_prefere || 'Daft Punk'
   );
   const [error, setError] = useState('');
-  const [isVerifyingGoogle, setIsVerifyingGoogle] = useState(false);
-  const [youtubeAccountStatus, setYoutubeAccountStatus] = useState(
-    initialProfile?.hasGoogleAuth
-      ? { isConnected: true, email: initialProfile?.email }
-      : null
-  );
+
+  useEffect(() => {
+    if (!isOpen) return;
+    setNom(initialProfile?.nom || 'Dupont');
+    setPrenom(initialProfile?.prenom || 'Alexandre');
+    setEmail(initialProfile?.email || 'alexandre.dupont@email.com');
+    setAge(initialProfile?.age || 22);
+    setVille(initialProfile?.ville || 'Paris');
+    setGenre(
+      KAGGLE_GENRES.includes(initialProfile?.genre_musical_prefere)
+        ? initialProfile.genre_musical_prefere
+        : ''
+    );
+    setArtistePref(initialProfile?.artiste_prefere || 'Daft Punk');
+    setError('');
+  }, [isOpen, initialProfile]);
 
   if (!isOpen) return null;
-
-  // 1-Click Sign-in / Verification via Google & YouTube
-  const handleGoogleQuickAuth = async () => {
-    setIsVerifyingGoogle(true);
-    setError('');
-    try {
-      if (onGoogleSignIn) {
-        const authData = await onGoogleSignIn();
-        if (authData) {
-          const user = authData.user;
-          const account = authData.youtubeAccount;
-          const displayName = user.displayName || '';
-          const parts = displayName.split(' ');
-          const first = parts[0] || 'Utilisateur';
-          const last = parts.slice(1).join(' ') || 'Google';
-
-          setPrenom(first);
-          setNom(last);
-          setEmail(user.email || '');
-          setYoutubeAccountStatus({
-            isConnected: Boolean(account?.isConnected),
-            hasInsufficientScope: Boolean(account?.hasInsufficientScope),
-            email: user.email,
-            displayName: user.displayName,
-            reason: account?.reason,
-          });
-
-          if (account?.hasInsufficientScope) {
-            setError(
-              "Permissions YouTube insuffisantes : assurez-vous de cocher l'autorisation d'accès à vos playlists YouTube lors de la validation Google."
-            );
-          }
-        }
-      }
-    } catch (err) {
-      console.error('Google registration error:', err);
-      setError(err.message || 'Erreur lors de la connexion Google');
-    } finally {
-      setIsVerifyingGoogle(false);
-    }
-  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -107,8 +74,8 @@ export const RegistrationModal = ({
       ville: ville.trim() || 'Paris',
       genre_musical_prefere: genre,
       artiste_prefere: artistePref.trim(),
-      hasGoogleAuth: Boolean(youtubeAccountStatus?.isConnected),
-      hasYouTubeAccount: Boolean(youtubeAccountStatus?.isConnected),
+      hasGoogleAuth: Boolean(initialProfile?.hasGoogleAuth),
+      hasYouTubeAccount: Boolean(initialProfile?.hasYouTubeAccount),
     });
     onClose();
   };
@@ -127,7 +94,7 @@ export const RegistrationModal = ({
                 {isInitialSignUp ? 'Créer votre profil musical' : 'Modifier vos informations'}
               </h3>
               <p className="text-xs text-slate-500">
-                Connectez votre compte Google / YouTube ou renseignez un compte lambda
+                Renseignez vos informations et préférences musicales
               </p>
             </div>
           </div>
@@ -147,54 +114,6 @@ export const RegistrationModal = ({
             <span>{error}</span>
           </div>
         )}
-
-        {/* 1. Fast Google / YouTube Auth Option */}
-        <div className="space-y-2 p-3.5 rounded-2xl bg-slate-50 border border-slate-200/80">
-          <div className="flex items-center justify-between">
-            <span className="text-xs font-bold text-slate-800 flex items-center gap-1.5">
-              <Youtube className="h-4 w-4 text-red-600" />
-              Compte Google &amp; YouTube
-            </span>
-            {youtubeAccountStatus?.isConnected && (
-              <span className="inline-flex items-center gap-1 text-[11px] font-bold px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-800">
-                <CheckCircle2 className="h-3 w-3 text-emerald-600" />
-                Compte YouTube connecté
-              </span>
-            )}
-          </div>
-
-          <GoogleSignInButton
-            onClick={handleGoogleQuickAuth}
-            disabled={isVerifyingGoogle}
-            text={
-              isVerifyingGoogle
-                ? 'Connexion et autorisation YouTube...'
-                : youtubeAccountStatus?.isConnected
-                ? `Connecté avec Google : ${email}`
-                : "S'inscrire avec Google (Active l'export YouTube)"
-            }
-          />
-
-          {youtubeAccountStatus?.isConnected && (
-            <p className="text-[11px] text-emerald-700 font-medium">
-              ✅ Votre compte Google ({email}) est prêt. Vous pourrez créer vos playlists directement dans votre compte YouTube.
-            </p>
-          )}
-
-          {!youtubeAccountStatus?.isConnected && (
-            <p className="text-[11px] text-slate-500">
-              💡 La connexion avec Google permet de créer automatiquement vos playlists sur votre compte YouTube.
-            </p>
-          )}
-        </div>
-
-        <div className="relative flex py-1 items-center">
-          <div className="flex-grow border-t border-slate-200"></div>
-          <span className="flex-shrink mx-3 text-[11px] font-semibold text-slate-400 uppercase tracking-wider">
-            Ou compte standard / lambda
-          </span>
-          <div className="flex-grow border-t border-slate-200"></div>
-        </div>
 
         <form onSubmit={handleSubmit} className="space-y-4">
           {/* Nom & Prénom */}
@@ -293,7 +212,8 @@ export const RegistrationModal = ({
                   onChange={(e) => setGenre(e.target.value)}
                   className="w-full rounded-xl border border-slate-200 bg-slate-50/80 pl-9 pr-3 py-2 text-xs font-medium text-slate-800 focus:bg-white focus:border-violet-500 focus:ring-2 focus:ring-violet-200 focus:outline-none transition-all cursor-pointer"
                 >
-                  {AVAILABLE_GENRES.map((g) => (
+                  <option value="">Choisir un genre</option>
+                  {KAGGLE_GENRES.map((g) => (
                     <option key={g} value={g}>
                       {g}
                     </option>
@@ -312,9 +232,15 @@ export const RegistrationModal = ({
                   type="text"
                   value={artistePref}
                   onChange={(e) => setArtistePref(e.target.value)}
+                  list="kaggle-artists"
                   placeholder="Ex: Daft Punk, Coldplay..."
                   className="w-full rounded-xl border border-slate-200 bg-slate-50/80 pl-9 pr-3 py-2 text-xs text-slate-800 focus:bg-white focus:border-violet-500 focus:ring-2 focus:ring-violet-200 focus:outline-none transition-all"
                 />
+                <datalist id="kaggle-artists">
+                  {KAGGLE_ARTISTS.map((artist) => (
+                    <option key={artist} value={artist} />
+                  ))}
+                </datalist>
               </div>
             </div>
           </div>

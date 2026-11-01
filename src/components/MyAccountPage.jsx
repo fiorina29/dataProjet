@@ -5,7 +5,6 @@ import {
   Edit3,
   Heart,
   Mail,
-  Radio,
   Youtube,
   ArrowRight,
   CheckCircle2,
@@ -17,7 +16,6 @@ export const MyAccountPage = ({
   profile,
   authStatus,
   onEditProfile,
-  onToggleSpotify,
   onToggleYoutube,
   onGoogleSignIn,
   onGoToGenerator,
@@ -51,7 +49,7 @@ export const MyAccountPage = ({
         <div>
           <h2 className="text-2xl font-bold tracking-tight text-slate-900">Mon Compte</h2>
           <p className="text-xs text-slate-500 mt-0.5">
-            Informations de profil &amp; synchronisation directe des playlists YouTube et Spotify
+            Informations de profil &amp; export de playlists YouTube
           </p>
         </div>
 
@@ -138,10 +136,10 @@ export const MyAccountPage = ({
           </div>
         </div>
 
-        {/* Carte 2: Connexions Musicales (YouTube & Spotify) */}
+        {/* Carte 2: Connexion YouTube */}
         <div className="rounded-3xl border border-slate-200/80 bg-white/95 p-6 shadow-sm space-y-5">
           <div>
-            <h3 className="text-base font-bold text-slate-900">Comptes de Streaming</h3>
+            <h3 className="text-base font-bold text-slate-900">Compte YouTube</h3>
             <p className="text-xs text-slate-500 mt-0.5">
               Connectez votre compte Google / YouTube pour créer automatiquement des playlists dans votre bibliothèque
             </p>
@@ -222,31 +220,6 @@ export const MyAccountPage = ({
               )}
             </div>
 
-            {/* Spotify */}
-            <div className="flex items-center justify-between p-3.5 rounded-2xl border border-emerald-100 bg-emerald-50/50">
-              <div className="flex items-center gap-3">
-                <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-emerald-500 text-white">
-                  <Radio className="h-4 w-4" />
-                </div>
-                <div>
-                  <h4 className="text-xs font-bold text-slate-900">Spotify</h4>
-                  <span className="text-[11px] text-emerald-700 font-medium">
-                    {authStatus.spotify.isConnected ? 'Connecté' : 'Non connecté'}
-                  </span>
-                </div>
-              </div>
-
-              <button
-                onClick={onToggleSpotify}
-                className={`rounded-xl px-3 py-1.5 text-xs font-bold transition-all ${
-                  authStatus.spotify.isConnected
-                    ? 'border border-slate-200 bg-white text-slate-600 hover:bg-slate-100'
-                    : 'bg-emerald-500 text-white hover:bg-emerald-600 shadow-sm'
-                }`}
-              >
-                {authStatus.spotify.isConnected ? 'Déconnecter' : 'Connecter'}
-              </button>
-            </div>
           </div>
         </div>
       </div>

@@ -37,11 +37,11 @@ Le projet utilise **Google Gemini API** (`@google/genai`) pour son moteur de rec
 # Clé API Google AI Studio pour Gemini (Gemini 3.8 Flash & Gemini 3.1 Flash-Lite)
 GEMINI_API_KEY="VOTRE_CLE_API_GEMINI_ICI"
 
-# Port du serveur de développement (par défaut 3000)
-PORT=3000
+# Port du serveur de développement (par défaut 3001)
+PORT=3001
 
 # URL de l'application en local
-APP_URL="http://localhost:3000"
+APP_URL="http://localhost:3001"
 ```
 
 > 💡 **Remarque importante** : Si vous n'avez pas de clé API Gemini ou ne souhaitez pas en mettre une immédiatement, le projet fonctionnera tout de même grâce à son **moteur heuristique local de secours** intégré !
@@ -64,12 +64,12 @@ npm run dev
 
 Le serveur Express + Vite démarre simultanément :
 ```
-➜  Local:   http://localhost:3000/
+➜  Local:   http://localhost:3001/
 ```
 
 #### 3) Ouvrir l'application
 Ouvrez votre navigateur web et rendez-vous sur :  
-👉 **[http://localhost:3000](http://localhost:3000)**
+👉 **[http://localhost:3001](http://localhost:3001)**
 
 ---
 
@@ -93,7 +93,7 @@ Ouvrez votre navigateur web et rendez-vous sur :
 
 | Commande | Action |
 | :--- | :--- |
-| `npm run dev` | Démarre le serveur local de dev sur `http://localhost:3000` |
+| `npm run dev` | Démarre le serveur local de dev sur `http://localhost:3001` |
 | `npm run build` | Compile l'application React et le bundle client dans `dist/` |
 | `npm run start` | Lance le serveur Express en mode production avec `tsx server.jsx` |
 | `npm run lint` | Analyse les sources JSX sans générer de fichiers (`tsc --noEmit`) |

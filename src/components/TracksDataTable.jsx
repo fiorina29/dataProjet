@@ -1,10 +1,7 @@
 import React, { useState, useEffect, useMemo } from 'react';
 import {
-  Play,
-  Pause,
   Search,
   ArrowUpDown,
-  Share2,
   Music,
   CheckSquare,
   Square,
@@ -22,7 +19,6 @@ import { getYouTubeToken, exportToYouTube } from '../services/youtubeExport';
 
 export const TracksDataTable = ({
   tracks,
-  onOpenExportModal,
   favoriteArtist,
   selectedContext,
 }) => {
@@ -30,8 +26,6 @@ export const TracksDataTable = ({
   const [viewLimit, setViewLimit] = useState('top20');
   const [sortField, setSortField] = useState('similarity');
   const [sortAsc, setSortAsc] = useState(false);
-  const [playingTrackId, setPlayingTrackId] = useState(null);
-
   // YouTube Direct Export State
   const [isExportingYt, setIsExportingYt] = useState(false);
   const [exportProgressYt, setExportProgressYt] = useState(null);
@@ -106,42 +100,6 @@ export const TracksDataTable = ({
     return tracks.filter((t) => selectedIds.has(t.track_id));
   }, [tracks, selectedIds]);
 
-  // Audio synthesis preview tone
-  const playPreviewTone = (track) => {
-    if (playingTrackId === track.track_id) {
-      setPlayingTrackId(null);
-      return;
-    }
-
-    try {
-      const AudioCtx = window.AudioContext || window.webkitAudioContext;
-      const ctx = new AudioCtx();
-      const osc = ctx.createOscillator();
-      const gain = ctx.createGain();
-
-      const baseFreq = 220 * Math.pow(2, (track.key || 0) / 12);
-      osc.type = track.acousticness > 0.5 ? 'sine' : 'triangle';
-      osc.frequency.setValueAtTime(baseFreq, ctx.currentTime);
-
-      gain.gain.setValueAtTime(0.15, ctx.currentTime);
-      gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 3.0);
-
-      osc.connect(gain);
-      gain.connect(ctx.destination);
-
-      osc.start();
-      osc.stop(ctx.currentTime + 3.0);
-
-      setPlayingTrackId(track.track_id);
-      setTimeout(() => {
-        setPlayingTrackId(null);
-      }, 3000);
-    } catch {
-      setPlayingTrackId(track.track_id);
-      setTimeout(() => setPlayingTrackId(null), 2000);
-    }
-  };
-
   const formatDuration = (ms) => {
     const totalSeconds = Math.floor(ms / 1000);
     const minutes = Math.floor(totalSeconds / 60);
@@ -176,12 +134,6 @@ export const TracksDataTable = ({
       next.add(id);
     }
     setSelectedIds(next);
-  };
-
-  // Instant export for the top 20
-  const handleQuickExportTop20 = () => {
-    const top20 = displayedTracks.slice(0, 20);
-    onOpenExportModal(top20.length >= 20 ? top20 : displayedTracks);
   };
 
   // Direct export to YouTube with getYouTubeToken and exportToYouTube
@@ -221,8 +173,6 @@ export const TracksDataTable = ({
         msg = "Connexion Google annulée. Veuillez autoriser l'accès à YouTube pour créer la playlist.";
       } else if (msg.includes('Quota') || msg.includes('quotaExceeded')) {
         msg = 'Quota YouTube du jour épuisé. Réessaie demain.';
-      } else if (msg.includes('chaîne') || msg.includes('youtubeSignupRequired')) {
-        msg = "Ce compte Google n'a pas de chaîne YouTube. Crée-en une puis réessaie.";
       }
       setExportErrorYt(msg);
     } finally {
@@ -289,26 +239,8 @@ export const TracksDataTable = ({
             <span>Exporter sur YouTube</span>
           </button>
 
-          {/* Quick Instant Export Top 20 */}
-          <button
-            onClick={handleQuickExportTop20}
-            disabled={isExportingYt}
-            className="flex items-center gap-2 rounded-2xl bg-gradient-to-r from-violet-600 via-pink-600 to-amber-500 px-4 py-2.5 text-xs font-black text-white shadow-md shadow-pink-500/20 hover:opacity-95 hover:scale-[1.01] active:scale-[0.99] transition-all disabled:opacity-50"
-            title="Créer rapidement la playlist de 20 titres minimum et l'exporter"
-          >
-            <Zap className="h-4 w-4 text-yellow-300" />
-            <span>Créer le Top 20 instantané</span>
-          </button>
 
-          {/* Export custom selection */}
-          <button
-            onClick={() => onOpenExportModal(selectedTracksList)}
-            disabled={isExportingYt || selectedTracksList.length === 0}
-            className="flex items-center gap-2 rounded-2xl bg-gradient-to-r from-emerald-600 via-teal-600 to-sky-600 px-4 py-2.5 text-xs font-bold text-white shadow-md hover:opacity-95 transition-all disabled:opacity-50"
-          >
-            <Share2 className="h-3.5 w-3.5" />
-            <span>Options d'export ({selectedTracksList.length})</span>
-          </button>
+
         </div>
       </div>
 
@@ -344,7 +276,9 @@ export const TracksDataTable = ({
             <div className="flex items-center gap-2">
               <CheckCircle2 className="h-5 w-5 text-emerald-600 shrink-0" />
               <span className="font-bold text-sm">
-                Playlist créée avec succès sur votre compte YouTube ! ({exportResultYt.added.length} titres ajoutés)
+                {exportResultYt.mode === 'playlist'
+                  ? 'Playlist créée sur ton compte YouTube !'
+                  : 'Ta playlist est prête sur YouTube !'} ({exportResultYt.added.length} titres ajoutés)
               </span>
             </div>
             <div className="flex items-center gap-2">
@@ -556,13 +490,11 @@ export const TracksDataTable = ({
               <th className="py-3 px-3.5">Énergie</th>
               <th className="py-3 px-3.5">Tempo</th>
               <th className="py-3 px-3.5 text-right">Durée</th>
-              <th className="py-3 px-3.5 text-center w-16">Extrait</th>
             </tr>
           </thead>
           <tbody className="divide-y divide-slate-100">
             {displayedTracks.map((track, index) => {
               const isSelected = selectedIds.has(track.track_id);
-              const isPlaying = playingTrackId === track.track_id;
               const isFavArtist =
                 favoriteArtist &&
                 track.artists.toLowerCase().includes(favoriteArtist.toLowerCase().trim());
@@ -650,23 +582,6 @@ export const TracksDataTable = ({
                     {formatDuration(track.duration_ms)}
                   </td>
 
-                  <td className="py-3 px-3.5 text-center">
-                    <button
-                      onClick={() => playPreviewTone(track)}
-                      className={`inline-flex h-8 w-8 items-center justify-center rounded-xl transition-all ${
-                        isPlaying
-                          ? 'bg-violet-600 text-white shadow-md'
-                          : 'bg-slate-100 text-slate-600 hover:bg-violet-100 hover:text-violet-700'
-                      }`}
-                      title="Écouter un extrait sonore synthétique"
-                    >
-                      {isPlaying ? (
-                        <Pause className="h-4 w-4" />
-                      ) : (
-                        <Play className="h-4 w-4 ml-0.5" />
-                      )}
-                    </button>
-                  </td>
                 </tr>
               );
             })}

@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import React, { useState, useMemo, useEffect, useCallback } from 'react';
+import React, { useState, useMemo, useEffect, useCallback, useRef } from 'react';
 import { Sparkles } from 'lucide-react';
 import { TopBar } from './components/TopBar';
 import { LandingHeroPage } from './components/LandingHeroPage';
@@ -12,11 +12,9 @@ import { TracksDataTable } from './components/TracksDataTable';
 import { MyAccountPage } from './components/MyAccountPage';
 import { RegistrationModal } from './components/RegistrationModal';
 import { LoginModal } from './components/LoginModal';
-import { ExportPlaylistModal } from './components/ExportPlaylistModal';
 import { GeminiAiTestModal } from './components/GeminiAiTestModal';
 import { AiGenerationInsights } from './components/AiGenerationInsights';
 import {
-  predictAudioTargetsLocally,
   rankTracksFromDataset,
 } from './services/recommendationEngine';
 import { fetchAiStatus, fetchAiPlaylistPrediction } from './services/geminiService';
@@ -24,7 +22,6 @@ import {
   initAuth,
   googleSignIn,
   logout as googleLogout,
-  getAccessToken,
   verifyYouTubeAccount,
 } from './services/authService';
 import { KAGGLE_SPOTIFY_TRACKS } from './data/kaggleSampleDataset';
@@ -61,6 +58,8 @@ export default function App() {
   const [selectedMood, setSelectedMood] = useState('');
   const [selectedContext, setSelectedContext] = useState('');
   const [hasGeneratedPlaylist, setHasGeneratedPlaylist] = useState(false);
+  const [rankedTracks, setRankedTracks] = useState([]);
+  const generationRequestId = useRef(0);
 
   // Live real-time Weather state
   const [weatherState, setWeatherState] = useState({
@@ -75,12 +74,8 @@ export default function App() {
     lastUpdated: new Date(),
   });
 
-  // Streaming Accounts Status (Spotify & YouTube)
+  // YouTube account status
   const [authStatus, setAuthStatus] = useState({
-    spotify: {
-      isConnected: true,
-      displayName: userProfile ? `${userProfile.prenom} (Spotify)` : 'Connecté',
-    },
     youtube: {
       isConnected: false,
       displayName: 'Non connecté',
@@ -88,7 +83,6 @@ export default function App() {
   });
 
   // AI Engine State
-  const [isAiMode, setIsAiMode] = useState(true);
   const [aiStatus, setAiStatus] = useState({
     status: 'checking',
     hasKey: true,
@@ -101,8 +95,6 @@ export default function App() {
   // Modals
   const [isSignUpModalOpen, setIsSignUpModalOpen] = useState(false);
   const [isLoginModalOpen, setIsLoginModalOpen] = useState(false);
-  const [isExportModalOpen, setIsExportModalOpen] = useState(false);
-  const [tracksToExport, setTracksToExport] = useState([]);
   const [isGenerating, setIsGenerating] = useState(false);
 
   // Load AI status from server
@@ -235,122 +227,105 @@ export default function App() {
     handleSaveProfile(newProfile);
   };
 
-  // Local heuristic fallback Model Inference
-  const mlOutput = useMemo(() => {
-    return predictAudioTargetsLocally({
-      utilisateur: {
-        age: userProfile?.age || 22,
-        genre_musical_prefere: userProfile?.genre_musical_prefere || 'Pas de préférence',
-        artiste_prefere: userProfile?.artiste_prefere,
-        ville: userProfile?.ville || weatherState.ville,
-      },
-      contexte: {
-        humeur: selectedMood || 'joyeux',
-        contexte_activite: selectedContext || 'voiture',
-        meteo: weatherState.conditionId,
-      },
-    });
-  }, [userProfile, selectedMood, selectedContext, weatherState.conditionId, weatherState.ville]);
-
   const [generationError, setGenerationError] = useState(null);
 
-  // Real Gemini AI Generation trigger — ONLY when user clicks on "Générer la playlist"
+  useEffect(() => {
+    generationRequestId.current += 1;
+    setAiResult(null);
+    setRankedTracks([]);
+    setHasGeneratedPlaylist(false);
+    setIsGenerating(false);
+    setGenerationError(null);
+  }, [
+    selectedMood,
+    selectedContext,
+    userProfile?.artiste_prefere,
+    userProfile?.genre_musical_prefere,
+    weatherState.conditionId,
+    weatherState.temperature,
+    weatherState.ville,
+  ]);
+
+  // Show a playlist only after Gemini has returned at least 20 matching curated tracks.
   const executeGeneration = useCallback(async () => {
     if (!selectedMood || !selectedContext) {
       return;
     }
 
+    const requestId = ++generationRequestId.current;
     setIsGenerating(true);
     setGenerationError(null);
-    // Display the playlist immediately from the local recommendation engine
-    setHasGeneratedPlaylist(true);
+    setHasGeneratedPlaylist(false);
+    setAiResult(null);
+    setRankedTracks([]);
 
-    if (isAiMode) {
-      try {
-        const result = await fetchAiPlaylistPrediction({
-          utilisateur: {
-            age: userProfile?.age || 22,
-            genre_musical_prefere: userProfile?.genre_musical_prefere || 'Pas de préférence',
-            artiste_prefere: userProfile?.artiste_prefere,
-            ville: userProfile?.ville || weatherState.ville,
-          },
-          contexte: {
-            humeur: selectedMood,
-            contexte_activite: selectedContext,
-            meteo: weatherState.conditionId,
-          },
-          temperature: weatherState.temperature,
-          weatherDescription: weatherState.description,
-        });
-        setAiResult(result);
-      } catch (err) {
-        console.warn('Gemini AI call failed, keeping local ML playlist:', err);
-        setGenerationError(null); // Keep playlist generated smoothly!
-      } finally {
+    try {
+      const result = await fetchAiPlaylistPrediction({
+        utilisateur: {
+          age: userProfile?.age || 22,
+          genre_musical_prefere: userProfile?.genre_musical_prefere || 'Pas de préférence',
+          artiste_prefere: userProfile?.artiste_prefere,
+          ville: userProfile?.ville || weatherState.ville,
+        },
+        contexte: {
+          humeur: selectedMood,
+          contexte_activite: selectedContext,
+          meteo: weatherState.conditionId,
+        },
+        temperature: weatherState.temperature,
+        weatherDescription: weatherState.description,
+      });
+      const tracks = rankTracksFromDataset(
+        result.spotify_audio_features_targets,
+        result.genres_recommandes,
+        userProfile?.artiste_prefere,
+        userProfile?.genre_musical_prefere,
+        selectedContext,
+        selectedMood,
+        KAGGLE_SPOTIFY_TRACKS,
+        result.curated_tracks
+      );
+      if (requestId !== generationRequestId.current) return;
+      const normalizeArtist = (artist) => artist
+        .normalize('NFD')
+        .replace(/[\u0300-\u036f]/g, '')
+        .trim()
+        .toLowerCase();
+      const favoriteArtist = normalizeArtist(userProfile?.artiste_prefere || '');
+      const availableArtistTracks = favoriteArtist
+        ? KAGGLE_SPOTIFY_TRACKS.filter((track) =>
+          track.artists.split(',').some((artist) => normalizeArtist(artist) === favoriteArtist)
+        ).length
+        : 5;
+      setAiResult({
+        ...result,
+        artistAvailabilityNotice: userProfile?.artiste_prefere && availableArtistTracks < 5
+          ? `Le catalogue Kaggle ne contient que ${availableArtistTracks} titre(s) de ${userProfile.artiste_prefere}. La playlist inclut tous les titres disponibles de cet artiste.`
+          : null,
+      });
+      setRankedTracks(tracks);
+      setHasGeneratedPlaylist(true);
+    } catch (err) {
+      if (requestId !== generationRequestId.current) return;
+      console.error('Gemini AI playlist generation failed:', err);
+      setGenerationError(err.message || "Impossible d'obtenir une playlist valide de l'IA.");
+    } finally {
+      if (requestId === generationRequestId.current) {
         setIsGenerating(false);
       }
-    } else {
-      setIsGenerating(false);
     }
-  }, [isAiMode, userProfile, weatherState, selectedMood, selectedContext]);
-
-  // Compute effective targets and genres
-  const effectiveTargets = useMemo(() => {
-    if (isAiMode && aiResult?.spotify_audio_features_targets) {
-      return aiResult.spotify_audio_features_targets;
-    }
-    return mlOutput.spotify_audio_features_targets;
-  }, [isAiMode, aiResult, mlOutput]);
-
-  const effectiveGenres = useMemo(() => {
-    if (isAiMode && aiResult?.genres_recommandes && aiResult.genres_recommandes.length > 0) {
-      return aiResult.genres_recommandes;
-    }
-    return mlOutput.genres_recommandes;
-  }, [isAiMode, aiResult, mlOutput]);
-
-  // Ranked tracks adapting strictly to chosen context and user musical tastes (artist + genre)
-  const rankedTracks = useMemo(() => {
-    if (!hasGeneratedPlaylist) return [];
-    return rankTracksFromDataset(
-      effectiveTargets,
-      effectiveGenres,
-      userProfile?.artiste_prefere,
-      userProfile?.genre_musical_prefere,
-      selectedContext,
-      selectedMood,
-      KAGGLE_SPOTIFY_TRACKS,
-      aiResult?.curated_tracks
-    );
-  }, [
-    hasGeneratedPlaylist,
-    effectiveTargets,
-    effectiveGenres,
-    userProfile?.artiste_prefere,
-    userProfile?.genre_musical_prefere,
-    selectedContext,
-    selectedMood,
-    aiResult?.curated_tracks,
-  ]);
-
-  const handleOpenExportModal = (tracks) => {
-    setTracksToExport(tracks);
-    setIsExportModalOpen(true);
-  };
+  }, [userProfile, weatherState, selectedMood, selectedContext]);
 
   return (
     <div className="min-h-screen text-slate-800 flex flex-col selection:bg-pink-500 selection:text-white">
       {/* 1. Header Navigation */}
       <TopBar
         profile={userProfile}
-        authStatus={authStatus}
         activeTab={activeTab}
         onSelectTab={setActiveTab}
         onOpenSignUp={() => setIsSignUpModalOpen(true)}
         onOpenLogin={() => setIsLoginModalOpen(true)}
         onLogout={handleLogout}
-        aiStatus={aiStatus}
-        onOpenAiTest={() => setIsAiTestModalOpen(true)}
       />
 
       {/* 2. Main Page Content */}
@@ -386,9 +361,9 @@ export default function App() {
               onSelectContext={setSelectedContext}
               weatherState={weatherState}
               onUpdateWeather={setWeatherState}
+              onSaveProfile={handleSaveProfile}
               onGenerate={executeGeneration}
               isLoading={isGenerating}
-              isAiMode={isAiMode}
               onOpenAiTest={() => setIsAiTestModalOpen(true)}
             />
 
@@ -411,7 +386,7 @@ export default function App() {
               </div>
             )}
 
-            {/* Only display the playlist after the user has explicitly clicked on "Générer la playlist" */}
+            {/* No playlist is shown until Gemini has returned a valid curated playlist. */}
             {!hasGeneratedPlaylist ? (
               <div className="rounded-3xl border border-dashed border-violet-200/90 bg-white/70 p-8 sm:p-12 text-center space-y-4 shadow-xs">
                 <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-tr from-violet-100 to-pink-100 text-violet-600 shadow-xs">
@@ -419,10 +394,18 @@ export default function App() {
                 </div>
                 <div className="max-w-md mx-auto space-y-2">
                   <h3 className="text-xl font-black text-slate-900 tracking-tight">
-                    Prêt à créer votre playlist sur-mesure ?
+                    {isGenerating
+                      ? "L'IA prépare votre playlist..."
+                      : generationError
+                      ? "La playlist n'a pas pu être validée"
+                      : 'Prêt à créer votre playlist sur-mesure ?'}
                   </h3>
                   <p className="text-xs text-slate-600 leading-relaxed">
-                    Sélectionnez votre <strong>humeur</strong> et votre <strong>contexte d'activité</strong> ci-dessus, puis cliquez sur <strong>« Générer la playlist »</strong>. L'IA sélectionnera les 20 meilleurs morceaux selon vos préférences, votre humeur et la météo. Vous pourrez ensuite l'exporter en un clic dans vos playlists YouTube.
+                    {isGenerating
+                      ? "Aucune chanson ne s'affichera avant la réponse de Gemini."
+                      : generationError
+                      ? "Réessayez pour obtenir 20 titres du catalogue, dont au moins 5 de votre artiste préféré."
+                      : <>Sélectionnez votre <strong>humeur</strong> et votre <strong>contexte d'activité</strong> ci-dessus, puis cliquez sur <strong>« Générer la playlist »</strong>. Gemini sélectionnera les 20 morceaux selon vos préférences, votre humeur et la météo.</>}
                   </p>
                 </div>
                 <div className="flex flex-wrap items-center justify-center gap-2 pt-1 text-xs">
@@ -454,8 +437,6 @@ export default function App() {
                   isLoading={isGenerating}
                   onOpenTestModal={() => setIsAiTestModalOpen(true)}
                   onRegenerate={executeGeneration}
-                  isAiMode={isAiMode}
-                  onToggleAiMode={setIsAiMode}
                   profile={userProfile}
                   selectedContext={selectedContext}
                   selectedMood={selectedMood}
@@ -464,7 +445,6 @@ export default function App() {
                 {/* THE ONLY MUSIC LIST: "Votre Playlist" */}
                 <TracksDataTable
                   tracks={rankedTracks}
-                  onOpenExportModal={handleOpenExportModal}
                   favoriteArtist={userProfile?.artiste_prefere}
                   selectedContext={selectedContext}
                 />
@@ -480,15 +460,6 @@ export default function App() {
               profile={userProfile}
               authStatus={authStatus}
               onEditProfile={() => setIsSignUpModalOpen(true)}
-              onToggleSpotify={() =>
-                setAuthStatus((prev) => ({
-                  ...prev,
-                  spotify: {
-                    ...prev.spotify,
-                    isConnected: !prev.spotify.isConnected,
-                  },
-                }))
-              }
               onToggleYoutube={handleToggleYoutube}
               onGoogleSignIn={handleGoogleSignIn}
               onGoToGenerator={() => setActiveTab('generator')}
@@ -500,7 +471,7 @@ export default function App() {
       {/* Footer */}
       <footer className="border-t border-slate-200/80 bg-white/70 px-6 py-6 text-center text-xs text-slate-500">
         <p>
-          MoodWave · Playlists sur-mesure Spotify &amp; YouTube créées directement selon votre humeur, votre contexte et la météo en direct
+          MoodWave · Playlists sur-mesure YouTube créées selon votre humeur, votre contexte et la météo en direct
         </p>
       </footer>
 
@@ -520,22 +491,6 @@ export default function App() {
         onLoginSuccess={handleLoginSuccess}
         onGoogleSignIn={handleGoogleSignIn}
         onSwitchToSignUp={() => setIsSignUpModalOpen(true)}
-      />
-
-      <ExportPlaylistModal
-        isOpen={isExportModalOpen}
-        onClose={() => setIsExportModalOpen(false)}
-        selectedTracks={tracksToExport}
-        ville={weatherState.ville}
-        humeur={selectedMood}
-        contexteActivite={selectedContext}
-        meteo={weatherState.conditionId}
-        suggestedTitle={aiResult?.playlist_title}
-        suggestedDescription={aiResult?.playlist_description}
-        authStatus={authStatus}
-        getAccessToken={getAccessToken}
-        onGoogleSignIn={handleGoogleSignIn}
-        userProfile={userProfile}
       />
 
       <GeminiAiTestModal

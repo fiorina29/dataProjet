@@ -20,9 +20,15 @@ import {
   Utensils,
   Moon,
   Footprints,
-  Heart
+  Heart,
+  Music2,
 } from 'lucide-react';
-import { MOOD_OPTIONS, CONTEXT_OPTIONS } from '../data/kaggleSampleDataset';
+import {
+  MOOD_OPTIONS,
+  CONTEXT_OPTIONS,
+  KAGGLE_ARTISTS,
+  KAGGLE_GENRES,
+} from '../data/kaggleSampleDataset';
 import { fetchLiveWeather, fetchLiveWeatherFromDevice } from '../services/weatherService';
 
 export const MoodAndWeatherSelector = ({
@@ -33,6 +39,7 @@ export const MoodAndWeatherSelector = ({
   onSelectContext,
   weatherState,
   onUpdateWeather,
+  onSaveProfile,
   onGenerate,
   isLoading,
   isAiMode = true,
@@ -40,6 +47,34 @@ export const MoodAndWeatherSelector = ({
 }) => {
   const [cityInput, setCityInput] = useState(profile.ville);
   const [isChangingCity, setIsChangingCity] = useState(false);
+  const [favoriteGenre, setFavoriteGenre] = useState(
+    KAGGLE_GENRES.includes(profile.genre_musical_prefere)
+      ? profile.genre_musical_prefere
+      : ''
+  );
+  const [favoriteArtist, setFavoriteArtist] = useState(profile.artiste_prefere || '');
+  const [preferencesSaved, setPreferencesSaved] = useState(false);
+  const savedGenre = KAGGLE_GENRES.includes(profile.genre_musical_prefere)
+    ? profile.genre_musical_prefere
+    : '';
+
+  useEffect(() => {
+    setFavoriteGenre(
+      KAGGLE_GENRES.includes(profile.genre_musical_prefere)
+        ? profile.genre_musical_prefere
+        : ''
+    );
+    setFavoriteArtist(profile.artiste_prefere || '');
+  }, [profile.genre_musical_prefere, profile.artiste_prefere]);
+
+  const handleSavePreferences = () => {
+    onSaveProfile({
+      ...profile,
+      genre_musical_prefere: favoriteGenre,
+      artiste_prefere: favoriteArtist.trim(),
+    });
+    setPreferencesSaved(true);
+  };
 
   // Auto-detect device location on first mount
   useEffect(() => {
@@ -100,7 +135,7 @@ export const MoodAndWeatherSelector = ({
       {/* 1. Cheerful Live Context Bar */}
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-5">
         {/* Welcome greeting card with warm colors */}
-        <div className="lg:col-span-2 rounded-3xl bg-gradient-to-r from-violet-600 via-purple-600 to-indigo-600 p-6 text-white shadow-lg shadow-violet-500/10 flex flex-col justify-between">
+        <div className="rounded-3xl bg-gradient-to-r from-violet-600 via-purple-600 to-indigo-600 p-6 text-white shadow-lg shadow-violet-500/10 flex flex-col justify-between">
           <div>
             <div className="inline-flex items-center gap-1.5 rounded-full bg-white/20 px-3 py-1 text-xs font-semibold backdrop-blur-md mb-2">
               <Sparkles className="h-3 w-3 text-yellow-300" />
@@ -126,6 +161,67 @@ export const MoodAndWeatherSelector = ({
           </div>
         </div>
 
+        {/* Editable profile music preferences */}
+        <div className="rounded-3xl border border-violet-100 bg-white p-5 shadow-md shadow-violet-500/5 space-y-3">
+          <div className="flex items-center gap-2">
+            <div className="flex h-7 w-7 items-center justify-center rounded-lg bg-violet-50 text-violet-600">
+              <Music2 className="h-4 w-4" />
+            </div>
+            <div>
+              <span className="text-xs font-bold text-slate-800 block">Préférences musicales</span>
+              <span className="text-[10px] text-violet-600 font-semibold">Profil MoodWave</span>
+            </div>
+          </div>
+          <label className="block text-[10px] font-semibold text-slate-600" htmlFor="favorite-genre">
+            Genre préféré
+          </label>
+          <select
+            id="favorite-genre"
+            value={favoriteGenre}
+            onChange={(event) => {
+              setFavoriteGenre(event.target.value);
+              setPreferencesSaved(false);
+            }}
+            className="w-full rounded-xl border border-slate-200 bg-slate-50 px-3 py-2 text-xs text-slate-800 focus:border-violet-500 focus:outline-none focus:ring-2 focus:ring-violet-200"
+          >
+            <option value="">Choisir un genre</option>
+            {KAGGLE_GENRES.map((genre) => (
+              <option key={genre} value={genre}>{genre}</option>
+            ))}
+          </select>
+          <label className="block text-[10px] font-semibold text-slate-600" htmlFor="favorite-artist">
+            Artiste préféré
+          </label>
+          <input
+            id="favorite-artist"
+            type="text"
+            list="generator-kaggle-artists"
+            value={favoriteArtist}
+            onChange={(event) => {
+              setFavoriteArtist(event.target.value);
+              setPreferencesSaved(false);
+            }}
+            placeholder="Choisir ou saisir un artiste"
+            className="w-full rounded-xl border border-slate-200 bg-slate-50 px-3 py-2 text-xs text-slate-800 focus:border-violet-500 focus:outline-none focus:ring-2 focus:ring-violet-200"
+          />
+          <datalist id="generator-kaggle-artists">
+            {KAGGLE_ARTISTS.map((artist) => (
+              <option key={artist} value={artist} />
+            ))}
+          </datalist>
+          <button
+            type="button"
+            onClick={handleSavePreferences}
+            disabled={
+              favoriteGenre === savedGenre &&
+              favoriteArtist.trim() === (profile.artiste_prefere || '')
+            }
+            className="w-full rounded-xl bg-violet-600 px-3 py-2 text-xs font-bold text-white transition-colors hover:bg-violet-700 disabled:cursor-not-allowed disabled:bg-slate-200 disabled:text-slate-500"
+          >
+            {preferencesSaved ? 'Préférences enregistrées' : 'Enregistrer'}
+          </button>
+        </div>
+
         {/* Live Weather Card with direct GPS */}
         <div className="rounded-3xl border border-sky-100 bg-white p-6 shadow-md shadow-sky-500/5 space-y-4">
           <div className="flex items-center justify-between">
@@ -133,7 +229,7 @@ export const MoodAndWeatherSelector = ({
               <div className="flex h-7 w-7 items-center justify-center rounded-lg bg-sky-50 text-sky-600">
                 <MapPin className="h-4 w-4" />
               </div>
-              <div>
+              <div className="min-w-0 flex-1">
                 <span className="text-xs font-bold text-slate-800 block truncate max-w-[150px]">
                   {weatherState.ville}
                 </span>
@@ -146,11 +242,11 @@ export const MoodAndWeatherSelector = ({
             <button
               onClick={handleLocateMe}
               disabled={weatherState.isLoading}
-              className="flex items-center gap-1 text-[11px] font-semibold text-slate-600 hover:text-sky-600 transition-colors bg-slate-50 hover:bg-sky-50 px-2.5 py-1 rounded-lg"
+              className="flex shrink-0 items-center gap-1 whitespace-nowrap text-[11px] font-semibold text-slate-600 hover:text-sky-600 transition-colors bg-slate-50 hover:bg-sky-50 px-2 py-1 rounded-lg"
               title="Relancer la géolocalisation de l'appareil"
             >
               <LocateFixed className={`h-3.5 w-3.5 ${weatherState.isLoading ? 'animate-spin text-sky-600' : ''}`} />
-              <span className="hidden sm:inline">GPS direct</span>
+              <span>GPS</span>
             </button>
           </div>
 
@@ -161,10 +257,10 @@ export const MoodAndWeatherSelector = ({
                 {getWeatherIcon(weatherState.conditionId)}
               </div>
               <div>
-                <div className="text-3xl font-black text-slate-800 font-mono-nums">
+                <div className="text-2xl font-black text-slate-800 font-mono-nums">
                   {weatherState.isLoading ? '--' : `${weatherState.temperature}°C`}
                 </div>
-                <div className="text-xs font-bold text-sky-700 capitalize">
+                <div className="max-w-[150px] truncate text-xs font-bold text-sky-700 capitalize">
                   {weatherState.isLoading ? 'Détection météo...' : weatherState.description}
                 </div>
               </div>

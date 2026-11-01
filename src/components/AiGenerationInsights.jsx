@@ -6,7 +6,6 @@ import {
   Compass,
   Sliders,
   CheckCircle2,
-  Bot,
   Heart
 } from 'lucide-react';
 
@@ -15,8 +14,6 @@ export const AiGenerationInsights = ({
   isLoading,
   onOpenTestModal,
   onRegenerate,
-  isAiMode,
-  onToggleAiMode,
   profile,
   selectedContext,
   selectedMood,
@@ -71,22 +68,8 @@ export const AiGenerationInsights = ({
           </div>
         </div>
 
-        {/* Action Controls & AI Toggle */}
+        {/* Action Controls */}
         <div className="flex flex-wrap items-center gap-2 self-start sm:self-auto">
-          {/* AI vs Heuristic Toggle */}
-          <button
-            type="button"
-            onClick={() => onToggleAiMode(!isAiMode)}
-            className={`flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-bold transition-all border ${
-              isAiMode
-                ? 'bg-violet-100/80 border-violet-300 text-violet-800'
-                : 'bg-white border-slate-200 text-slate-600'
-            }`}
-          >
-            <Bot className="h-3.5 w-3.5 text-violet-600" />
-            <span>Mode IA {isAiMode ? 'Activé' : 'Désactivé'}</span>
-          </button>
-
           {/* Test Console Trigger */}
           <button
             type="button"
@@ -130,6 +113,12 @@ export const AiGenerationInsights = ({
           </span>
         )}
       </div>
+
+      {aiResult?.artistAvailabilityNotice && (
+        <div className="rounded-2xl border border-amber-200 bg-amber-50 p-3 text-xs font-medium text-amber-900">
+          {aiResult.artistAvailabilityNotice}
+        </div>
+      )}
 
       {/* Reasoning and Insights */}
       {aiResult?.ai_reasoning && (
