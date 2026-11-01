@@ -1,4 +1,4 @@
-export async function fetchAiStatus() {
+async function fetchAiStatus() {
   try {
     const res = await fetch("/api/ai/status");
     if (!res.ok) {
@@ -27,7 +27,7 @@ export async function fetchAiStatus() {
     };
   }
 }
-export async function runAiTest(prompt) {
+async function runAiTest(prompt) {
   const defaultPrompt = prompt || "Donne une phrase courte et po\xE9tique reliant l'\xE9tat d'esprit, la pluie ou le soleil et la musique.";
   try {
     const res = await fetch("/api/ai/test", {
@@ -59,7 +59,7 @@ export async function runAiTest(prompt) {
     };
   }
 }
-export async function fetchAiPlaylistPrediction(payload) {
+async function fetchAiPlaylistPrediction(payload) {
   try {
     const res = await fetch("/api/ai/predict-playlist", {
       method: "POST",
@@ -88,3 +88,8 @@ export async function fetchAiPlaylistPrediction(payload) {
     throw err;
   }
 }
+export {
+  fetchAiPlaylistPrediction,
+  fetchAiStatus,
+  runAiTest
+};

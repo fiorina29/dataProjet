@@ -5,11 +5,11 @@
   "type": "module",
   "scripts": {
     "dev": "tsx server.jsx",
-    "build": "vite build --config vite.config.jsx",
+    "build": "vite build",
     "start": "tsx server.jsx",
-    "preview": "vite preview --config vite.config.jsx",
+    "preview": "vite preview",
     "clean": "rm -rf dist",
-    "lint": "node --check --input-type=module < server.jsx"
+    "lint": "tsc --noEmit"
   },
   "dependencies": {
     "@google/genai": "^2.4.0",
@@ -24,9 +24,14 @@
     "motion": "^12.23.24"
   },
   "devDependencies": {
+    "@types/node": "^22.14.0",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
     "autoprefixer": "^10.4.21",
-    "esbuild": "^0.27.0",
+    "esbuild": "^0.25.0",
     "tailwindcss": "^4.3.3",
-    "tsx": "^4.21.0"
+    "tsx": "^4.21.0",
+    "typescript": "^7.0.2",
+    "@types/express": "^4.17.21"
   }
 }

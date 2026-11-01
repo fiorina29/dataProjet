@@ -1,5 +1,5 @@
 import { KAGGLE_SPOTIFY_TRACKS } from "../data/kaggleSampleDataset";
-export function matchesGenre(trackGenre, testGenre) {
+function matchesGenre(trackGenre, testGenre) {
   if (!trackGenre || !testGenre) return false;
   const tg = trackGenre.toLowerCase().trim();
   const ug = testGenre.toLowerCase().trim();
@@ -20,7 +20,7 @@ export function matchesGenre(trackGenre, testGenre) {
   if (ug.includes("r&b") && (tg.includes("r-n-b") || tg.includes("pop"))) return true;
   return false;
 }
-export function predictAudioTargetsLocally(payload) {
+function predictAudioTargetsLocally(payload) {
   const { utilisateur, contexte } = payload;
   const mood = (contexte.humeur || "").toLowerCase();
   const activity = (contexte.contexte_activite || "").toLowerCase();
@@ -158,7 +158,7 @@ export function predictAudioTargetsLocally(payload) {
     genres_recommandes: Array.from(genres).slice(0, 5)
   };
 }
-export function rankTracksFromDataset(targets, recommendedGenres, favoriteArtist, favoriteGenre, activityContext, mood, tracksPool = KAGGLE_SPOTIFY_TRACKS, aiCuratedTracks) {
+function rankTracksFromDataset(targets, recommendedGenres, favoriteArtist, favoriteGenre, activityContext, mood, tracksPool = KAGGLE_SPOTIFY_TRACKS, aiCuratedTracks) {
   const { target_valence, target_energy, target_danceability, target_acousticness } = targets;
   const act = (activityContext || "").toLowerCase();
   const md = (mood || "").toLowerCase();
@@ -260,3 +260,8 @@ export function rankTracksFromDataset(targets, recommendedGenres, favoriteArtist
   const sorted = scoredTracks.sort((a, b) => (b.similarity_score || 0) - (a.similarity_score || 0));
   return sorted;
 }
+export {
+  matchesGenre,
+  predictAudioTargetsLocally,
+  rankTracksFromDataset
+};

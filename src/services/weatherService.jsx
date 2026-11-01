@@ -19,7 +19,7 @@ function mapWmoCodeToCondition(code) {
   }
   return { conditionId: "nuageux", description: "Temps mitig\xE9" };
 }
-export async function fetchLiveWeatherFromDevice() {
+async function fetchLiveWeatherFromDevice() {
   return new Promise((resolve) => {
     if (!navigator.geolocation) {
       resolve(fetchLiveWeather("Paris"));
@@ -73,7 +73,7 @@ export async function fetchLiveWeatherFromDevice() {
     );
   });
 }
-export async function fetchLiveWeather(cityName) {
+async function fetchLiveWeather(cityName) {
   const query = cityName.trim() || "Paris";
   try {
     const geoUrl = `https://geocoding-api.open-meteo.com/v1/search?name=${encodeURIComponent(
@@ -130,3 +130,7 @@ export async function fetchLiveWeather(cityName) {
     };
   }
 }
+export {
+  fetchLiveWeather,
+  fetchLiveWeatherFromDevice
+};

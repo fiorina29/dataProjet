@@ -1,4 +1,4 @@
-export const KAGGLE_SPOTIFY_TRACKS = [
+const KAGGLE_SPOTIFY_TRACKS = [
   // =========================================================================
   // 1. FÊTE / SOIRÉE / CLUB / DANCE / GROOVE (Valence >= 0.70, Danceability >= 0.70, Energy >= 0.75)
   // =========================================================================
@@ -2589,7 +2589,7 @@ export const KAGGLE_SPOTIFY_TRACKS = [
     track_genre: "latino"
   }
 ];
-export const AVAILABLE_GENRES = [
+const AVAILABLE_GENRES = [
   "Pas de pr\xE9f\xE9rence",
   "Pop",
   "Rock",
@@ -2607,7 +2607,7 @@ export const AVAILABLE_GENRES = [
   "Disco / Funk",
   "Musique pour Enfants (Kids / Disney)"
 ];
-export const MOOD_OPTIONS = [
+const MOOD_OPTIONS = [
   { id: "joyeux", label: "Joyeux / Solaire", emoji: "\u2600\uFE0F", color: "from-amber-400 to-orange-400" },
   { id: "triste", label: "M\xE9lancolique / Triste", emoji: "\u{1F327}\uFE0F", color: "from-blue-400 to-indigo-500" },
   { id: "energetique", label: "Survolt\xE9 / \xC9nergie", emoji: "\u26A1", color: "from-red-400 to-rose-500" },
@@ -2621,7 +2621,7 @@ export const MOOD_OPTIONS = [
   { id: "motivant", label: "Conqu\xE9rant / Motivation", emoji: "\u{1F3C6}", color: "from-yellow-400 to-amber-500" },
   { id: "sombre", label: "Nocturne / Sombre", emoji: "\u{1F319}", color: "from-slate-600 to-slate-800" }
 ];
-export const CONTEXT_OPTIONS = [
+const CONTEXT_OPTIONS = [
   { id: "voiture", label: "En voiture / Road Trip", emoji: "\u{1F697}" },
   { id: "fete", label: "F\xEAte / Soir\xE9e", emoji: "\u{1F389}" },
   { id: "enfant", label: "Avec enfants / Famille", emoji: "\u{1F476}" },
@@ -2633,7 +2633,7 @@ export const CONTEXT_OPTIONS = [
   { id: "marche", label: "Balade / Plein air", emoji: "\u{1F6B6}" },
   { id: "romantique", label: "D\xEEner romantique", emoji: "\u{1F377}" }
 ];
-export const WEATHER_OPTIONS = [
+const WEATHER_OPTIONS = [
   { id: "pluie", label: "Pluie", icon: "\u{1F327}\uFE0F" },
   { id: "soleil", label: "Ensoleill\xE9", icon: "\u2600\uFE0F" },
   { id: "nuageux", label: "Nuageux", icon: "\u26C5" },
@@ -2641,3 +2641,10 @@ export const WEATHER_OPTIONS = [
   { id: "neige", label: "Neige", icon: "\u2744\uFE0F" },
   { id: "brume", label: "Brume", icon: "\u{1F32B}\uFE0F" }
 ];
+export {
+  AVAILABLE_GENRES,
+  CONTEXT_OPTIONS,
+  KAGGLE_SPOTIFY_TRACKS,
+  MOOD_OPTIONS,
+  WEATHER_OPTIONS
+};
