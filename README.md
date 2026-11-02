@@ -177,5 +177,5 @@ Les résultats et figures fournis dans `evaluation/` ont été produits **sans G
 
 ## 👥 Auteurs
 
-- _Prénom Nom_ — _rôle_ — _email_
-- _Prénom Nom_ — _rôle_ — _email_
+- Cloé GOACOLOU 
+- Fiorina ROYCEE 
