@@ -6,14 +6,12 @@
 import React, { useState, useMemo, useEffect, useCallback, useRef } from 'react';
 import { Sparkles } from 'lucide-react';
 import { TopBar } from './components/TopBar';
-import { LandingHeroPage } from './components/LandingHeroPage';
 import { MoodAndWeatherSelector } from './components/MoodAndWeatherSelector';
 import { TracksDataTable } from './components/TracksDataTable';
 import { MyAccountPage } from './components/MyAccountPage';
 import { RegistrationModal } from './components/RegistrationModal';
 import { LoginModal } from './components/LoginModal';
 import { GeminiAiTestModal } from './components/GeminiAiTestModal';
-import { AiGenerationInsights } from './components/AiGenerationInsights';
 import {
   rankTracksFromDataset,
 } from './services/recommendationEngine';
@@ -27,7 +25,7 @@ import {
 import { KAGGLE_SPOTIFY_TRACKS } from './data/kaggleSampleDataset';
 
 export default function App() {
-  // Navigation: 'home' | 'generator' | 'account'
+  // Navigation: 'generator' | 'account'
   const [activeTab, setActiveTab] = useState('generator');
 
   // User Profile
@@ -89,7 +87,6 @@ export default function App() {
     primaryModel: 'gemini-3.8-flash',
     fallbackModel: 'gemini-3.1-flash-lite',
   });
-  const [aiResult, setAiResult] = useState(null);
   const [isAiTestModalOpen, setIsAiTestModalOpen] = useState(false);
 
   // Modals
@@ -209,7 +206,7 @@ export default function App() {
       youtube: { isConnected: false, displayName: 'Non connecté' },
     }));
     localStorage.removeItem('moodwave_user_profile_v2');
-    setActiveTab('home');
+    setActiveTab('generator');
   };
 
   const handleLoginSuccess = (email) => {
@@ -231,7 +228,6 @@ export default function App() {
 
   useEffect(() => {
     generationRequestId.current += 1;
-    setAiResult(null);
     setRankedTracks([]);
     setHasGeneratedPlaylist(false);
     setIsGenerating(false);
@@ -256,7 +252,6 @@ export default function App() {
     setIsGenerating(true);
     setGenerationError(null);
     setHasGeneratedPlaylist(false);
-    setAiResult(null);
     setRankedTracks([]);
 
     try {
@@ -286,23 +281,6 @@ export default function App() {
         result.curated_tracks
       );
       if (requestId !== generationRequestId.current) return;
-      const normalizeArtist = (artist) => artist
-        .normalize('NFD')
-        .replace(/[\u0300-\u036f]/g, '')
-        .trim()
-        .toLowerCase();
-      const favoriteArtist = normalizeArtist(userProfile?.artiste_prefere || '');
-      const availableArtistTracks = favoriteArtist
-        ? KAGGLE_SPOTIFY_TRACKS.filter((track) =>
-          track.artists.split(',').some((artist) => normalizeArtist(artist) === favoriteArtist)
-        ).length
-        : 5;
-      setAiResult({
-        ...result,
-        artistAvailabilityNotice: userProfile?.artiste_prefere && availableArtistTracks < 5
-          ? `Le catalogue Kaggle ne contient que ${availableArtistTracks} titre(s) de ${userProfile.artiste_prefere}. La playlist inclut tous les titres disponibles de cet artiste.`
-          : null,
-      });
       setRankedTracks(tracks);
       setHasGeneratedPlaylist(true);
     } catch (err) {
@@ -330,15 +308,6 @@ export default function App() {
 
       {/* 2. Main Page Content */}
       <main className="flex-1 w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        {/* Landing View (Home) */}
-        {activeTab === 'home' && (
-          <LandingHeroPage
-            onOpenSignUp={() => setIsSignUpModalOpen(true)}
-            onOpenLogin={() => setIsLoginModalOpen(true)}
-            onContinueAsGuest={() => setActiveTab('generator')}
-          />
-        )}
-
         {/* Generator View */}
         {activeTab === 'generator' && (
           <div className="space-y-8 animate-in fade-in duration-200">
@@ -431,17 +400,6 @@ export default function App() {
               </div>
             ) : (
               <>
-                {/* AI Insights & Reasoning Banner */}
-                <AiGenerationInsights
-                  aiResult={aiResult}
-                  isLoading={isGenerating}
-                  onOpenTestModal={() => setIsAiTestModalOpen(true)}
-                  onRegenerate={executeGeneration}
-                  profile={userProfile}
-                  selectedContext={selectedContext}
-                  selectedMood={selectedMood}
-                />
-
                 {/* THE ONLY MUSIC LIST: "Votre Playlist" */}
                 <TracksDataTable
                   tracks={rankedTracks}

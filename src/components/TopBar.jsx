@@ -17,7 +17,7 @@ export const TopBar = ({
           <Music className="h-5 w-5" />
         </div>
         <button
-          onClick={() => onSelectTab(profile ? 'generator' : 'home')}
+          onClick={() => onSelectTab('generator')}
           className="text-left group"
         >
           <span className="text-lg font-black tracking-tight bg-gradient-to-r from-violet-600 via-pink-600 to-amber-500 bg-clip-text text-transparent">
@@ -28,16 +28,6 @@ export const TopBar = ({
 
       {/* Zone 2: Navigation Links */}
       <nav className="flex items-center gap-6 text-sm font-semibold text-slate-600">
-        <button
-          onClick={() => onSelectTab('home')}
-          className={`whitespace-nowrap transition-colors ${
-            activeTab === 'home'
-              ? 'text-violet-600 font-bold'
-              : 'hover:text-slate-900'
-          }`}
-        >
-          Accueil
-        </button>
         <button
           onClick={() => onSelectTab('generator')}
           className={`whitespace-nowrap transition-colors ${
