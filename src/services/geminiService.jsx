@@ -81,14 +81,26 @@ async function fetchAiPlaylistPrediction(payload) {
       spotify_audio_features_targets: data.spotify_audio_features_targets,
       genres_recommandes: data.genres_recommandes || [],
       vibe_keywords: data.vibe_keywords || [],
-      curated_tracks: data.curated_tracks || []
+      curated_tracks: data.curated_tracks || [],
+      tracks: data.tracks || []
     };
   } catch (err) {
     console.warn("AI playlist generation failed or unavailable, falling back:", err.message);
     throw err;
   }
 }
+async function fetchLocalPlaylist(payload) {
+  const res = await fetch("/api/local/predict-playlist", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(payload)
+  });
+  const data = await res.json();
+  if (!res.ok || !data.success) throw new Error(data.error || "Erreur du moteur local");
+  return { ...data, isAiGenerated: false, tracks: data.tracks || [] };
+}
 export {
+  fetchLocalPlaylist,
   fetchAiPlaylistPrediction,
   fetchAiStatus,
   runAiTest

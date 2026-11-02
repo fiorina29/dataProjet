@@ -23,12 +23,8 @@ import {
   Heart,
   Music2,
 } from 'lucide-react';
-import {
-  MOOD_OPTIONS,
-  CONTEXT_OPTIONS,
-  KAGGLE_ARTISTS,
-  KAGGLE_GENRES,
-} from '../data/kaggleSampleDataset';
+import { MOOD_OPTIONS, CONTEXT_OPTIONS } from '../data/uiOptions';
+import { useCatalogMeta } from '../services/catalogService';
 import { fetchLiveWeather, fetchLiveWeatherFromDevice } from '../services/weatherService';
 
 export const MoodAndWeatherSelector = ({
@@ -45,6 +41,7 @@ export const MoodAndWeatherSelector = ({
   isAiMode = true,
   onOpenAiTest,
 }) => {
+  const { genres: KAGGLE_GENRES, artists: KAGGLE_ARTISTS } = useCatalogMeta();
   const [cityInput, setCityInput] = useState(profile.ville);
   const [isChangingCity, setIsChangingCity] = useState(false);
   const [favoriteGenre, setFavoriteGenre] = useState(
@@ -65,7 +62,7 @@ export const MoodAndWeatherSelector = ({
         : ''
     );
     setFavoriteArtist(profile.artiste_prefere || '');
-  }, [profile.genre_musical_prefere, profile.artiste_prefere]);
+  }, [profile.genre_musical_prefere, profile.artiste_prefere, KAGGLE_GENRES]);
 
   const handleSavePreferences = () => {
     onSaveProfile({

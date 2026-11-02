@@ -9,7 +9,9 @@
     "start": "tsx server.jsx",
     "preview": "vite preview",
     "clean": "rm -rf dist",
-    "lint": "tsc --noEmit"
+    "lint": "tsc --noEmit",
+    "evaluate": "tsx evaluation/evaluate.mjs",
+    "analyze": "python evaluation/analyze.py"
   },
   "dependencies": {
     "@google/genai": "^2.32.0",

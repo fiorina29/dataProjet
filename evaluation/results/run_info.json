@@ -1,0 +1,16 @@
+{
+  "date": "2026-11-02T20:40:12.226Z",
+  "model": "gemini-3.1-flash-lite",
+  "k": 20,
+  "profiles": 24,
+  "dataset": {
+    "rawRows": 114000,
+    "droppedMissing": 1,
+    "droppedInvalid": 157,
+    "keptRows": 113842,
+    "uniqueTracks": 81021,
+    "genres": 114,
+    "artists": 29794,
+    "loadMs": 3179
+  }
+}

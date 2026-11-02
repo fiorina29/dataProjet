@@ -1,5 +1,5 @@
 // src/data/moodwaveRules.js
-// Règles partagées entre le serveur (server.jsx) et le moteur front (recommendationEngine.jsx) :
+// Règles partagées entre le serveur (server.jsx), le moteur de classement (recommender.js) et l'évaluation :
 //  - correspondance entre le genre choisi par l'utilisateur (en français) et les genres du dataset Kaggle
 //  - conversion humeur / activité / météo -> caractéristiques audio cibles
 //  - regroupement des doublons du dataset (un même titre présent dans plusieurs genres)
@@ -71,6 +71,14 @@ export function hasGenrePreference(label) {
 export function resolveGenreFamily(label) {
   if (!hasGenrePreference(label)) return null;
   const g = normalizeText(label);
+  // 1) Le libellé est exactement un genre du dataset (ex. "j-rock", "deep-house") : ce genre précis est le genre favori,
+  //    et le reste de sa famille devient "genres voisins".
+  const exact = GENRE_FAMILIES.find((family) => family.genres.includes(g));
+  if (exact) {
+    const related = new Set([...exact.genres, ...exact.related].filter((x) => x !== g));
+    return { key: g, label: String(label), genres: new Set([g]), related, custom: false };
+  }
+  // 2) Sinon, recherche par mots-clés (ex. "Hip-Hop / Rap", "Électronique / EDM") -> toute la famille.
   const found = GENRE_FAMILIES.find((family) => family.aliases.some((alias) => g.includes(alias)));
   if (found) {
     return { key: found.key, label: String(label), genres: new Set(found.genres), related: new Set(found.related), custom: false };
@@ -187,6 +195,11 @@ export function computeAudioTargets(contexte = {}) {
     moodGenres.add("romance");
   } else if (mood.includes("colere") || mood.includes("enerv") || mood.includes("defoul")) {
     valence = 0.3; energy = 0.95; dance = 0.55; acoustic = 0.03;
+  } else if (mood.includes("reveu") || mood.includes("flott")) {
+    valence = 0.5; energy = 0.35; dance = 0.4; acoustic = 0.6;
+    moodGenres.add("ambient");
+  } else if (mood.includes("sombre") || mood.includes("nocturne")) {
+    valence = 0.22; energy = 0.5; dance = 0.45; acoustic = 0.3;
   }
 
   const contextGenres = new Set();
@@ -209,6 +222,13 @@ export function computeAudioTargets(contexte = {}) {
   } else if (activity.includes("detente") || activity.includes("relax") || activity.includes("lecture")) {
     energy = Math.min(0.35, energy); acoustic = Math.max(0.6, acoustic);
     contextGenres.add("chill");
+  } else if (activity.includes("cuisine") || activity.includes("repas")) {
+    valence = Math.max(0.6, valence);
+  } else if (activity.includes("marche") || activity.includes("balade") || activity.includes("plein air")) {
+    energy = clamp(energy + 0.05); valence = Math.max(0.55, valence);
+  } else if (activity.includes("romanti") || activity.includes("diner")) {
+    energy = Math.min(0.5, energy); acoustic = Math.max(0.45, acoustic);
+    contextGenres.add("romance");
   }
 
   if (weather.includes("soleil") || weather.includes("degage")) valence = clamp(valence + 0.05);
@@ -239,6 +259,42 @@ export function audioDistance(track, targets) {
   const dD = (Number(track.danceability) - targets.target_danceability) ** 2;
   const dA = (Number(track.acousticness) - targets.target_acousticness) ** 2 * 0.8;
   return Math.sqrt(dV + dE + dD + dA);
+}
+
+/**
+ * Distance utilisée pour classer les titres : distance audio + un léger a priori de popularité.
+ * Avec 80 000 titres, beaucoup de morceaux inconnus (popularité 0) ont des caractéristiques proches de la cible ;
+ * sans ce terme, les playlists seraient remplies de titres obscurs. Poids 0,15 : un titre populaire mais mal adapté
+ * reste derrière un titre bien adapté.
+ */
+export const POPULARITY_WEIGHT = 0.15;
+export function rankingDistance(track, targets) {
+  return audioDistance(track, targets) + POPULARITY_WEIGHT * (1 - (Number(track.popularity) || 0) / 100);
+}
+
+/** Règles strictes par activité (ex. pas de titre explicite avec des enfants). Partagées par le moteur et l'évaluation. */
+export function violatesActivity(track, activity) {
+  const act = normalizeText(activity);
+  const genres = (track.all_genres && track.all_genres.length ? track.all_genres : [track.track_genre]).map(normalizeText);
+  if (act.includes("fete") || act.includes("soiree")) {
+    if (genres.includes("sad") || genres.includes("classical")) return true;
+    if (track.valence < 0.38 || track.energy < 0.5 || track.danceability < 0.48 || track.acousticness > 0.6) return true;
+  }
+  if (act.includes("sport") || act.includes("workout")) {
+    if (genres.includes("sad") || genres.includes("classical")) return true;
+    if (track.energy < 0.58 || track.tempo < 95 || track.acousticness > 0.5) return true;
+  }
+  if (act.includes("sommeil") || act.includes("dormir")) {
+    if (track.energy > 0.45 || track.danceability > 0.65 || track.loudness > -7) return true;
+  }
+  if (act.includes("enfant") && track.explicit) return true;
+  return false;
+}
+
+/** L'activité impose-t-elle des règles strictes ? */
+export function activityHasConstraints(activity) {
+  const act = normalizeText(activity);
+  return ["fete", "soiree", "sport", "workout", "sommeil", "dormir", "enfant"].some((k) => act.includes(k));
 }
 
 export function similarityScore(track, targets) {

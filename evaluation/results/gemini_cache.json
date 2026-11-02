@@ -1,0 +1,3866 @@
+{
+  "P02": {
+    "model": "gemini-3.1-flash-lite",
+    "latencyMs": 2941,
+    "attempts": 1,
+    "invalidIds": 0,
+    "returned": 25,
+    "playlist_title": "Échos de Pluie et de Solitude",
+    "ai_reasoning": "La playlist privilégie le genre acoustique pour répondre à la demande de l'utilisateur. Les titres ont été sélectionnés pour leur faible énergie et leur tonalité mélancolique, créant une progression harmonieuse qui s'accorde avec le calme nécessaire pour une journée de pluie.",
+    "picks": [
+      {
+        "track_id": "6Vc5wAMmXdKIAM7WUoEb7N",
+        "track_name": "Say Something",
+        "artists": "A Great Big World;Christina Aguilera",
+        "reason": "Une entrée en douceur pour votre moment de détente sous la pluie."
+      },
+      {
+        "track_id": "7xLhousIHDxoGgeJNhO4Ye",
+        "track_name": "Say Something",
+        "artists": "A Great Big World",
+        "reason": "La fragilité de cette mélodie reflète votre humeur actuelle."
+      },
+      {
+        "track_id": "6Xbi3gOwMal0Ds3ETvBBwe",
+        "track_name": "The Winner Takes It All - Acoustic",
+        "artists": "Jae Hall",
+        "reason": "Une version acoustique dépouillée, idéale pour une ambiance calme."
+      },
+      {
+        "track_id": "0J4sK2VO75cRSVoj0FokQn",
+        "track_name": "Fix You",
+        "artists": "Canyon City",
+        "reason": "Pour accompagner vos pensées en toute tranquillité."
+      },
+      {
+        "track_id": "4G8wt3fUBpgBjI35TBF2eQ",
+        "track_name": "Duet",
+        "artists": "Rachael Yamagata",
+        "reason": "Une parenthèse acoustique intime pour votre détente."
+      },
+      {
+        "track_id": "5eNYumDY5PCXtKKJ0SWg2r",
+        "track_name": "Poison & Wine",
+        "artists": "The Civil Wars",
+        "reason": "La douceur des cordes pour adoucir ce moment de tristesse."
+      },
+      {
+        "track_id": "4qTHoIp62ngNDpUJwW3hZ7",
+        "track_name": "Can’t Help Falling in Love",
+        "artists": "Boyce Avenue",
+        "reason": "Un classique apaisant pour vous envelopper dans le calme."
+      },
+      {
+        "track_id": "5ZUObJNpVt2l9GogUSfALc",
+        "track_name": "The Trouble with Wanting",
+        "artists": "Joy Williams",
+        "reason": "Une mélodie lente qui s'accorde parfaitement à la météo."
+      },
+      {
+        "track_id": "5mdjfBsyzl78NQI4sI4IzR",
+        "track_name": "Walking Blind",
+        "artists": "Aidan Hawken",
+        "reason": "Une atmosphère épurée pour favoriser votre relaxation."
+      },
+      {
+        "track_id": "5Jac5r26r1HkpH9Xv5zt7A",
+        "track_name": "Duet (feat. Stephanie Briggs)",
+        "artists": "Penny and Sparrow;Stephanie Briggs",
+        "reason": "La simplicité acoustique pour laisser passer vos émotions."
+      },
+      {
+        "track_id": "60S0LkuUyzHzX29KWew1a6",
+        "track_name": "Moon River",
+        "artists": "JJ Heller",
+        "reason": "Une berceuse mélancolique pour votre instant détente."
+      },
+      {
+        "track_id": "5oV8bZaShr2d01FFMHBUPq",
+        "track_name": "Iris",
+        "artists": "Kina Grannis",
+        "reason": "Une interprétation délicate qui accompagne votre solitude."
+      },
+      {
+        "track_id": "0F78T5bfHQCliaNjBkIYBq",
+        "track_name": "When the Party's Over",
+        "artists": "Kina Grannis",
+        "reason": "La fragilité acoustique pour souligner votre humeur du jour."
+      },
+      {
+        "track_id": "4qPNDBW1i3p13qLCt0Ki3A",
+        "track_name": "Ghost - Acoustic",
+        "artists": "Ben Woodward",
+        "reason": "Un titre doux et éthéré pour vos moments de réflexion."
+      },
+      {
+        "track_id": "25fcj6d2W1l8DQL11Czdzb",
+        "track_name": "Party of One (feat. Sam Smith)",
+        "artists": "Brandi Carlile;Sam Smith",
+        "reason": "Une voix posée qui respecte votre besoin de calme."
+      },
+      {
+        "track_id": "2Qw1KFrJ1q6qHXxWGh51kC",
+        "track_name": "A Thousand Years",
+        "artists": "Boyce Avenue",
+        "reason": "Une mélodie familière pour vous apporter un peu de réconfort."
+      },
+      {
+        "track_id": "2z3HKlpENvfz1Am2MNF2pL",
+        "track_name": "I Ain't Ever Loved No One - Acoustic",
+        "artists": "Donovan Woods;Tenille Townes",
+        "reason": "Un titre acoustique brut pour une écoute sans distraction."
+      },
+      {
+        "track_id": "4s3G9Ifc1dp8xEksZxNe8P",
+        "track_name": "Unconditional",
+        "artists": "Richard Walters",
+        "reason": "La texture acoustique idéale pour un après-midi pluvieux."
+      },
+      {
+        "track_id": "3PcIfTefcjfWTK6WFmOLqK",
+        "track_name": "I Can't Make You Love Me",
+        "artists": "Boyce Avenue;Rachel Grae",
+        "reason": "Une interprétation poignante pour vos pensées du moment."
+      },
+      {
+        "track_id": "0Bv0qHGKNiwzDtHzXrjmIn",
+        "track_name": "River Flows In You",
+        "artists": "Sungha Jung",
+        "reason": "L'instrumental parfait pour se perdre dans ses pensées."
+      },
+      {
+        "track_id": "2XDxQ3VzovLzh60zgOaNEi",
+        "track_name": "The Reason",
+        "artists": "Tim Halperin",
+        "reason": "Une progression douce pour apaiser votre esprit."
+      },
+      {
+        "track_id": "6jI7y83WjuyBne9b3IvdSs",
+        "track_name": "Make It Without You",
+        "artists": "Andrew Belle",
+        "reason": "La douceur acoustique pour clore votre moment de détente."
+      },
+      {
+        "track_id": "5O9R57EozcpLKGQBzadPVy",
+        "track_name": "Only Love Can Hurt Like This",
+        "artists": "Meg Birch",
+        "reason": "Un titre mélodique qui résonne avec votre mélancolie."
+      },
+      {
+        "track_id": "0c99BUd87HQfzgUUQqRyds",
+        "track_name": "For Now",
+        "artists": "Kina Grannis",
+        "reason": "Une note finale pleine d'émotion pour votre playlist."
+      },
+      {
+        "track_id": "71ehTADpxs85ULrZgSEKCy",
+        "track_name": "Almost Lover",
+        "artists": "A Fine Frenzy",
+        "reason": "Une conclusion acoustique pour un moment de repos absolu."
+      }
+    ]
+  },
+  "P03": {
+    "model": "gemini-3.1-flash-lite",
+    "latencyMs": 3112,
+    "attempts": 1,
+    "invalidIds": 0,
+    "returned": 25,
+    "playlist_title": "Avicii Pulse: Sport & Energy",
+    "ai_reasoning": "La sélection priorise l'intégralité des titres d'Avicii demandés, complétée par des morceaux EDM à haute énergie et forte positivité pour maintenir un rythme soutenu pendant le sport malgré la météo maussade.",
+    "picks": [
+      {
+        "track_id": "5UqCQaDshqbIk3pkhy4Pjg",
+        "track_name": "Levels - Radio Edit",
+        "artists": "Avicii",
+        "reason": "Un classique indémodable pour lancer l'énergie du sport."
+      },
+      {
+        "track_id": "0ct6r3EGTcMLPtrXHDvVjc",
+        "track_name": "The Nights",
+        "artists": "Avicii",
+        "reason": "Parfait pour se mettre en condition et rester motivé."
+      },
+      {
+        "track_id": "0nrRP2bk19rLc0orkWPQk2",
+        "track_name": "Wake Me Up",
+        "artists": "Avicii",
+        "reason": "Le rythme idéal pour un échauffement dynamique."
+      },
+      {
+        "track_id": "10P1Cy36hugYDFTZPCE9Bk",
+        "track_name": "Heaven",
+        "artists": "Avicii",
+        "reason": "Une montée en puissance pour maintenir l'effort."
+      },
+      {
+        "track_id": "6Pgkp4qUoTmJIPn7ReaGxL",
+        "track_name": "Without You (feat. Sandro Cavazza)",
+        "artists": "Avicii;Sandro Cavazza",
+        "reason": "L'intensité nécessaire pour une séance de sport exigeante."
+      },
+      {
+        "track_id": "78W8wiUIlQ2SnWY9TVowKZ",
+        "track_name": "Back Where I Belong (feat. Avicii)",
+        "artists": "Otto Knows;Avicii",
+        "reason": "Un beat progressif qui accompagne parfaitement le mouvement."
+      },
+      {
+        "track_id": "7tSO7DrrYpiMXX3zM4b3oM",
+        "track_name": "Seek Bromance - Avicii Vocal Edit",
+        "artists": "Tim Berg;Avicii",
+        "reason": "Pour garder la cadence pendant les répétitions."
+      },
+      {
+        "track_id": "21Ci0rT8NiAvCZKouM8O9G",
+        "track_name": "I Could Be The One (Avicii Vs. Nicky Romero) - Radio Edit",
+        "artists": "Avicii;Nicky Romero",
+        "reason": "Une énergie débordante pour le cardio."
+      },
+      {
+        "track_id": "6VRhkROS2SZHGlp0pxndbJ",
+        "track_name": "Bangarang (feat. Sirah)",
+        "artists": "Skrillex;Sirah",
+        "reason": "Un boost d'adrénaline pur pour les moments les plus intenses."
+      },
+      {
+        "track_id": "3oZoXyU0SkDldgS7AcN4y4",
+        "track_name": "Get Low",
+        "artists": "Dillon Francis;DJ Snake",
+        "reason": "Un beat agressif pour pousser ses limites."
+      },
+      {
+        "track_id": "6M6Tk58pQvABy6ru66dY3d",
+        "track_name": "No Money",
+        "artists": "Galantis",
+        "reason": "Optimisme et énergie pour oublier le temps gris."
+      },
+      {
+        "track_id": "6HZ9VeI5IRFCNQLXhpF4bq",
+        "track_name": "I Love It (feat. Charli XCX)",
+        "artists": "Icona Pop;Charli XCX",
+        "reason": "Un hymne électro qui booste instantanément le moral."
+      },
+      {
+        "track_id": "6cx06DFPPHchuUAcTxznu9",
+        "track_name": "Head & Heart (feat. MNEK)",
+        "artists": "Joel Corry;MNEK",
+        "reason": "Positivité maximale pour rester focalisé sur l'exercice."
+      },
+      {
+        "track_id": "0U6bQIAh6MCGo1xjbIIx2S",
+        "track_name": "Instagram",
+        "artists": "Dimitri Vegas & Like Mike;David Guetta;Daddy Yankee;Afro Bros;Natti Natasha;Dimitri Vegas;Like Mike",
+        "reason": "Un rythme solaire pour contrer la grisaille parisienne."
+      },
+      {
+        "track_id": "65ES1qwOB577ZnTkizMXJJ",
+        "track_name": "HUMBLE. - SKRILLEX REMIX",
+        "artists": "Skrillex;Kendrick Lamar",
+        "reason": "Une puissance sonore idéale pour le renforcement musculaire."
+      },
+      {
+        "track_id": "4crczEC1PpoD8TsDsmoWNI",
+        "track_name": "Goodbye",
+        "artists": "Imanbek;Goodboys",
+        "reason": "La dynamique parfaite pour maintenir la cadence."
+      },
+      {
+        "track_id": "6K8ElBuFmFj8KYUP16B7ss",
+        "track_name": "Rain In Ibiza",
+        "artists": "Felix Jaehn;The Stickmen Project;Calum Scott",
+        "reason": "Une ambiance estivale pour dynamiser la séance."
+      },
+      {
+        "track_id": "1D2ZNECRd7KIlA4pyOUGsv",
+        "track_name": "What Would You Do?",
+        "artists": "Joel Corry;David Guetta;Bryson Tiller",
+        "reason": "Un morceau entraînant pour ne pas perdre le rythme."
+      },
+      {
+        "track_id": "6iZDblmqBRqrjyOfaV6KKl",
+        "track_name": "Lovefool - twocolors Remix",
+        "artists": "twocolors",
+        "reason": "Une intensité constante qui soutient l'activité physique."
+      },
+      {
+        "track_id": "6b0niK2zmoE9kZY5HkLGen",
+        "track_name": "Hey Baby",
+        "artists": "Tungevaag;Raaban;A7S",
+        "reason": "Une énergie contagieuse pour le dernier effort."
+      },
+      {
+        "track_id": "6Owc2SuzwO3LW1SAODYK3l",
+        "track_name": "Melody",
+        "artists": "Sigala",
+        "reason": "Pour rester dans la zone pendant la fin de séance."
+      },
+      {
+        "track_id": "4lhqb6JvbHId48OUJGwymk",
+        "track_name": "Hey Brother",
+        "artists": "Avicii",
+        "reason": "Un classique d'Avicii pour une fin de session entraînante."
+      },
+      {
+        "track_id": "4QwNKEWMM7dyLB7Ew9DHHg",
+        "track_name": "Lonely Together - (feat. Rita Ora) Alan Walker Remix",
+        "artists": "Avicii;Rita Ora;Alan Walker",
+        "reason": "Une collaboration moderne pour clore l'entraînement."
+      },
+      {
+        "track_id": "2P4OICZRVAQcYAV2JReRfj",
+        "track_name": "Waiting For Love",
+        "artists": "Avicii",
+        "reason": "Un moment mélodique pour commencer la récupération."
+      },
+      {
+        "track_id": "0g2zW7vCyWkUJg5aQjOwi7",
+        "track_name": "The Days",
+        "artists": "Avicii",
+        "reason": "Une fin de playlist apaisante après l'effort intense."
+      }
+    ]
+  },
+  "P04": {
+    "model": "gemini-3.1-flash-lite",
+    "latencyMs": 3700,
+    "attempts": 1,
+    "invalidIds": 0,
+    "returned": 25,
+    "playlist_title": "Brume de Travail",
+    "ai_reasoning": "La sélection privilégie des titres avec une énergie modérée et une composante acoustique marquée, idéale pour la concentration tout en restant relaxante face à la grisaille. Le mélange entre titres 'Proche' et 'Ambiance' assure une progression fluide.",
+    "picks": [
+      {
+        "track_id": "6sv7ZmasB6qSiF8hWJNpDG",
+        "track_name": "Still",
+        "artists": "Jeff Bernat",
+        "reason": "Une entrée en matière calme pour débuter le travail dans le calme."
+      },
+      {
+        "track_id": "15QdrzuAzRny3zEDUT1JEQ",
+        "track_name": "marcella daydreaming",
+        "artists": "rec.memos",
+        "reason": "La dimension acoustique aide à rester concentré malgré la brume."
+      },
+      {
+        "track_id": "2GoAhMIvnZ1n7ZEqj7jrAa",
+        "track_name": "life is a balloon",
+        "artists": "frek!",
+        "reason": "Idéal pour une session de travail de fond sans distraction."
+      },
+      {
+        "track_id": "3zIuHdD8dkh1vPxQu334T7",
+        "track_name": "Blue Train",
+        "artists": "John Coltrane",
+        "reason": "Le jazz apporte une touche sophistiquée à votre espace de travail."
+      },
+      {
+        "track_id": "66790TBuwlIrGxWWTVc6yl",
+        "track_name": "Day Is Done",
+        "artists": "Nick Drake",
+        "reason": "Une mélodie douce pour accompagner la luminosité réduite."
+      },
+      {
+        "track_id": "3EtIraJEHVSbBvLw5msioH",
+        "track_name": "Northern Sky",
+        "artists": "Nick Drake",
+        "reason": "Parfait pour maintenir une humeur chill durant vos tâches."
+      },
+      {
+        "track_id": "6NSlOEEtWlqvEFrjQsry77",
+        "track_name": "World Spins Madly On",
+        "artists": "The Weepies;Deb Talan;Steve Tannen",
+        "reason": "Une acoustique légère qui ne perturbe pas votre concentration."
+      },
+      {
+        "track_id": "4Akic5cb5RHJrTdQZY7AfX",
+        "track_name": "No Plans",
+        "artists": "Jason Mraz",
+        "reason": "Un rythme stable pour cadencer votre activité."
+      },
+      {
+        "track_id": "7KBotkRcWIrSUZvs55WU1S",
+        "track_name": "Divin exil",
+        "artists": "Ben Mazué",
+        "reason": "Une touche française poétique pour adoucir le brouillard parisien."
+      },
+      {
+        "track_id": "21hB8x6QTEsTfIDENPcyXm",
+        "track_name": "The Happiest Girl",
+        "artists": "BLACKPINK",
+        "reason": "Une ambiance mélodique qui équilibre bien l'énergie visée."
+      },
+      {
+        "track_id": "7hqNknIehM12TMTLuYTTzs",
+        "track_name": "Você Só Me Faz Felíz",
+        "artists": "Eduardo Costa",
+        "reason": "Une positivité modérée pour garder le moral au travail."
+      },
+      {
+        "track_id": "7545Q9VR0txjH6yJUzo42v",
+        "track_name": "Aires del Mayab",
+        "artists": "Estela Nuñez",
+        "reason": "Un rythme posé qui s'accorde avec le calme de votre environnement."
+      },
+      {
+        "track_id": "1YQWosTIljIvxAgHWTp7KP",
+        "track_name": "Take Five",
+        "artists": "The Dave Brubeck Quartet",
+        "reason": "La fluidité du jazz pour une session de travail fluide."
+      },
+      {
+        "track_id": "2b7aJhLWeh7TR7IJXI2pog",
+        "track_name": "Blue Side of Lonesome",
+        "artists": "George Jones;The Jordanaires",
+        "reason": "Une mélodie introspective pour vos moments de réflexion."
+      },
+      {
+        "track_id": "1PtJclc46wTk367PlsU6Uj",
+        "track_name": "I Have A Dream",
+        "artists": "ABBA",
+        "reason": "Une douceur classique pour garder une humeur sereine."
+      },
+      {
+        "track_id": "7DZ8n63a46dU6iUyN9OeRl",
+        "track_name": "The Way That I Love You - single version",
+        "artists": "Passenger",
+        "reason": "Le côté folk acoustique aide à rester dans une bulle productive."
+      },
+      {
+        "track_id": "58qX77t2VWMWcycsh9zKLc",
+        "track_name": "i don't want to watch the world end with someone else",
+        "artists": "Clinton Kane",
+        "reason": "Une composition moderne et chill pour accompagner le milieu de journée."
+      },
+      {
+        "track_id": "1FHCU1rDAeaPsBW9byjJ0Q",
+        "track_name": "12:51",
+        "artists": "krissy & ericka",
+        "reason": "La guitare acoustique crée une atmosphère de travail intime."
+      },
+      {
+        "track_id": "1tyxZ2buhi3Zn32j5LEpb5",
+        "track_name": "Fall for You",
+        "artists": "Sarah Kang;Jesse Barrera",
+        "reason": "Une mélodie apaisante pour éviter la fatigue mentale."
+      },
+      {
+        "track_id": "6KUsVERTI2fY3Swi5mo27R",
+        "track_name": "Love Alone",
+        "artists": "Mokita",
+        "reason": "Un rythme entraînant mais doux pour garder l'esprit alerte."
+      },
+      {
+        "track_id": "2JvK5309aRgcdgd4Ed9RJ0",
+        "track_name": "Addicted",
+        "artists": "JON VINYL",
+        "reason": "Le côté chill aide à maintenir la positivité visée."
+      },
+      {
+        "track_id": "0JCerv0mCCyf5IBIny6sYh",
+        "track_name": "Cue Points",
+        "artists": "Dusty Decks",
+        "reason": "Des textures sonores idéales pour se plonger dans ses dossiers."
+      },
+      {
+        "track_id": "5w7snuYJzYBSeCwgZPwpME",
+        "track_name": "Red Wine at Dawn",
+        "artists": "Blackburri",
+        "reason": "Une énergie équilibrée pour terminer vos tâches sereinement."
+      },
+      {
+        "track_id": "3UnfOb5hmnf4KF7NIgAj9a",
+        "track_name": "Weak",
+        "artists": "Larissa Lambert",
+        "reason": "Une note finale douce pour clôturer votre session de travail."
+      },
+      {
+        "track_id": "19Hg1UCZaCdpHB37L7x63X",
+        "track_name": "EVERYTHING",
+        "artists": "The Black Skirts",
+        "reason": "Un titre indie-pop pour finir la journée en toute légèreté."
+      }
+    ]
+  },
+  "P05": {
+    "model": "gemini-3.1-flash-lite",
+    "latencyMs": 3174,
+    "attempts": 1,
+    "invalidIds": 0,
+    "returned": 25,
+    "playlist_title": "Rainy Drive Echoes",
+    "ai_reasoning": "La sélection priorise l'artiste favori (Arctic Monkeys) pour ancrer l'identité rock, complétée par des titres rock à forte composante acoustique et une énergie modérée pour accompagner la conduite sous la pluie. La progression suit une courbe nostalgique et introspective.",
+    "picks": [
+      {
+        "track_id": "11jRCxY01k9jvCdUru0EeP",
+        "track_name": "Body Paint",
+        "artists": "Arctic Monkeys",
+        "reason": "Ambiance mélancolique parfaite pour une route sous la pluie."
+      },
+      {
+        "track_id": "0C6dSPCqwKqwos6s1CrDrh",
+        "track_name": "The Car",
+        "artists": "Arctic Monkeys",
+        "reason": "Le titre idéal pour accompagner la conduite en ville."
+      },
+      {
+        "track_id": "605E2oDpy3uSIhbRFcrQyn",
+        "track_name": "Despair In The Departure Lounge",
+        "artists": "Arctic Monkeys",
+        "reason": "Capture parfaitement l'humeur nostalgique de l'utilisateur."
+      },
+      {
+        "track_id": "4wMR4fRKMTyUJG6VAsmccv",
+        "track_name": "Riot Van",
+        "artists": "Arctic Monkeys",
+        "reason": "Un son brut et garage qui rappelle les racines de l'artiste."
+      },
+      {
+        "track_id": "3PhbzvTllkq1rkULafc6ns",
+        "track_name": "The Ultracheese",
+        "artists": "Arctic Monkeys",
+        "reason": "Une douceur acoustique pour adoucir le trajet pluvieux."
+      },
+      {
+        "track_id": "4KPi4VNvPOfKqIp1sx19Xf",
+        "track_name": "Big Ideas",
+        "artists": "Arctic Monkeys",
+        "reason": "La texture rock introspective correspond à l'état d'esprit actuel."
+      },
+      {
+        "track_id": "5hljqZrl0h7RcIhUnOPuve",
+        "track_name": "Sculptures Of Anything Goes",
+        "artists": "Arctic Monkeys",
+        "reason": "Une énergie contenue et mélancolique pour la route."
+      },
+      {
+        "track_id": "5fClRRa7P9nPIpstj50veV",
+        "track_name": "Mr Schwartz",
+        "artists": "Arctic Monkeys",
+        "reason": "La touche acoustique apporte du réconfort au volant."
+      },
+      {
+        "track_id": "7iN1s7xHE4ifF5povM6A48",
+        "track_name": "Let It Be - Remastered 2009",
+        "artists": "The Beatles",
+        "reason": "Un classique intemporel qui apaise l'esprit sous la pluie."
+      },
+      {
+        "track_id": "4U45aEWtQhrm8A5mxPaFZ7",
+        "track_name": "Vienna",
+        "artists": "Billy Joel",
+        "reason": "La mélodie nostalgique s'accorde avec le paysage urbain."
+      },
+      {
+        "track_id": "0y1QJc3SJVPKJ1OvFmFqe6",
+        "track_name": "Way down We Go",
+        "artists": "KALEO",
+        "reason": "Le ton rock acoustique colle à l'énergie visée."
+      },
+      {
+        "track_id": "7LHAKF7pBqHch8o6Yo0ad5",
+        "track_name": "Suzume",
+        "artists": "RADWIMPS;Toaka",
+        "reason": "Une touche rock atmosphérique pour une ambiance de conduite."
+      },
+      {
+        "track_id": "0Qo6ENwrR9bj9nKWEuNslx",
+        "track_name": "Babooshka",
+        "artists": "Kate Bush",
+        "reason": "Une atmosphère unique qui complète bien la sélection rock."
+      },
+      {
+        "track_id": "6dsmAUGQAng00srCMvfd8z",
+        "track_name": "As Tears Go By - Mono Version",
+        "artists": "The Rolling Stones",
+        "reason": "La version acoustique est idéale pour une humeur nostalgique."
+      },
+      {
+        "track_id": "6WISfiNXEcOMBFEQ5Gla1H",
+        "track_name": "Fool To Cry - Remastered 2009",
+        "artists": "The Rolling Stones",
+        "reason": "Une ballade rock qui renforce la mélancolie du moment."
+      },
+      {
+        "track_id": "1GcVa4jFySlun4jLSuMhiq",
+        "track_name": "Angie",
+        "artists": "The Rolling Stones",
+        "reason": "Un classique rock qui s'intègre parfaitement à la playlist."
+      },
+      {
+        "track_id": "0QQIhT6PtJ5glyn4HKNKQ6",
+        "track_name": "All the Pretty Girls",
+        "artists": "KALEO",
+        "reason": "L'équilibre acoustique parfait pour une conduite calme."
+      },
+      {
+        "track_id": "4LtSTc3xANVhYeeN69nscM",
+        "track_name": "Aaftaab",
+        "artists": "The Local Train",
+        "reason": "Une sonorité rock douce pour apaiser le trajet."
+      },
+      {
+        "track_id": "7FzVgFOvltyHGJwZhBXJsz",
+        "track_name": "Hay Luto En Mi Alma",
+        "artists": "Grupo Lluvia",
+        "reason": "Un morceau rock qui résonne avec la météo actuelle."
+      },
+      {
+        "track_id": "5MxNLUsfh7uzROypsoO5qe",
+        "track_name": "Dream On",
+        "artists": "Aerosmith",
+        "reason": "La profondeur de ce titre rock accompagne bien la nostalgie."
+      },
+      {
+        "track_id": "6mFkJmJqdDVQ1REhVfGgd1",
+        "track_name": "Wish You Were Here",
+        "artists": "Pink Floyd",
+        "reason": "Un incontournable pour les moments de réflexion au volant."
+      },
+      {
+        "track_id": "6zC0mpGYwbNTpk9SKwh08f",
+        "track_name": "Wonderful Tonight",
+        "artists": "Eric Clapton",
+        "reason": "La douceur acoustique pour clore la partie nostalgique."
+      },
+      {
+        "track_id": "6MqqJ0OVjaYeiWUSMOAK8x",
+        "track_name": "Film Credits",
+        "artists": "Club Kuru",
+        "reason": "Une touche garage moderne pour rester dans l'esprit du genre."
+      },
+      {
+        "track_id": "6bZuZKR8hoyzZXNh1IW2Bu",
+        "track_name": "Lovers",
+        "artists": "Anna of the North",
+        "reason": "Une ambiance épurée pour terminer le trajet en douceur."
+      },
+      {
+        "track_id": "3JiaA3hvuKu4Fjf6AWwVMX",
+        "track_name": "Difficult",
+        "artists": "Gracie Abrams",
+        "reason": "Une conclusion indie-pop qui garde une belle cohérence rock."
+      }
+    ]
+  },
+  "P06": {
+    "model": "gemini-3.1-flash-lite",
+    "latencyMs": 5076,
+    "attempts": 1,
+    "invalidIds": 0,
+    "returned": 25,
+    "playlist_title": "Focus Classique : Harmonie de Travail",
+    "ai_reasoning": "La playlist privilégie le genre classique pour répondre aux préférences de l'utilisateur. Les titres ont été choisis pour leur faible niveau d'énergie et leur caractère acoustique marqué, idéal pour maintenir une concentration constante sans distraction tout en s'adaptant à une ambiance studieuse et calme.",
+    "picks": [
+      {
+        "track_id": "17i5jLpzndlQhbS4SrTd0B",
+        "track_name": "Cello Suite No. 1 in G Major, BWV 1007: I. Prélude",
+        "artists": "Johann Sebastian Bach;Yo-Yo Ma",
+        "reason": "Une ouverture douce et acoustique idéale pour démarrer une session de travail."
+      },
+      {
+        "track_id": "5fJD7wh9yoSTpl9d5rgl7l",
+        "track_name": "The Theory of Everything",
+        "artists": "Jóhann Jóhannsson",
+        "reason": "Une atmosphère propice à la réflexion profonde et à la concentration."
+      },
+      {
+        "track_id": "7xfSCgVOkQJhVxnqzepATH",
+        "track_name": "Moonlight Sonata (First Movement from Piano Sonata No. 14, Op. 27 No. 2)",
+        "artists": "Ludwig van Beethoven;Luke Woodapple",
+        "reason": "Le calme du piano aide à maintenir le focus pendant les tâches complexes."
+      },
+      {
+        "track_id": "39uLYYZytVUwcjgeYLI409",
+        "track_name": "Merry-Go-Round of Life - from 'Howl's Moving Castle'",
+        "artists": "Joe Hisaishi",
+        "reason": "Une mélodie classique apaisante pour rester concentré sans distraction."
+      },
+      {
+        "track_id": "0ROMalDdNg3L2HoZP4qFyJ",
+        "track_name": "The Four Seasons - Winter in F Minor, RV. 297: I. Allegro non molto",
+        "artists": "Antonio Vivaldi;Adrian Chandler;La Serenissima",
+        "reason": "Le rythme régulier aide à garder une cadence de travail stable."
+      },
+      {
+        "track_id": "48AAhCg91UjUhFZ17sNcSD",
+        "track_name": "Triple Concerto in C Major, Op. 56: III. Rondo alla Polacca - Live at Philharmonie, Berlin / 2019",
+        "artists": "Ludwig van Beethoven;Anne-Sophie Mutter;Yo-Yo Ma;Daniel Barenboim;West-Eastern Divan Orchestra",
+        "reason": "La structure orchestrale favorise une ambiance studieuse."
+      },
+      {
+        "track_id": "64ta7ZvTJeThz7Ns4LmAHS",
+        "track_name": "Symphony No. 25 in G Minor, K. 183: I. Allegro con brio",
+        "artists": "Wolfgang Amadeus Mozart;Academy of St. Martin in the Fields;Sir Neville Marriner",
+        "reason": "Une dynamique équilibrée pour soutenir l'effort intellectuel."
+      },
+      {
+        "track_id": "1Rnc5yUosXzrVkKSW3pa9Y",
+        "track_name": "Symphony No. 30 in D Major, K. 202: IV. Presto",
+        "artists": "Wolfgang Amadeus Mozart;Bernhard Paumgartner;Camerata Salzburg",
+        "reason": "La clarté instrumentale permet une bonne immersion dans le travail."
+      },
+      {
+        "track_id": "5FwMLFEARYqd9faHGljjwM",
+        "track_name": "Andantino in C, K.15b",
+        "artists": "Wolfgang Amadeus Mozart;Erik Smith",
+        "reason": "La douceur de Mozart est parfaite pour une session de lecture ou d'écriture."
+      },
+      {
+        "track_id": "1D0jiXy3pWSk1QxcB8WWhY",
+        "track_name": "Three German Dances, K.605: No. 3 in C, Trio \"Die Schlittenfahrt\"",
+        "artists": "Academy of St. Martin in the Fields;Sir Neville Marriner",
+        "reason": "Une pièce légère qui ne fatigue pas l'esprit lors d'une longue journée."
+      },
+      {
+        "track_id": "7urxY2iebJABhKrHwmqG95",
+        "track_name": "La Boutique fantasque, P.120 - Arr. Respighi: 14. Galop",
+        "artists": "Gioachino Rossini;National Philharmonic Orchestra;Richard Bonynge",
+        "reason": "Un rythme modéré qui accompagne bien l'activité de bureau."
+      },
+      {
+        "track_id": "0ybRC3er244EuG42zjm83G",
+        "track_name": "Les petits riens, K.app.10 (ballet): No. 14 without indication, attr. to Mozart",
+        "artists": "Wolfgang Amadeus Mozart;Concerto Köln;Anton Steck",
+        "reason": "La simplicité de cette œuvre aide à rester zen face aux deadlines."
+      },
+      {
+        "track_id": "7v8IPCKAG5dOSKbwWR2dBT",
+        "track_name": "9 Variations on ‘Lison dormait’ from ‘Julie’ by N. Dezède in C, K.264: 5. Variation IV",
+        "artists": "Wolfgang Amadeus Mozart;Danielle Laval",
+        "reason": "Une variation apaisante pour maintenir l'attention."
+      },
+      {
+        "track_id": "3AyVRsHBE2bUvL70CRrbpY",
+        "track_name": "6 Variations on \"Mio caro Adone\" by Salieri in B, K.180: 3. Variation II",
+        "artists": "Wolfgang Amadeus Mozart;Danielle Laval",
+        "reason": "Une mélodie discrète qui complète parfaitement un environnement calme."
+      },
+      {
+        "track_id": "11sZuBli3HCStlEetHfo9Q",
+        "track_name": "16 Minuets K.176: No. 7 in A",
+        "artists": "Wolfgang Amadeus Mozart;Wiener Mozart Ensemble;Willi Boskovsky",
+        "reason": "La structure classique classique aide à structurer sa propre pensée."
+      },
+      {
+        "track_id": "0HOrX3f1vhUpn5hknKAM9W",
+        "track_name": "Christmas Oratorio, BWV 248 / Pt. 5 - For the 1st Sunday in the New Year: No. 51 Terzetto: \"Ach, wann wird die Zeit erscheinen?\"",
+        "artists": "Johann Sebastian Bach;Gundula Janowitz;Christa Ludwig;Fritz Wunderlich;Münchener Bach-Orchester;Karl Richter",
+        "reason": "Un arrangement choral qui apporte une dimension sereine au travail."
+      },
+      {
+        "track_id": "3FRKJyEazxmrH3Ez8FFUIx",
+        "track_name": "Christmas Oratorio, BWV 248 / Part One - For The First Day Of Christmas: No. 1 Chorus: \"Jauchzet, frohlocket\"",
+        "artists": "Johann Sebastian Bach;The Monteverdi Choir;English Baroque Soloists;John Eliot Gardiner",
+        "reason": "Une énergie positive mais mesurée pour garder le moral au travail."
+      },
+      {
+        "track_id": "4oE62AqzUuiwV09HGxiMlu",
+        "track_name": "Lyric Pieces I, Op. 12 (Excerpts): No. 6, Norsk",
+        "artists": "Edvard Grieg;Una Bourne",
+        "reason": "La texture acoustique est idéale pour une concentration sans effort."
+      },
+      {
+        "track_id": "6XjBNMzl25wEBebNMdPMGg",
+        "track_name": "Lyric Pieces I, Op. 12 (Excerpts): No. 2, Vals",
+        "artists": "Edvard Grieg;Una Bourne",
+        "reason": "Le tempo de cette valse favorise un rythme de travail constant."
+      },
+      {
+        "track_id": "5viwzFJxwRE1OEUR7G6hiD",
+        "track_name": "Carnaval, Op. 9: No. 13, Estrella (Live in Japan, 2022)",
+        "artists": "Robert Schumann;Pavel Nersessian",
+        "reason": "La finesse du piano permet de rester plongé dans ses dossiers."
+      },
+      {
+        "track_id": "69jMyEbK0YL1LLbgBhBdB6",
+        "track_name": "Piano Concerto No. 3 in D major, K. 40: 2a. Andante - Pt. 1",
+        "artists": "Wolfgang Amadeus Mozart;Yvonne Loriod;Orchestre Du Domaine Musical;Pierre Boulez",
+        "reason": "Une pièce instrumentale qui ne distrait pas l'utilisateur."
+      },
+      {
+        "track_id": "3aaoirIsvuAPSO0CEBvaMq",
+        "track_name": "4 Pieces for String Quartet, Op. 81, MWV Sdr 44: No. 3 in E Minor, Capriccio",
+        "artists": "Felix Mendelssohn;Arioso Quartett Wien",
+        "reason": "La rigueur du quatuor à cordes aide à la discipline personnelle."
+      },
+      {
+        "track_id": "0Yg3f6Ch8suogGGblasukI",
+        "track_name": "Paraphrase de concert sur Rigoletto, S. 434 (After Giuseppe Verdi)",
+        "artists": "Franz Liszt;Una Bourne",
+        "reason": "Une interprétation classique qui enrichit l'environnement de travail."
+      },
+      {
+        "track_id": "2faaO5zn4XlmyiNM4VFy8g",
+        "track_name": "Le nozze di Figaro, K. 492: Overture",
+        "artists": "Wolfgang Amadeus Mozart;London Philharmonic Orchestra;Sir Georg Solti",
+        "reason": "Une ouverture vive pour terminer une tâche avec dynamisme."
+      },
+      {
+        "track_id": "2FlJAJvMqU36pBmkcnvbo8",
+        "track_name": "Messiah, HWV 56 / Pt. 2: No. 42 \"Hallelujah\"",
+        "artists": "George Frideric Handel;John Alldis Choir;London Philharmonic Orchestra;Karl Richter",
+        "reason": "La solennité finale pour clore une session de travail productive."
+      }
+    ]
+  },
+  "P07": {
+    "model": "gemini-3.1-flash-lite",
+    "latencyMs": 3296,
+    "attempts": 1,
+    "invalidIds": 0,
+    "returned": 25,
+    "playlist_title": "Nuit Sereine sous la Pluie",
+    "ai_reasoning": "Pour répondre au stress et à l'envie de sommeil par temps de pluie, j'ai sélectionné des titres avec une acoustique élevée (proche de 0.8-0.9) et une énergie faible. La progression est linéaire, débutant par des mélodies chill pour décompresser, puis évoluant vers des morceaux plus éthérés et calmes pour favoriser l'endormissement.",
+    "picks": [
+      {
+        "track_id": "3WJr7eUk9Kr1JaJ9tOsN5P",
+        "track_name": "Under Your Skin",
+        "artists": "BluntOne;Baen Mow",
+        "reason": "Ambiance chill idéale pour calmer le stress initial."
+      },
+      {
+        "track_id": "0CwLue2qwkPcQpovNGNtVx",
+        "track_name": "i looked into your eyes",
+        "artists": "Sky McCreery",
+        "reason": "Très faible énergie pour commencer à ralentir le rythme."
+      },
+      {
+        "track_id": "4IEGZYUSKkgWMy8vpp1Z7H",
+        "track_name": "end credits",
+        "artists": "Sarah Kang",
+        "reason": "Texture acoustique douce pour accompagner le repos."
+      },
+      {
+        "track_id": "4ZlHqeXbItX1qC86aFUax1",
+        "track_name": "once in a moon",
+        "artists": "Sarah Kang",
+        "reason": "Mélodie éthérée parfaite pour une soirée pluvieuse."
+      },
+      {
+        "track_id": "3r9eGg4SVPbhtiPTA9UkmK",
+        "track_name": "us",
+        "artists": "keshi",
+        "reason": "Atmosphère intimiste pour se détacher des soucis."
+      },
+      {
+        "track_id": "4qPNDBW1i3p13qLCt0Ki3A",
+        "track_name": "Ghost - Acoustic",
+        "artists": "Ben Woodward",
+        "reason": "Version acoustique dépouillée favorisant la détente."
+      },
+      {
+        "track_id": "4w0rTd0QIbsvVykYij8M7L",
+        "track_name": "retrograde",
+        "artists": "dhruv",
+        "reason": "Rythme lent pour une transition vers le sommeil."
+      },
+      {
+        "track_id": "1vlzSY7AttAiAvSEe1JbVs",
+        "track_name": "crush on you",
+        "artists": "Elijah Who",
+        "reason": "Douceur acoustique pour apaiser l'esprit."
+      },
+      {
+        "track_id": "3mGkPsZbHEBf8ZT1ExZnww",
+        "track_name": "Scent of a Woman: Tango (Por Una Cabeza)",
+        "artists": "Carlos Gardel;Itzhak Perlman;John Williams;Pittsburgh Symphony Orchestra",
+        "reason": "Tango mélancolique qui s'accorde avec le bruit de la pluie."
+      },
+      {
+        "track_id": "6Ln89sczgIcAJXGAIdS94R",
+        "track_name": "Riha",
+        "artists": "Anuv Jain",
+        "reason": "Très faible énergie, parfait pour le lâcher-prise."
+      },
+      {
+        "track_id": "1Qnwq7Qu5aDPG9l2ZNRx1A",
+        "track_name": "Neeyam Thanalinu",
+        "artists": "Noel Toms",
+        "reason": "Mélodie apaisante pour accompagner l'activité de sommeil."
+      },
+      {
+        "track_id": "6cMzeng5QA8fd2qqiMeIyg",
+        "track_name": "Running Up That Hill (A Deal With God) - Acoustic",
+        "artists": "Jonah Baker",
+        "reason": "Reprise acoustique calme pour une atmosphère sereine."
+      },
+      {
+        "track_id": "6hYvw3LLTViP2mT4MpDNmT",
+        "track_name": "Grow As We Go",
+        "artists": "Ben Platt",
+        "reason": "Voix douce pour réduire l'anxiété avant de dormir."
+      },
+      {
+        "track_id": "5pME1MDi0g4wCmEvTet9mG",
+        "track_name": "O Lord, You’re Beautiful (with Steffany Gretzinger)",
+        "artists": "Chris Tomlin;Steffany Gretzinger",
+        "reason": "Ambiance méditative avec une acoustique profonde."
+      },
+      {
+        "track_id": "6wXpQl6LNBzDhalmed8Lm5",
+        "track_name": "Turn To Stone",
+        "artists": "Ingrid Michaelson",
+        "reason": "Mélodie délicate pour un esprit fatigué."
+      },
+      {
+        "track_id": "18GiV1BaXzPVYpp9rmOg0E",
+        "track_name": "Blowin' in the Wind",
+        "artists": "Bob Dylan",
+        "reason": "Classique folk très calme pour favoriser l'endormissement."
+      },
+      {
+        "track_id": "2B4Y9u4ERAFiMo13XPJyGP",
+        "track_name": "Here, There And Everywhere - Remastered 2009",
+        "artists": "The Beatles",
+        "reason": "Harmonies douces pour un sommeil paisible."
+      },
+      {
+        "track_id": "536vha5aAUhlb50NGDfzfa",
+        "track_name": "You're Somebody Else - Acoustic",
+        "artists": "flora cash",
+        "reason": "Acoustique immersive pour s'isoler du stress extérieur."
+      },
+      {
+        "track_id": "2soQW3y7DwZIPH4fS5av1W",
+        "track_name": "Dancing on the Waves",
+        "artists": "Bethel Music;We The Kingdom",
+        "reason": "Bruit ambiant relaxant pour une nuit tranquille."
+      },
+      {
+        "track_id": "3Frn3MJRQFvjCIbTbBUZCS",
+        "track_name": "Jahaan Tu Chala",
+        "artists": "Jasleen Royal",
+        "reason": "Douceur vocale pour accompagner le repos."
+      },
+      {
+        "track_id": "5Xd9NVSspCkmCxa9gSAWu8",
+        "track_name": "It's Been a Long, Long Time",
+        "artists": "Harry James;Kitty Kallan",
+        "reason": "Jazz feutré pour une fin de soirée reposante."
+      },
+      {
+        "track_id": "7CUiA8VcA2tNANBunjp6ns",
+        "track_name": "Умка",
+        "artists": "Elena Kamburova",
+        "reason": "Berceuse mélancolique pour le sommeil."
+      },
+      {
+        "track_id": "1UKobFsdqNXQb8OthimCKe",
+        "track_name": "Helplessly Hoping - 2005 Remaster",
+        "artists": "Crosby, Stills & Nash",
+        "reason": "Acoustique pure pour une relaxation totale."
+      },
+      {
+        "track_id": "44qYR2lyrw5CLSTVtE5CNR",
+        "track_name": "Struna",
+        "artists": "Moon Guitar",
+        "reason": "Instrumental guitare pour le silence de la nuit."
+      },
+      {
+        "track_id": "0wxGIpOZbDR4RGy1sh3XhR",
+        "track_name": "Meant To Be",
+        "artists": "Ber;Charlie Oriain",
+        "reason": "Dernière note douce pour glisser vers le sommeil."
+      }
+    ]
+  },
+  "P08": {
+    "model": "gemini-3.1-flash-lite",
+    "latencyMs": 3003,
+    "attempts": 1,
+    "invalidIds": 0,
+    "returned": 25,
+    "playlist_title": "Afternoon Romance",
+    "ai_reasoning": "La playlist privilégie les sonorités R&B fluides et les mélodies de The Weeknd pour ancrer l'ambiance romantique. Les titres ont été sélectionnés pour maintenir une énergie modérée et positive, idéale pour une après-midi ensoleillée en amoureux.",
+    "picks": [
+      {
+        "track_id": "2Ch7LmS7r2Gy2kc64wv3Bz",
+        "track_name": "Die For You",
+        "artists": "The Weeknd",
+        "reason": "Une entrée en douceur pour un après-midi romantique."
+      },
+      {
+        "track_id": "7MXVkk9YMctZqd1Srtv4MB",
+        "track_name": "Starboy",
+        "artists": "The Weeknd;Daft Punk",
+        "reason": "Rythme chalereux parfait pour une activité à deux."
+      },
+      {
+        "track_id": "5XCa3ygRyz2R9avSi0CYJI",
+        "track_name": "I Feel It Coming",
+        "artists": "The Weeknd;Daft Punk",
+        "reason": "Ambiance ensoleillée et positive pour renforcer votre complicité."
+      },
+      {
+        "track_id": "3HoQtJWvaadVDZPgQevKIh",
+        "track_name": "Take My Breath - Single Version",
+        "artists": "The Weeknd",
+        "reason": "Une énergie entraînante qui reste fidèle à votre humeur amoureuse."
+      },
+      {
+        "track_id": "52KDAbgFGCXZQVlOXy2XIQ",
+        "track_name": "Out of Time",
+        "artists": "The Weeknd",
+        "reason": "Parfait pour savourer le temps qui passe à deux."
+      },
+      {
+        "track_id": "5QO79kh1waicV47BqGRL3g",
+        "track_name": "Save Your Tears",
+        "artists": "The Weeknd",
+        "reason": "Un incontournable de votre artiste favori pour illuminer votre moment."
+      },
+      {
+        "track_id": "7cq2nIdClANqlwH4okuYm3",
+        "track_name": "Melhor pensar",
+        "artists": "UM44K;Luan Otten",
+        "reason": "Douceur R&B qui s'accorde parfaitement avec votre humeur."
+      },
+      {
+        "track_id": "7yaAq7FKFtjrndst1JTNoA",
+        "track_name": "Eu Sou Free",
+        "artists": "Sempre Livre",
+        "reason": "Une touche de légèreté pour accompagner votre après-midi."
+      },
+      {
+        "track_id": "5toSzfFqh7gfTLGWW3Z8Zv",
+        "track_name": "Doce Vampiro",
+        "artists": "Rita Lee;Roberto De Carvalho",
+        "reason": "Une mélodie envoûtante pour un cadre romantique."
+      },
+      {
+        "track_id": "6P3phrVqOebNtYo1uEyRJY",
+        "track_name": "Always Like This",
+        "artists": "Bombay Bicycle Club",
+        "reason": "Rythme idéal pour une activité détendue en ville."
+      },
+      {
+        "track_id": "0UQor28BlM3xdKQGAwPPyP",
+        "track_name": "Cartas e Versos",
+        "artists": "Frejat",
+        "reason": "La tendresse du R&B pour un instant privilégié."
+      },
+      {
+        "track_id": "7fkye7kZSoe0TYdcyWNJ3U",
+        "track_name": "Lindo, Leve E Pleno",
+        "artists": "Maneva",
+        "reason": "Une ambiance lumineuse pour profiter de la météo clémente."
+      },
+      {
+        "track_id": "3m2FNr5FlOyf94Slpae7vy",
+        "track_name": "O último romântico",
+        "artists": "Lulu Santos",
+        "reason": "Un classique romantique pour renforcer votre connexion."
+      },
+      {
+        "track_id": "6GOV45NixAW87unGHpS3mE",
+        "track_name": "Original MTK #2 - Se Você Vier",
+        "artists": "MTK;Cammie;Anchietx",
+        "reason": "Des harmonies douces pour un moment de partage."
+      },
+      {
+        "track_id": "0WIcuCP4r3jBup7JRk7yRO",
+        "track_name": "Beira Mar",
+        "artists": "Cynthia Luz",
+        "reason": "Une pause acoustique apaisante dans votre playlist."
+      },
+      {
+        "track_id": "6Kt6Lnwhmw13qeD345A84E",
+        "track_name": "Put Your Records On",
+        "artists": "Corinne Bailey Rae",
+        "reason": "La positivité incarnée pour un rendez-vous réussi."
+      },
+      {
+        "track_id": "62ODcIMTYy3Ccn7W02gf4w",
+        "track_name": "Azul",
+        "artists": "Zimbra",
+        "reason": "Une mélodie moderne qui s'intègre parfaitement à votre style."
+      },
+      {
+        "track_id": "375PG35fYzLTG6jkrJbegL",
+        "track_name": "Mixed Emotions",
+        "artists": "Lil Tjay",
+        "reason": "Des vibrations R&B profondes pour votre activité."
+      },
+      {
+        "track_id": "2mNw979gQkL6Z6mCxgCect",
+        "track_name": "Vida Eu Gosto De Você",
+        "artists": "Maneva",
+        "reason": "La sincérité du R&B pour accompagner vos échanges."
+      },
+      {
+        "track_id": "3u20pgvNSSmgMk401Bxuu0",
+        "track_name": "Tão bem",
+        "artists": "Lulu Santos",
+        "reason": "Un morceau solaire qui célèbre votre humeur amoureuse."
+      },
+      {
+        "track_id": "666euhH9Qoz0W7Vewgs6z4",
+        "track_name": "Convite",
+        "artists": "Tritom;Buddy",
+        "reason": "Le mélange parfait entre énergie et douceur romantique."
+      },
+      {
+        "track_id": "35lAjvsvS9k9HHuP1fjDT8",
+        "track_name": "Human Nature",
+        "artists": "Michael Jackson",
+        "reason": "Une touche soul intemporelle pour sublimer ce moment."
+      },
+      {
+        "track_id": "745H5CctFr12Mo7cqa1BMH",
+        "track_name": "My Girl",
+        "artists": "The Temptations",
+        "reason": "Un classique qui apporte une chaleur réconfortante."
+      },
+      {
+        "track_id": "07AbRgKmb5KfppwtZbZqDI",
+        "track_name": "Slipping Away",
+        "artists": "LEISURE",
+        "reason": "Une atmosphère planante pour clore votre session romantique."
+      },
+      {
+        "track_id": "5aRJTjJ7XbxXJmsZWM682b",
+        "track_name": "No Woman, No Cry (Outtake)",
+        "artists": "Nina Simone",
+        "reason": "Une finale douce et apaisante pour prolonger le plaisir."
+      }
+    ]
+  },
+  "P09": {
+    "model": "gemini-3.1-flash-lite",
+    "latencyMs": 144153,
+    "attempts": 1,
+    "invalidIds": 0,
+    "returned": 25,
+    "playlist_title": "Thunderous Intensity",
+    "ai_reasoning": "La playlist combine les classiques indémodables de Metallica avec des titres metal à haute énergie pour maintenir une intensité constante pendant ton entraînement, tout en adaptant le rythme aux pics d'adrénaline nécessaires.",
+    "picks": [
+      {
+        "track_id": "5sICkBXVmaCQk5aISGR3x1",
+        "track_name": "Enter Sandman",
+        "artists": "Metallica",
+        "reason": "Un classique de Metallica pour lancer l'échauffement avec intensité."
+      },
+      {
+        "track_id": "6FUwPb4mGlUDbx42uspXaZ",
+        "track_name": "Fuel",
+        "artists": "Metallica",
+        "reason": "Le rythme effréné parfait pour commencer le sport avec colère."
+      },
+      {
+        "track_id": "2MuWTIM3b0YEAskbeeFE1i",
+        "track_name": "Master Of Puppets",
+        "artists": "Metallica",
+        "reason": "L'énergie pure de Metallica pour monter en puissance."
+      },
+      {
+        "track_id": "28WmNsclKsrVmdv3tDmoYU",
+        "track_name": "Seek & Destroy - Remastered",
+        "artists": "Metallica",
+        "reason": "Parfait pour évacuer la frustration dès le début de la séance."
+      },
+      {
+        "track_id": "6UB9mShVLbMm0W4e6vud4C",
+        "track_name": "Battery",
+        "artists": "Metallica",
+        "reason": "Une cadence rapide idéale pour un effort soutenu."
+      },
+      {
+        "track_id": "2R6UrJ8uWbSIiHWmvRQvN8",
+        "track_name": "Whiskey In The Jar",
+        "artists": "Metallica",
+        "reason": "Un incontournable pour maintenir le moral pendant l'effort."
+      },
+      {
+        "track_id": "1PhLYngBKbeDtdmDzCg3Pb",
+        "track_name": "Sad But True",
+        "artists": "Metallica",
+        "reason": "La lourdeur du riff aide à canaliser l'humeur actuelle."
+      },
+      {
+        "track_id": "2dXsILW8gzkosqleHAvl0v",
+        "track_name": "For Whom The Bell Tolls - Remastered",
+        "artists": "Metallica",
+        "reason": "Un rythme marquant pour rythmer tes répétitions."
+      },
+      {
+        "track_id": "6VNgUdPze583ZMIqe9EAyF",
+        "track_name": "Dragula",
+        "artists": "Rob Zombie",
+        "reason": "Une énergie sombre qui résonne avec ton humeur."
+      },
+      {
+        "track_id": "7oVEtyuv9NBmnytsCIsY5I",
+        "track_name": "BURN IT DOWN",
+        "artists": "Linkin Park",
+        "reason": "Un titre dynamique pour booster tes performances."
+      },
+      {
+        "track_id": "4Yf5bqU3NK4kNOypcrLYwU",
+        "track_name": "Faint",
+        "artists": "Linkin Park",
+        "reason": "Le tempo parfait pour un exercice cardio intense."
+      },
+      {
+        "track_id": "2oNYsdCasRRlz1shXFAz7D",
+        "track_name": "LOST IN THE ECHO",
+        "artists": "Linkin Park",
+        "reason": "Une montée en régime idéale pour le milieu de séance."
+      },
+      {
+        "track_id": "6L5QMBrydoaapTDMQ0Anui",
+        "track_name": "Guilty All the Same (feat. Rakim)",
+        "artists": "Linkin Park;Rakim",
+        "reason": "Un mélange de rap et metal pour varier l'énergie."
+      },
+      {
+        "track_id": "3K4HG9evC7dg3N0R9cYqk4",
+        "track_name": "One Step Closer",
+        "artists": "Linkin Park",
+        "reason": "L'urgence du morceau correspond à ton besoin d'évacuer."
+      },
+      {
+        "track_id": "6irNz2hSXvd2QJG0vXyBFR",
+        "track_name": "Bat Country",
+        "artists": "Avenged Sevenfold",
+        "reason": "La brutalité nécessaire pour les exercices les plus durs."
+      },
+      {
+        "track_id": "5IVA7WzOlWrmZh8EqZqMaw",
+        "track_name": "Looking Down the Barrel of Today",
+        "artists": "Hatebreed",
+        "reason": "Une énergie brute pour repousser tes limites physiques."
+      },
+      {
+        "track_id": "1Vej0qeQ3ioKwpI6FUbRv1",
+        "track_name": "Papercut",
+        "artists": "Linkin Park",
+        "reason": "Un rythme saccadé qui aide à garder la concentration."
+      },
+      {
+        "track_id": "0EYOdF5FCkgOJJla8DI2Md",
+        "track_name": "B.Y.O.B.",
+        "artists": "System Of A Down",
+        "reason": "Idéal pour libérer toute la colère accumulée."
+      },
+      {
+        "track_id": "5egqKwgK5r5rvGD1LrtR7J",
+        "track_name": "Points of Authority",
+        "artists": "Linkin Park",
+        "reason": "Une structure puissante pour ton entraînement."
+      },
+      {
+        "track_id": "0VFk1Ofc6X7QHdVC9T71sK",
+        "track_name": "The Dying Song (Time to Sing)",
+        "artists": "Slipknot",
+        "reason": "Le paroxysme de l'énergie pour une fin de séance explosive."
+      },
+      {
+        "track_id": "2yss0n7KmvmSr4EHvjfFpn",
+        "track_name": "Don't Stay",
+        "artists": "Linkin Park",
+        "reason": "Un morceau agressif pour ne rien lâcher jusqu'au bout."
+      },
+      {
+        "track_id": "4qVR3CF8FuFvHN4L6vXlB1",
+        "track_name": "Lying from You",
+        "artists": "Linkin Park",
+        "reason": "Une intensité qui soutient ton effort final."
+      },
+      {
+        "track_id": "42ZVk59gT4tMlrZmd8Ijxf",
+        "track_name": "Indestructible",
+        "artists": "Disturbed",
+        "reason": "La lourdeur parfaite pour le dernier effort."
+      },
+      {
+        "track_id": "4L5r9XNiWJ7cbqcIiNvVes",
+        "track_name": "The Hand That Feeds",
+        "artists": "Nine Inch Nails",
+        "reason": "Une atmosphère industrielle pour clore la séance."
+      },
+      {
+        "track_id": "2wByBKgqvrsTEtyB3LT25m",
+        "track_name": "Goat",
+        "artists": "Static-X",
+        "reason": "Une puissance sonore totale pour terminer en beauté."
+      }
+    ]
+  },
+  "P10": {
+    "model": "gemini-3.1-flash-lite",
+    "latencyMs": 9423,
+    "attempts": 1,
+    "invalidIds": 0,
+    "returned": 25,
+    "playlist_title": "Flocons et Rêveries",
+    "ai_reasoning": "La sélection privilégie des titres avec une composante acoustique marquée et une énergie modérée, parfaitement adaptée à une marche lente dans un paysage enneigé. La progression suit une courbe de douceur atmosphérique, idéale pour l'humeur rêveuse.",
+    "picks": [
+      {
+        "track_id": "1Wdj4wRDYS7aT4CoPS0mAH",
+        "track_name": "You Are Enough",
+        "artists": "Sleeping At Last",
+        "reason": "Accompagne parfaitement le rythme lent d'une marche rêveuse."
+      },
+      {
+        "track_id": "0O0bttAxJKKWqAqY2Nq4mC",
+        "track_name": "Falling In Love",
+        "artists": "Cigarettes After Sex",
+        "reason": "Ambiance onirique pour contempler la neige qui tombe."
+      },
+      {
+        "track_id": "1vTkNAelvP5V2vbQ5rAbu3",
+        "track_name": "Recomposed By Max Richter: Vivaldi, The Four Seasons: Autumn 3 - 2022",
+        "artists": "Max Richter;Elena Urioste;Chineke! Orchestra",
+        "reason": "Le caractère acoustique souligne la pureté d'un paysage hivernal."
+      },
+      {
+        "track_id": "1ZCtwpUvU6a6L94dmacSGu",
+        "track_name": "Recomposed By Max Richter: Vivaldi, The Four Seasons: Spring 3 - 2012",
+        "artists": "Max Richter;Daniel Hope;Raphael Alpermann;Konzerthaus Kammerorchester Berlin;Andre de Ridder",
+        "reason": "Une mélodie légère pour ne pas briser le silence de la neige."
+      },
+      {
+        "track_id": "285ieonEuLkll3zknYK2TY",
+        "track_name": "The Last of Us",
+        "artists": "Gustavo Santaolalla",
+        "reason": "La profondeur sonore idéale pour une déambulation solitaire."
+      },
+      {
+        "track_id": "16D9AzevsZAh4GfQEYIo7I",
+        "track_name": "Earth",
+        "artists": "Sleeping At Last",
+        "reason": "Minimaliste, parfait pour rester dans sa bulle en marchant."
+      },
+      {
+        "track_id": "4qsVPnhbvEooD1bSNqvvh0",
+        "track_name": "Let It Be - Remastered 2015",
+        "artists": "The Beatles",
+        "reason": "Un classique intemporel qui apaise l'esprit."
+      },
+      {
+        "track_id": "6NNiVBkstx4zWrQVbEpZ8I",
+        "track_name": "Yürürüm",
+        "artists": "Nurettin Rençber",
+        "reason": "Une douceur folk qui réchauffe l'ambiance urbaine."
+      },
+      {
+        "track_id": "4izgn8ot9W6pWpsyjkuwJ9",
+        "track_name": "Rädd",
+        "artists": "Jens Hult;Melissa Horn",
+        "reason": "La mélancolie suédoise se marie bien avec le froid."
+      },
+      {
+        "track_id": "0mbS3VwRbO6HVBMPXnzOGA",
+        "track_name": "To Love Somebody",
+        "artists": "Bee Gees",
+        "reason": "Une teinte disco acoustique pour une marche rythmée mais douce."
+      },
+      {
+        "track_id": "7iN1s7xHE4ifF5povM6A48",
+        "track_name": "Let It Be - Remastered 2009",
+        "artists": "The Beatles",
+        "reason": "La sérénité des Beatles pour une promenade apaisée."
+      },
+      {
+        "track_id": "1CYBnHYYbOAsuDCGa0zrw0",
+        "track_name": "Without a Light",
+        "artists": "Drew Holcomb & The Neighbors",
+        "reason": "Un son acoustique pur, idéal pour les rues enneigées."
+      },
+      {
+        "track_id": "1B5Tp2Ml9nLlmTSJx8xVfI",
+        "track_name": "Always On My Mind",
+        "artists": "Elvis Presley",
+        "reason": "Une voix chaleureuse pour contraster avec la température extérieure."
+      },
+      {
+        "track_id": "1eEcwtd7gjJlpcWn4rOIjY",
+        "track_name": "När solen färgar juninatten",
+        "artists": "Sven-Ingvars",
+        "reason": "Une atmosphère douce qui invite au rêve éveillé."
+      },
+      {
+        "track_id": "4GuZMzKXJSoWhwHUqRa0fm",
+        "track_name": "Numbers",
+        "artists": "TEMPOREX",
+        "reason": "Légèreté sonore pour une marche sans but précis."
+      },
+      {
+        "track_id": "1qrp8PDu28yMFOItAOynx3",
+        "track_name": "But You Know I Love You - Live From The Louisville Palace, Kentucky / 2002",
+        "artists": "Alison Krauss & Union Station",
+        "reason": "Une touche bluegrass pour une promenade authentique."
+      },
+      {
+        "track_id": "41CgzGD7xlgnJe14R4cqkL",
+        "track_name": "Paris in the Rain",
+        "artists": "Lauv",
+        "reason": "Le titre fait écho à l'environnement pluvieux/neigeux de Paris."
+      },
+      {
+        "track_id": "5y8d8RHvxb0KiTa9Nq0xWp",
+        "track_name": "Morning Has Broken - Remastered 2021",
+        "artists": "Yusuf / Cat Stevens",
+        "reason": "Un morceau qui évoque le calme d'un matin sous la neige."
+      },
+      {
+        "track_id": "7KBotkRcWIrSUZvs55WU1S",
+        "track_name": "Divin exil",
+        "artists": "Ben Mazué",
+        "reason": "La poésie française pour accompagner vos pensées."
+      },
+      {
+        "track_id": "7qEHsqek33rTcFNT9PFqLf",
+        "track_name": "Someone You Loved",
+        "artists": "Lewis Capaldi",
+        "reason": "Une mélodie pop acoustique très immersive."
+      },
+      {
+        "track_id": "53S98SFeRSxjd7F7eUnfAJ",
+        "track_name": "Teri Hogaiyaan",
+        "artists": "Vishal Mishra",
+        "reason": "La texture sonore est idéale pour une marche contemplative."
+      },
+      {
+        "track_id": "52VIdyKqp1pJRSyUQaxKUA",
+        "track_name": "Everything I Own",
+        "artists": "Bread",
+        "reason": "Douceur folk pour une fin de balade apaisante."
+      },
+      {
+        "track_id": "0ODu1CDUxG4UHZgiLLe1bD",
+        "track_name": "Teenage Dirtbag",
+        "artists": "Cavetown;chloe moriondo",
+        "reason": "Une version indie-pop qui garde l'énergie de la marche."
+      },
+      {
+        "track_id": "51HGVPqQYGY0gH8UPgZu84",
+        "track_name": "(You Make Me Feel Like) A Natural Woman",
+        "artists": "Jessie Mueller;Beautiful Female Ensemble",
+        "reason": "La puissance émotionnelle pour clore la promenade."
+      },
+      {
+        "track_id": "4YgUcH7aKBmP5EeysIjvKD",
+        "track_name": "Leaf And Stream",
+        "artists": "Wishbone Ash",
+        "reason": "Une conclusion atmosphérique pour retourner au chaud."
+      }
+    ]
+  },
+  "P11": {
+    "model": "gemini-3.1-flash-lite",
+    "latencyMs": 5717,
+    "attempts": 1,
+    "invalidIds": 0,
+    "returned": 25,
+    "playlist_title": "Peak Performance Flow",
+    "ai_reasoning": "La playlist est construite pour maintenir une intensité élevée (énergie > 0.8) nécessaire au sport, en commençant par des titres hip-hop rythmés et en intégrant les succès de Drake pour satisfaire les préférences de l'utilisateur. La progression suit une courbe d'énergie croissante pour accompagner l'effort physique.",
+    "picks": [
+      {
+        "track_id": "5ZKG94fnjiuMH5yrC5S9lS",
+        "track_name": "One Dance",
+        "artists": "Drake;Wizkid;Kyla",
+        "reason": "Un classique de Drake pour commencer l'échauffement en douceur."
+      },
+      {
+        "track_id": "3F5CgOj3wFlRv51JsHbxhe",
+        "track_name": "Jimmy Cooks (feat. 21 Savage)",
+        "artists": "Drake;21 Savage",
+        "reason": "Le flow percutant de Drake pour entrer dans le vif du sujet."
+      },
+      {
+        "track_id": "59nOXPmaKlBfGMDeOVGrIK",
+        "track_name": "WAIT FOR U (feat. Drake & Tems)",
+        "artists": "Future;Drake;Tems",
+        "reason": "Une collaboration intense pour motiver le début de séance."
+      },
+      {
+        "track_id": "6DCZcSspjsKoFjzjrWoCdn",
+        "track_name": "God's Plan",
+        "artists": "Drake",
+        "reason": "Un hymne positif pour garder le rythme."
+      },
+      {
+        "track_id": "40iJIUlhi6renaREYGeIDS",
+        "track_name": "Fair Trade (with Travis Scott)",
+        "artists": "Drake;Travis Scott",
+        "reason": "Une énergie constante pour maintenir la concentration."
+      },
+      {
+        "track_id": "116H0KvKr2Zl4RPuVBruDO",
+        "track_name": "MIA (feat. Drake)",
+        "artists": "Bad Bunny;Drake",
+        "reason": "Le rythme latin de Drake pour dynamiser le cardio."
+      },
+      {
+        "track_id": "6XHVuErjQ4XNm6nDPVCxVX",
+        "track_name": "No Guidance (feat. Drake)",
+        "artists": "Chris Brown;Drake",
+        "reason": "Une ambiance entraînante pour enchaîner les répétitions."
+      },
+      {
+        "track_id": "5s0e986tlNvseDl2YydUc6",
+        "track_name": "ALL I NEED (feat. Drake)",
+        "artists": "Popcaan;Drake",
+        "reason": "Le style dancehall de Drake pour varier la cadence."
+      },
+      {
+        "track_id": "0wGrTrI43CKmfzbFNNhftb",
+        "track_name": "East Side Flow",
+        "artists": "Sidhu Moose Wala",
+        "reason": "Énergie brute hip-hop pour atteindre le pic d'effort."
+      },
+      {
+        "track_id": "4B8RTAHSPfYpV222GsmEjq",
+        "track_name": "Zumba",
+        "artists": "Don Omar",
+        "reason": "Rythme survitaminé idéal pour le cardio intensif."
+      },
+      {
+        "track_id": "71Udwiv5GsZghU6XQ5LXQj",
+        "track_name": "Jaat Da Muqabala",
+        "artists": "Sidhu Moose Wala",
+        "reason": "Le titre le plus énergique pour repousser tes limites."
+      },
+      {
+        "track_id": "74qF0JeFMVilMEeFDiQZ48",
+        "track_name": "Mummy Nu Pasand (From \"Jai Mummy Di\")",
+        "artists": "Sunanda Sharma;Tanishk Bagchi",
+        "reason": "Un tempo ultra-rapide pour ne jamais ralentir."
+      },
+      {
+        "track_id": "3F0I9AkbRwz12yz7Hxn0bF",
+        "track_name": "Oh Ho Ho Ho (Remix)",
+        "artists": "Sukhbir;Ikka",
+        "reason": "Une énergie explosive pour rester motivé."
+      },
+      {
+        "track_id": "7H3mfOvtPNA8YDF3EdKy0L",
+        "track_name": "Tum Hi Ho Bandhu",
+        "artists": "Neeraj Shridhar;Kavita Seth",
+        "reason": "Un beat très positif pour garder le sourire pendant l'effort."
+      },
+      {
+        "track_id": "1tEto4JrqNmBZFH5uAiYqb",
+        "track_name": "Sadi Gali",
+        "artists": "Lehmber Hussainpuri",
+        "reason": "L'intensité maximale pour un final musclé."
+      },
+      {
+        "track_id": "0zhxUjkXag9iEFccaiua4a",
+        "track_name": "RUMBATÓN",
+        "artists": "Daddy Yankee",
+        "reason": "Un groove dansant pour maintenir la cadence."
+      },
+      {
+        "track_id": "1sxh0eqIb8ulYypPuq6ZRu",
+        "track_name": "Bhaag D.K. Bose, Aandhi Aayi",
+        "artists": "Ram Sampath",
+        "reason": "Une dose d'adrénaline pure pour ton entraînement."
+      },
+      {
+        "track_id": "0vp47IigZ7JVQ89jDetO7H",
+        "track_name": "Limbo",
+        "artists": "Daddy Yankee",
+        "reason": "Parfait pour garder le rythme sur une séance longue."
+      },
+      {
+        "track_id": "2Wu9PNpLUCBl3W1GaPqkhl",
+        "track_name": "Morni Banke (From \"Badhaai Ho\")",
+        "artists": "Guru Randhawa;Neha Kakkar;Tanishk Bagchi;Panjabi MC",
+        "reason": "Une positivité contagieuse pour booster tes performances."
+      },
+      {
+        "track_id": "6eYsOcDdB5b6rTO5ubMxeV",
+        "track_name": "Private Party (From \"Don\")",
+        "artists": "Anirudh Ravichander;Jonita Gandhi",
+        "reason": "Un beat très dansant pour rester dynamique."
+      },
+      {
+        "track_id": "7GNRUsU3M4XNDDB9xle5Dz",
+        "track_name": "That That (prod. & feat. SUGA of BTS)",
+        "artists": "PSY;SUGA",
+        "reason": "Une énergie débordante pour le pic de ta séance."
+      },
+      {
+        "track_id": "4C6Uex2ILwJi9sZXRdmqXp",
+        "track_name": "Super Freaky Girl",
+        "artists": "Nicki Minaj",
+        "reason": "Le rythme parfait pour rester concentré sur ton objectif."
+      },
+      {
+        "track_id": "027A615jcOJgvezFn8kok4",
+        "track_name": "Boys - Pink Panda Remix",
+        "artists": "Lizzo;Pink Panda",
+        "reason": "Un son énergique qui pousse à se dépasser."
+      },
+      {
+        "track_id": "0tNLlw94DIrCECnp0dSUUz",
+        "track_name": "Lovumba",
+        "artists": "Daddy Yankee",
+        "reason": "Une intensité constante pour finir en beauté."
+      },
+      {
+        "track_id": "1vSXwYeKnzsVvekSpqVabx",
+        "track_name": "Chikni Chameli",
+        "artists": "Ajay-Atul;Shreya Ghoshal",
+        "reason": "Le coup de boost final pour conclure la séance."
+      }
+    ]
+  },
+  "P12": {
+    "model": "gemini-3.1-flash-lite",
+    "latencyMs": 2895,
+    "attempts": 1,
+    "invalidIds": 0,
+    "returned": 25,
+    "playlist_title": "Orage Urbain",
+    "ai_reasoning": "La sélection équilibre des titres à énergie modérée et faible positivité pour refléter l'humeur sombre et le temps orageux, tout en conservant une fluidité rythmique adaptée à la conduite sous la pluie.",
+    "picks": [
+      {
+        "track_id": "6la3Kme7O7D01fJPxgpAS5",
+        "track_name": "訣愛 (劇集《蒼蘭訣》片頭曲)",
+        "artists": "詹雯婷",
+        "reason": "La mélancolie parfaite pour commencer ce trajet sous la pluie."
+      },
+      {
+        "track_id": "553GNiNqcudWfsF55RBDqz",
+        "track_name": "雨愛",
+        "artists": "Rainie Yang",
+        "reason": "Le thème de la pluie accompagne idéalement la météo actuelle."
+      },
+      {
+        "track_id": "5Xak5fmy089t0FYmh3VJiY",
+        "track_name": "Black",
+        "artists": "Pearl Jam",
+        "reason": "Une profondeur émotionnelle qui résonne avec une humeur sombre."
+      },
+      {
+        "track_id": "6O5TrlFWTYvznd9fMC0VvU",
+        "track_name": "When We Were Young",
+        "artists": "Adele",
+        "reason": "Une douceur mélancolique pour rester concentré sur la route."
+      },
+      {
+        "track_id": "7lGKEWMXVWWTt3X71Bv44I",
+        "track_name": "Unsteady",
+        "artists": "X Ambassadors",
+        "reason": "Une intensité contenue pour une conduite calme sous l'orage."
+      },
+      {
+        "track_id": "09mEdoA6zrmBPgTEN5qXmN",
+        "track_name": "Call Out My Name",
+        "artists": "The Weeknd",
+        "reason": "L'ambiance sonore idéale pour une atmosphère de voiture nocturne."
+      },
+      {
+        "track_id": "56TOfxnRzSRbFRw8J6C4IT",
+        "track_name": "Suicidal Thoughts",
+        "artists": "Josh A;iamjakehill",
+        "reason": "Un morceau introspectif qui s'accorde avec ton état d'esprit."
+      },
+      {
+        "track_id": "2OHym1q6nzgtT75UCNjjro",
+        "track_name": "Spending My Time",
+        "artists": "Roxette",
+        "reason": "Un classique apaisant pour ne pas se laisser submerger."
+      },
+      {
+        "track_id": "58AS4weYlUWvGztZbKIuAU",
+        "track_name": "Leave Out All The Rest",
+        "artists": "Linkin Park",
+        "reason": "La transition parfaite vers une vibe alternative sombre."
+      },
+      {
+        "track_id": "7egnrHJAANlNymbrmQNKcG",
+        "track_name": "The Dark of You",
+        "artists": "Breaking Benjamin",
+        "reason": "Une énergie grunge qui colle à l'atmosphère orageuse."
+      },
+      {
+        "track_id": "4B161tnzwvFCWiOfx9T8Di",
+        "track_name": "Dying Is Absolutely Safe",
+        "artists": "Architects",
+        "reason": "Un morceau intense pour refléter la tension de l'orage."
+      },
+      {
+        "track_id": "10JChpCG0OymAH2KgJJZMm",
+        "track_name": "ZLEJ",
+        "artists": "Sickbrain",
+        "reason": "Une résonance émotionnelle sombre pour ton trajet."
+      },
+      {
+        "track_id": "0LgClDJd2RF2s47hAVq38S",
+        "track_name": "Moon Knight Theme",
+        "artists": "Samuel Kim",
+        "reason": "Une ambiance mystérieuse qui complète bien le décor extérieur."
+      },
+      {
+        "track_id": "1VNWaY3uNfoeWqb5U8x2QX",
+        "track_name": "Lonely Day",
+        "artists": "System Of A Down",
+        "reason": "L'intensité parfaite pour marquer le milieu du parcours."
+      },
+      {
+        "track_id": "5SFXOMJJ334Wn2PwBHeRZN",
+        "track_name": "Girls Like Us",
+        "artists": "Zoe Wees",
+        "reason": "Une touche de modernité pour alléger légèrement l'ambiance."
+      },
+      {
+        "track_id": "1BLOVHYYlH4JUHQGcpt75R",
+        "track_name": "Ode To The Mets",
+        "artists": "The Strokes",
+        "reason": "Un rock alternatif introspectif pour la route."
+      },
+      {
+        "track_id": "3HNTLCpAGnizbyJmk7466r",
+        "track_name": "Never Let Me Go",
+        "artists": "Florence + The Machine",
+        "reason": "Une intensité vocale qui capture l'esprit de l'orage."
+      },
+      {
+        "track_id": "5cRKj1kynNFqiliT2ndZ3y",
+        "track_name": "Akuma no Ko",
+        "artists": "Higuchi Ai",
+        "reason": "Une énergie mélodique qui accompagne bien la conduite."
+      },
+      {
+        "track_id": "6bfyfZ0UV3K9Broh54iXaw",
+        "track_name": "Stop Thinking (feat. Lights)",
+        "artists": "Seven Lions;Lights",
+        "reason": "Calme et posé, parfait pour rester serein au volant."
+      },
+      {
+        "track_id": "4cXLQrYdvNNRGg6fpCxWT2",
+        "track_name": "When You Know (Where You Come From)",
+        "artists": "Scorpions",
+        "reason": "La force du rock classique pour une route humide."
+      },
+      {
+        "track_id": "6oisIeymvkzN5naOjtoneu",
+        "track_name": "By My Side",
+        "artists": "The Rides",
+        "reason": "Une mélodie bluesy pour une fin de trajet apaisée."
+      },
+      {
+        "track_id": "2bkrZWJ7JRXPOal7pWiyDO",
+        "track_name": "你敢不敢",
+        "artists": "LaLa Hsu",
+        "reason": "Une sonorité mélancolique qui reste fluide."
+      },
+      {
+        "track_id": "1d6B9SauXraTqsUULNIGxD",
+        "track_name": "Hijo de la Luna (En Vivo)",
+        "artists": "Ana Torroja;Sentidos Opuestos",
+        "reason": "Un titre espagnol profond pour une ambiance nocturne."
+      },
+      {
+        "track_id": "1YQFHbLCNzdF9UtUOapZsX",
+        "track_name": "洋蔥",
+        "artists": "Mayday",
+        "reason": "Une ballade douce pour clore cette session introspective."
+      },
+      {
+        "track_id": "560HUCEM1YHuhSeZ1dWTCo",
+        "track_name": "Don't Tell Me",
+        "artists": "MEDZ",
+        "reason": "Un final en douceur pour arriver à destination."
+      }
+    ]
+  },
+  "P13": {
+    "model": "gemini-3.1-flash-lite",
+    "latencyMs": 13062,
+    "attempts": 1,
+    "invalidIds": 0,
+    "returned": 25,
+    "playlist_title": "Soleil et Sourires",
+    "ai_reasoning": "La sélection privilégie des titres avec une énergie élevée, une positivité marquée et un aspect dansant, parfaits pour une activité avec des enfants. J'ai mélangé des classiques pour enfants et des titres pop/dance dynamiques pour maintenir une ambiance joyeuse et ensoleillée.",
+    "picks": [
+      {
+        "track_id": "39rcV2H8yMk2zfRfNkiS0r",
+        "track_name": "John Jacob Jingleheimer Schmidt",
+        "artists": "Blippi",
+        "reason": "Un classique parfait pour l'énergie joyeuse des enfants."
+      },
+      {
+        "track_id": "38oFd1l8b5fkXSgKCjiWxT",
+        "track_name": "Cheki Morena",
+        "artists": "Atención Atención",
+        "reason": "Très positif et dansant pour s'amuser sous le soleil."
+      },
+      {
+        "track_id": "0TQp3SpfrkWtGCyJJgMbHW",
+        "track_name": "Hot Potato",
+        "artists": "The Wiggles",
+        "reason": "Rythme entraînant idéal pour une activité ludique."
+      },
+      {
+        "track_id": "5p8AYHRMryPs61W0UcXDf4",
+        "track_name": "La Taza",
+        "artists": "Atención Atención",
+        "reason": "Très joyeux pour accompagner les jeux extérieurs."
+      },
+      {
+        "track_id": "7toZuecF36JJeBq1faE2Xt",
+        "track_name": "Head, Shoulders, Knees and Toes",
+        "artists": "The Wiggles",
+        "reason": "Extrêmement positif et stimulant pour les enfants."
+      },
+      {
+        "track_id": "1cdbkpZ3q1KYZDNSrOpdkb",
+        "track_name": "Ice Cream (with Selena Gomez)",
+        "artists": "BLACKPINK;Selena Gomez",
+        "reason": "Un morceau dynamique et coloré pour une ambiance festive."
+      },
+      {
+        "track_id": "0QBzMgT7NIeoCYy3sJCof1",
+        "track_name": "Bam Bam (feat. Ed Sheeran)",
+        "artists": "Camila Cabello;Ed Sheeran",
+        "reason": "Positivité contagieuse pour un après-midi ensoleillé."
+      },
+      {
+        "track_id": "1FnV600VjinGnFtUBvmGGw",
+        "track_name": "You Make Me Feel Like Dancing",
+        "artists": "Leo Sayer",
+        "reason": "Un rythme disco irrésistible pour danser avec les enfants."
+      },
+      {
+        "track_id": "3w3y8KPTfNeOKPiqUTakBh",
+        "track_name": "Locked out of Heaven",
+        "artists": "Bruno Mars",
+        "reason": "Énergie pop entraînante qui colle à l'humeur joyeuse."
+      },
+      {
+        "track_id": "6Uj1ctrBOjOas8xZXGqKk4",
+        "track_name": "Woman",
+        "artists": "Doja Cat",
+        "reason": "Très dansant et moderne, parfait pour se défouler."
+      },
+      {
+        "track_id": "6ztstiyZL6FXzh4aG46ZPD",
+        "track_name": "Boogie Wonderland",
+        "artists": "Earth, Wind & Fire;The Emotions",
+        "reason": "Un classique indémodable pour faire bouger tout le monde."
+      },
+      {
+        "track_id": "4h9wh7iOZ0GGn8QVp4RAOB",
+        "track_name": "I Ain't Worried",
+        "artists": "OneRepublic",
+        "reason": "Optimisme pur, idéal pour une météo ensoleillée."
+      },
+      {
+        "track_id": "5yGTQzYbEdY6B9RFZJypgt",
+        "track_name": "Rhythm Of The Night",
+        "artists": "DeBarge",
+        "reason": "Ambiance festive pour maintenir le sourire des enfants."
+      },
+      {
+        "track_id": "6mICuAdrwEjh6Y6lroV2Kg",
+        "track_name": "Chantaje (feat. Maluma)",
+        "artists": "Shakira;Maluma",
+        "reason": "Rythme latin très dansant pour une activité joyeuse."
+      },
+      {
+        "track_id": "3qI94hINNNeb4S7xQi18lS",
+        "track_name": "Blame It on the Boogie",
+        "artists": "The Jacksons",
+        "reason": "Un groove disco qui donne envie de bouger en famille."
+      },
+      {
+        "track_id": "1BqnZOkYJbvYLOhN0qPJDm",
+        "track_name": "Ma Baker",
+        "artists": "Boney M.",
+        "reason": "Énergie maximale et très positive pour terminer en beauté."
+      },
+      {
+        "track_id": "0GfPkS7yLww8jMsiLbvyDp",
+        "track_name": "Five Little Ducks",
+        "artists": "LooLoo Kids",
+        "reason": "Ludique et joyeux, parfait pour les moments de jeu."
+      },
+      {
+        "track_id": "0QTxYh5WB9Jzahx9WGG6yL",
+        "track_name": "Hot Cross Buns",
+        "artists": "Muffin Man",
+        "reason": "Simple et entraînant pour une activité enfantine."
+      },
+      {
+        "track_id": "5vQ60FReaX3qw7wtVYd3CS",
+        "track_name": "Mom Finger",
+        "artists": "Dreweeris Band",
+        "reason": "Rythme soutenu pour garder l'énergie au beau fixe."
+      },
+      {
+        "track_id": "6cMa0G311OqrInQCboBJuI",
+        "track_name": "Peppa's Club",
+        "artists": "Peppa Pig",
+        "reason": "Très dansant et apprécié des enfants."
+      },
+      {
+        "track_id": "1ri9ZUkBJVFUdgwzCnfcYs",
+        "track_name": "MAMIII",
+        "artists": "Becky G;KAROL G",
+        "reason": "Positivité et rythme pour profiter du soleil."
+      },
+      {
+        "track_id": "6RtPijgfPKROxEzTHNRiDp",
+        "track_name": "Rude",
+        "artists": "MAGIC!",
+        "reason": "Un hit reggae très joyeux pour l'après-midi."
+      },
+      {
+        "track_id": "38XLUjlR84JEwK0SOvX77a",
+        "track_name": "Let's go to Hell",
+        "artists": "Tai Verdes",
+        "reason": "Énergie débordante pour accompagner les jeux."
+      },
+      {
+        "track_id": "50DyjmQxDUAygFT31rD1kT",
+        "track_name": "Nawa Nawa Pyaar",
+        "artists": "Gippy Grewal;Tanu Grewal",
+        "reason": "Très dansant, idéal pour une ambiance ludique."
+      },
+      {
+        "track_id": "2mKtuCFjL0JPW1UbxH9ZzD",
+        "track_name": "Mentime la Verdad",
+        "artists": "Los Caligaris",
+        "reason": "Rythme ska festif pour conclure cette session de jeu."
+      }
+    ]
+  },
+  "P14": {
+    "model": "gemini-3.1-flash-lite",
+    "latencyMs": 10649,
+    "attempts": 1,
+    "invalidIds": 0,
+    "returned": 25,
+    "playlist_title": "Échos de Neige et de Sommeil",
+    "ai_reasoning": "La sélection se concentre exclusivement sur des compositions pour piano solo ou accompagnées, privilégiant des tempos lents et une acoustique riche pour favoriser l'endormissement tout en respectant l'humeur triste de l'utilisateur.",
+    "picks": [
+      {
+        "track_id": "20j6UxtRdY8ry3JfVPJIqJ",
+        "track_name": "Pluvius",
+        "artists": "BigRicePiano",
+        "reason": "Une atmosphère très basse en énergie, idéale pour glisser vers le sommeil."
+      },
+      {
+        "track_id": "3MOqT1Ka4jEf9PKSafbDiT",
+        "track_name": "Dvala",
+        "artists": "Ever So Blue",
+        "reason": "La texture sonore calme aide à apaiser une humeur triste."
+      },
+      {
+        "track_id": "0RdeSJMPOXBb8a1MmEP7Fq",
+        "track_name": "Svaj",
+        "artists": "Jacob David",
+        "reason": "Très faible énergie, parfait pour une nuit calme."
+      },
+      {
+        "track_id": "1fyoUmAZLx9tLmXA99Uxs4",
+        "track_name": "Longest days",
+        "artists": "Biba Dupont",
+        "reason": "La lenteur extrême favorise la transition vers le sommeil."
+      },
+      {
+        "track_id": "4uNQlDhz4fIKvjvdSESKou",
+        "track_name": "For Kate",
+        "artists": "Ed Chinaski",
+        "reason": "Une mélodie minimaliste qui accompagne parfaitement le repos."
+      },
+      {
+        "track_id": "47u0q4Z7iALJXli6pkcnvA",
+        "track_name": "Mystique",
+        "artists": "Cassandra Nestico",
+        "reason": "Douceur et acoustique pure pour se détendre."
+      },
+      {
+        "track_id": "4iCLo3ZjF6V1RW4Wz18KMz",
+        "track_name": "Aufgang der Sonne",
+        "artists": "Ploxxio",
+        "reason": "Le calme absolu pour une nuit paisible."
+      },
+      {
+        "track_id": "1J9iVCaEriyoMXpj2XszhU",
+        "track_name": "When Sunny Gets Blue",
+        "artists": "McCoy Tyner",
+        "reason": "Une mélodie mélancolique qui résonne avec l'état émotionnel actuel."
+      },
+      {
+        "track_id": "25h6NHq2mLaiupkc0XDuBa",
+        "track_name": "Kioque",
+        "artists": "Akira Kosemura",
+        "reason": "Un piano introspectif pour une soirée solitaire."
+      },
+      {
+        "track_id": "2p5THyuNwpJ9c7ex3TN383",
+        "track_name": "Nowesind",
+        "artists": "Jacob David",
+        "reason": "Une intensité très basse pour ne pas perturber le sommeil."
+      },
+      {
+        "track_id": "2xwp3DfpcINuUpbnQM86X1",
+        "track_name": "Through the Arbor",
+        "artists": "Kevin Kern",
+        "reason": "Un classique apaisant pour clore la journée."
+      },
+      {
+        "track_id": "5BMOKxB68b72YxWVnbq6Zf",
+        "track_name": "Afterthought",
+        "artists": "Elliott Jacqués",
+        "reason": "Une mélodie dépouillée qui invite au lâcher-prise."
+      },
+      {
+        "track_id": "6bII2soeyLixg1Pwpqd3Bp",
+        "track_name": "Hymn to the Sea (From \"Titanic\")",
+        "artists": "Jacob's Piano",
+        "reason": "Une profondeur émotionnelle qui s'accorde à la mélancolie."
+      },
+      {
+        "track_id": "0a8JnrGsVJstKtEzJCnGgD",
+        "track_name": "Una Mattina (from \"The Intouchables\")",
+        "artists": "Jacob's Piano",
+        "reason": "La délicatesse du piano pour apaiser l'esprit."
+      },
+      {
+        "track_id": "0M3DaTZsuttjClg5VG8exA",
+        "track_name": "Heartland",
+        "artists": "Lihua Zhao",
+        "reason": "Une atmosphère vaporeuse et calme."
+      },
+      {
+        "track_id": "0p8gAcPkDYgzcZZwAou12B",
+        "track_name": "Scene I, Kyoto",
+        "artists": "Umitaro Abe",
+        "reason": "Une approche contemplative du piano pour un repos profond."
+      },
+      {
+        "track_id": "0ob3wzPe3R3NpJtUEz0wUQ",
+        "track_name": "Sunnebovals",
+        "artists": "Christian Peterson-Bergling",
+        "reason": "La douceur du piano pour oublier la tristesse."
+      },
+      {
+        "track_id": "1TWlhhICPR0UpyIJhxPiEx",
+        "track_name": "Matin",
+        "artists": "Anne Vallayer",
+        "reason": "Une ambiance feutrée pour une nuit d'hiver."
+      },
+      {
+        "track_id": "3e1WYfmlGZvuwiwJRZ9x0f",
+        "track_name": "Cosmos",
+        "artists": "Jan Thiel",
+        "reason": "Un son éthéré, propice au calme nocturne."
+      },
+      {
+        "track_id": "28GCsymrcDUXXLC12nkhp3",
+        "track_name": "Ellipses",
+        "artists": "Dominique Marais",
+        "reason": "La subtilité des notes pour accompagner le sommeil."
+      },
+      {
+        "track_id": "4lu6zYkghmAlCnDcgKqJcY",
+        "track_name": "Halo",
+        "artists": "Mia Carrera",
+        "reason": "Une mélodie sombre et calme."
+      },
+      {
+        "track_id": "1PjFebgYCE4h0l8WJvnFHG",
+        "track_name": "Filter",
+        "artists": "Smyang Piano",
+        "reason": "Une simplicité acoustique qui facilite l'endormissement."
+      },
+      {
+        "track_id": "43z2LSP0180NFwr720P3xk",
+        "track_name": "Remembrance",
+        "artists": "Elfrieda",
+        "reason": "Une mélodie tendre pour apaiser les pensées tristes."
+      },
+      {
+        "track_id": "0noUgseAwk5ocHM4RyWcKg",
+        "track_name": "Airplane pt. 2",
+        "artists": "Smyang Piano",
+        "reason": "Une texture calme pour une nuit sereine."
+      },
+      {
+        "track_id": "7jCQisqspF9CBSrTIykHei",
+        "track_name": "Glimpse of Us - Piano Version",
+        "artists": "Philip",
+        "reason": "La mélancolie douce du piano pour conclure cette playlist."
+      }
+    ]
+  },
+  "P15": {
+    "model": "gemini-3.1-flash-lite",
+    "latencyMs": 4679,
+    "attempts": 1,
+    "invalidIds": 0,
+    "returned": 25,
+    "playlist_title": "Latino Fever: Night Out",
+    "ai_reasoning": "J'ai priorisé les titres de Bad Bunny et les incontournables du genre latino pour garantir une énergie élevée (0.9) et un côté dansant marqué, parfaits pour une activité de fête.",
+    "picks": [
+      {
+        "track_id": "69vlMrzHwATKzupwNcUPyK",
+        "track_name": "La Santa",
+        "artists": "Bad Bunny;Daddy Yankee",
+        "reason": "Un incontournable de Bad Bunny pour lancer l'énergie de la fête."
+      },
+      {
+        "track_id": "70rQq4iMDKjX8UlG7QlHUa",
+        "track_name": "X ÚLTIMA VEZ",
+        "artists": "Daddy Yankee;Bad Bunny",
+        "reason": "Rythme intense pour maintenir l'ambiance énergique de la soirée."
+      },
+      {
+        "track_id": "4tYFy8ALRjIZvnvSLw5lxN",
+        "track_name": "Party",
+        "artists": "Bad Bunny;Rauw Alejandro",
+        "reason": "Le titre parfait pour une activité de fête avec une forte dimension dansante."
+      },
+      {
+        "track_id": "4r9jkMEnArtWGH2rL2FZl0",
+        "track_name": "A Tu Merced",
+        "artists": "Bad Bunny",
+        "reason": "Une positivité élevée qui booste l'humeur lors d'une fête."
+      },
+      {
+        "track_id": "53xnBJEIk3ofmNbKQ6mMxe",
+        "track_name": "Báilame - Remix",
+        "artists": "Nacho;Yandel;Bad Bunny;Mambo Kingz;DJ Luian",
+        "reason": "Une collaboration explosive pour garder tout le monde sur la piste."
+      },
+      {
+        "track_id": "6NfrH0ANGmgBXyxgV2PeXt",
+        "track_name": "La Difícil",
+        "artists": "Bad Bunny",
+        "reason": "Un classique de Bad Bunny très efficace pour une ambiance festive."
+      },
+      {
+        "track_id": "2DEZmgHKAvm41k4J3R2E9Y",
+        "track_name": "Safaera",
+        "artists": "Bad Bunny;Jowell & Randy;Ñengo Flow",
+        "reason": "Son rythme iconique est indispensable pour une soirée latino réussie."
+      },
+      {
+        "track_id": "3oxGJdepSlIwJxjyvtPxXT",
+        "track_name": "No Me Conoce - Remix",
+        "artists": "Jhayco;J Balvin;Bad Bunny",
+        "reason": "Une énergie débordante pour soutenir l'activité de fête."
+      },
+      {
+        "track_id": "2mBTuHj5xrXHF3BeXD9ebN",
+        "track_name": "Sígueme Y Te Sigo",
+        "artists": "Daddy Yankee",
+        "reason": "Un titre de Daddy Yankee extrêmement dansant pour la foule."
+      },
+      {
+        "track_id": "1qdiryo9D6QgoZw9beV72q",
+        "track_name": "Con Calma",
+        "artists": "Daddy Yankee;Snow",
+        "reason": "Un hymne latino qui garantit une ambiance positive et festive."
+      },
+      {
+        "track_id": "4B8RTAHSPfYpV222GsmEjq",
+        "track_name": "Zumba",
+        "artists": "Don Omar",
+        "reason": "Le titre idéal pour faire monter l'énergie au maximum en soirée."
+      },
+      {
+        "track_id": "3AedlLCGKNhQdhtLzObIbR",
+        "track_name": "Pasarela",
+        "artists": "Daddy Yankee",
+        "reason": "Une intensité parfaite pour une activité de fête dynamique."
+      },
+      {
+        "track_id": "0bhhXULPNfCsVhZp35HrC3",
+        "track_name": "Dura",
+        "artists": "Daddy Yankee",
+        "reason": "Un hit incontournable pour maintenir la positivité de l'humeur."
+      },
+      {
+        "track_id": "1IEiQRYKkP0J4BMZKHVVKO",
+        "track_name": "It's Your Birthday",
+        "artists": "Andreea D",
+        "reason": "Parfait pour célébrer avec une énergie très élevée."
+      },
+      {
+        "track_id": "6PDlkWmrq2ZKiUuFt2aQsH",
+        "track_name": "Loco",
+        "artists": "Justin Quiles;Chimbala;Zion & Lennox",
+        "reason": "Un rythme effréné pour ne jamais laisser retomber l'ambiance."
+      },
+      {
+        "track_id": "79HZAZNnOE97rb2hnI0XQr",
+        "track_name": "LOKERA",
+        "artists": "Rauw Alejandro;Lyanno;Brray",
+        "reason": "Très dansant, idéal pour une fête énergique."
+      },
+      {
+        "track_id": "4SSbtLDkepeOHAckM1FCBP",
+        "track_name": "LOS APARATOS",
+        "artists": "El Alfa;Noriel;Trueno",
+        "reason": "Une positivité maximale pour une soirée mémorable."
+      },
+      {
+        "track_id": "12xEvLcLawXJUs4ANGYdxZ",
+        "track_name": "Me Estas Tentando - Remix",
+        "artists": "Wisin & Yandel;Franco \"El Gorilla\";Jayko",
+        "reason": "Un classique énergique qui motive tout le monde à danser."
+      },
+      {
+        "track_id": "1dVZeuQFWzSI22d3hPEncI",
+        "track_name": "BOMBÓN",
+        "artists": "Daddy Yankee;El Alfa;Lil Jon",
+        "reason": "Le mélange parfait entre énergie et style dansant pour la fête."
+      },
+      {
+        "track_id": "0vp47IigZ7JVQ89jDetO7H",
+        "track_name": "Limbo",
+        "artists": "Daddy Yankee",
+        "reason": "Un must-have pour une humeur festive et joyeuse."
+      },
+      {
+        "track_id": "0zhxUjkXag9iEFccaiua4a",
+        "track_name": "RUMBATÓN",
+        "artists": "Daddy Yankee",
+        "reason": "Une énergie brute qui colle parfaitement à l'activité de fête."
+      },
+      {
+        "track_id": "0rCxlp7KdpW1JR8uG6Uno0",
+        "track_name": "Danza Kuduro",
+        "artists": "Lucenzo;Don Omar",
+        "reason": "L'incontournable absolu pour dynamiser une piste de danse."
+      },
+      {
+        "track_id": "228BxWXUYQPJrJYHDLOHkj",
+        "track_name": "Gasolina",
+        "artists": "Daddy Yankee",
+        "reason": "Un classique indémodable pour une ambiance de fête intense."
+      },
+      {
+        "track_id": "2L95U6syP0bV3fkYYOzmiW",
+        "track_name": "La Mamá de la Mamá",
+        "artists": "El Alfa;Chael Produciendo;CJ;El Cherry Scom",
+        "reason": "Le titre le plus dansant pour une fin de soirée explosive."
+      },
+      {
+        "track_id": "0Rj2yNpEvXOl8yn9UOuIRs",
+        "track_name": "Gyal You A Party Animal - Remix",
+        "artists": "Charly Black;Daddy Yankee",
+        "reason": "Un rythme proche pour prolonger la fête avec une intensité maximale."
+      }
+    ]
+  },
+  "P19": {
+    "model": "gemini-3.1-flash-lite",
+    "latencyMs": 3518,
+    "attempts": 1,
+    "invalidIds": 0,
+    "returned": 25,
+    "playlist_title": "Urban Serenity: Marche Parisienne",
+    "ai_reasoning": "La playlist est conçue autour d'une énergie modérée et d'une forte composante acoustique pour favoriser la détente pendant la marche. Les titres ont été sélectionnés pour leur aspect mélodique et calme, correspondant à l'ambiance nuageuse de Paris, en alternant entre des sonorités folk, acoustic et chill pour maintenir une progression fluide.",
+    "picks": [
+      {
+        "track_id": "2GtksLOwApBFKXsm4jsw8o",
+        "track_name": "dead",
+        "artists": "Zaini",
+        "reason": "Une entrée en matière douce pour calmer le stress lors du début de la marche."
+      },
+      {
+        "track_id": "5NwpfDSHmNc7gu23GQK5DF",
+        "track_name": "All My Days",
+        "artists": "Alexi Murdoch",
+        "reason": "Idéal pour accompagner le rythme de la marche sous un ciel nuageux."
+      },
+      {
+        "track_id": "16x2V0ZWoXD7Rjo6bSAoEK",
+        "track_name": "I'll Be There For You (Friends Theme)",
+        "artists": "Boyce Avenue",
+        "reason": "Une sonorité acoustique familière qui apaise l'esprit."
+      },
+      {
+        "track_id": "3ZjSJv88euP3CdvTg07dZL",
+        "track_name": "Beautiful Soul",
+        "artists": "Jonah Baker",
+        "reason": "La simplicité de cette mélodie aide à se recentrer en marchant."
+      },
+      {
+        "track_id": "63wsZUhUZLlh1OsyrZq7sz",
+        "track_name": "Fast Car",
+        "artists": "Boyce Avenue;Kina Grannis",
+        "reason": "Un rythme posé qui s'accorde parfaitement avec l'activité physique légère."
+      },
+      {
+        "track_id": "5V7mTIcXVU9k2JNu0mE6vy",
+        "track_name": "Fall for You (Acoustic)",
+        "artists": "Secondhand Serenade",
+        "reason": "Le piano apporte une profondeur émotionnelle qui aide à évacuer la tension."
+      },
+      {
+        "track_id": "4ptDJbJl35d7gQfeNteBwp",
+        "track_name": "Solo",
+        "artists": "Dan Berk",
+        "reason": "Une ambiance acoustique pure pour une marche réflexive."
+      },
+      {
+        "track_id": "3R5pd8Z7X3MxaFQphHSUaH",
+        "track_name": "Jealous of Paris",
+        "artists": "Haley Joelle",
+        "reason": "Le texte et la mélodie douce sont parfaits pour une balade urbaine solitaire."
+      },
+      {
+        "track_id": "7cE35BjpKtOIMTqsKGL8z8",
+        "track_name": "I Don't Want to Talk About It",
+        "artists": "Everything But The Girl",
+        "reason": "Une atmosphère feutrée qui capture l'humeur calme recherchée."
+      },
+      {
+        "track_id": "5y8d8RHvxb0KiTa9Nq0xWp",
+        "track_name": "Morning Has Broken - Remastered 2021",
+        "artists": "Yusuf / Cat Stevens",
+        "reason": "Un classique folk pour apaiser le stress du quotidien."
+      },
+      {
+        "track_id": "7JIIY2oDPFkURYMCLJuzhe",
+        "track_name": "Elliot's Song - From \"Euphoria\" An HBO Original Series",
+        "artists": "Dominic Fike;Zendaya",
+        "reason": "Une douceur sonore qui s'harmonise avec le temps couvert."
+      },
+      {
+        "track_id": "66790TBuwlIrGxWWTVc6yl",
+        "track_name": "Day Is Done",
+        "artists": "Nick Drake",
+        "reason": "La mélancolie légère est idéale pour une marche contemplative."
+      },
+      {
+        "track_id": "4LloVtxNZpeh7q7xdi1DQc",
+        "track_name": "Free Fallin' - Live at the Nokia Theatre, Los Angeles, CA - December 2007",
+        "artists": "John Mayer",
+        "reason": "Le côté acoustique live renforce le sentiment de calme extérieur."
+      },
+      {
+        "track_id": "52VIdyKqp1pJRSyUQaxKUA",
+        "track_name": "Everything I Own",
+        "artists": "Bread",
+        "reason": "Une folk classique qui stabilise l'énergie pendant la marche."
+      },
+      {
+        "track_id": "2zbGXr2XCcRR40R7ymEENc",
+        "track_name": "Embryonic Journey",
+        "artists": "Jefferson Airplane",
+        "reason": "Une instrumentalisation qui laisse place à la pensée sans stress."
+      },
+      {
+        "track_id": "3Bnvv3wAKD7qftV4uHA8GG",
+        "track_name": "Coisas Dentro das Coisas",
+        "artists": "5 a Seco",
+        "reason": "Le genre MPB apporte une touche chaleureuse sous le ciel gris."
+      },
+      {
+        "track_id": "5For9ZuNFUOpcDBq0dvWR6",
+        "track_name": "Rosa Flor - Acústica",
+        "artists": "Big Up;Maneva",
+        "reason": "Une version acoustique qui garde l'esprit serein."
+      },
+      {
+        "track_id": "1eK9FbqhWUoolfJdiQtKaO",
+        "track_name": "Vem Andar Comigo - Acústico",
+        "artists": "Jota Quest",
+        "reason": "Le rythme constant aide à maintenir une allure régulière."
+      },
+      {
+        "track_id": "7ccurrFI92e3hBtU02WgTL",
+        "track_name": "Good Feeling",
+        "artists": "Violent Femmes",
+        "reason": "Une touche acoustique positive pour alléger l'humeur stressée."
+      },
+      {
+        "track_id": "58Qq7oDXsKfuDlRM00ahoa",
+        "track_name": "A Sunday Kind Of Love",
+        "artists": "Etta James",
+        "reason": "La voix profonde d'Etta James pour ancrer la sérénité."
+      },
+      {
+        "track_id": "3N2rQn3AyLfkJGAS4viDAt",
+        "track_name": "Stormy Weather",
+        "artists": "Etta James",
+        "reason": "Une ambiance blues qui s'adapte au climat nuageux."
+      },
+      {
+        "track_id": "1D5IQXGW1gIIIxQHLymxMO",
+        "track_name": "November Blues",
+        "artists": "The Avett Brothers",
+        "reason": "Le bluegrass apporte une variété acoustique bienvenue."
+      },
+      {
+        "track_id": "2jhZ3cnnggRI0lj6L5obmj",
+        "track_name": "Tennessee Pusher",
+        "artists": "Old Crow Medicine Show",
+        "reason": "Une énergie légère pour dynamiser la fin de la marche."
+      },
+      {
+        "track_id": "7uChwK0FIUOdpu8c2AFsOx",
+        "track_name": "Sun's Gonna Shine",
+        "artists": "Steve Martin;Edie Brickell",
+        "reason": "Le mélange acoustique parfait pour conclure la balade."
+      },
+      {
+        "track_id": "10qNxZBdhfTFaaFUELBxUH",
+        "track_name": "Southbound",
+        "artists": "The Doc Watson Family",
+        "reason": "Un final doux et naturel pour terminer la session de marche."
+      }
+    ]
+  },
+  "P20": {
+    "model": "gemini-3.1-flash-lite",
+    "latencyMs": 3106,
+    "attempts": 1,
+    "invalidIds": 0,
+    "returned": 25,
+    "playlist_title": "Lover's Electric Pulse",
+    "ai_reasoning": "J'ai intégré les succès pop de Taylor Swift pour satisfaire votre artiste favori, puis j'ai complété la playlist avec des titres pop à haute énergie et positivité pour dynamiser votre fête, tout en maintenant une progression fluide qui correspond à une ambiance amoureuse et dansante.",
+    "picks": [
+      {
+        "track_id": "6X7pjnNm5dHSUot6hp3KFU",
+        "track_name": "Lover",
+        "artists": "Taylor Swift",
+        "reason": "Parfait pour introduire l'humeur amoureuse avec douceur."
+      },
+      {
+        "track_id": "1u8c2t2Cy7UBoG4ArRcF5g",
+        "track_name": "Blank Space",
+        "artists": "Taylor Swift",
+        "reason": "Pop entraînante pour lancer la fête."
+      },
+      {
+        "track_id": "3fVnlF4pGqWI9flVENcT28",
+        "track_name": "Wildest Dreams",
+        "artists": "Taylor Swift",
+        "reason": "Pour maintenir une ambiance de rêve lors de la fête."
+      },
+      {
+        "track_id": "6vJaXvEXh6HOeiEZLFDhrp",
+        "track_name": "You Belong With Me (Taylor’s Version)",
+        "artists": "Taylor Swift",
+        "reason": "Un classique pop pour dynamiser l'activité."
+      },
+      {
+        "track_id": "1D4PL9B8gOg78jiHg3FvBb",
+        "track_name": "Love Story",
+        "artists": "Taylor Swift",
+        "reason": "Célébration de l'amour avec une énergie dansante."
+      },
+      {
+        "track_id": "3hUxzQpSfdDqwM3ZTFQY0K",
+        "track_name": "august",
+        "artists": "Taylor Swift",
+        "reason": "Une touche acoustique pop pour varier le rythme."
+      },
+      {
+        "track_id": "3AYtDDIbG4DQxnEFELeFag",
+        "track_name": "willow",
+        "artists": "Taylor Swift",
+        "reason": "Une mélodie douce pour équilibrer l'énergie de la fête."
+      },
+      {
+        "track_id": "1R0a2iXumgCiFb7HEZ7gUE",
+        "track_name": "Don’t Blame Me",
+        "artists": "Taylor Swift",
+        "reason": "Pour ajouter de la profondeur à votre ambiance amoureuse."
+      },
+      {
+        "track_id": "4h9wh7iOZ0GGn8QVp4RAOB",
+        "track_name": "I Ain't Worried",
+        "artists": "OneRepublic",
+        "reason": "High energy pour une fête sous le soleil."
+      },
+      {
+        "track_id": "6Uj1ctrBOjOas8xZXGqKk4",
+        "track_name": "Woman",
+        "artists": "Doja Cat",
+        "reason": "Très dansant et positif pour l'ambiance festive."
+      },
+      {
+        "track_id": "5nCthAh3jt4xKuLJAifAaR",
+        "track_name": "Harleys In Hawaii",
+        "artists": "Katy Perry",
+        "reason": "Parfait pour l'énergie solaire de la ville."
+      },
+      {
+        "track_id": "5QDLhrAOJJdNAmCTJ8xMyW",
+        "track_name": "Dynamite",
+        "artists": "BTS",
+        "reason": "Un hymne pop incontournable pour danser."
+      },
+      {
+        "track_id": "4cluDES4hQEUhmXj6TXkSo",
+        "track_name": "What Makes You Beautiful",
+        "artists": "One Direction",
+        "reason": "Grande positivité pour une fête joyeuse."
+      },
+      {
+        "track_id": "2dpaYNEQHiRxtZbfNsse99",
+        "track_name": "Happier",
+        "artists": "Marshmello;Bastille",
+        "reason": "Rythme entraînant pour garder tout le monde sur la piste."
+      },
+      {
+        "track_id": "0WtM2NBVQNNJLh6scP13H8",
+        "track_name": "Calm Down (with Selena Gomez)",
+        "artists": "Rema;Selena Gomez",
+        "reason": "Vibe estivale parfaite pour danser en amoureux."
+      },
+      {
+        "track_id": "5nujrmhLynf4yMoMtj8AQF",
+        "track_name": "Levitating (feat. DaBaby)",
+        "artists": "Dua Lipa;DaBaby",
+        "reason": "Un hit pop indispensable pour toute fête réussie."
+      },
+      {
+        "track_id": "5cF0dROlMOK5uNZtivgu50",
+        "track_name": "Attention",
+        "artists": "Charlie Puth",
+        "reason": "Pour maintenir le groove de la soirée."
+      },
+      {
+        "track_id": "39LLxExYz6ewLAcYrzQQyP",
+        "track_name": "Levitating",
+        "artists": "Dua Lipa",
+        "reason": "Énergie maximale pour faire monter la température."
+      },
+      {
+        "track_id": "27SdWb2rFzO6GWiYDBTD9j",
+        "track_name": "Cheap Thrills",
+        "artists": "Sia",
+        "reason": "Un classique dansant pour la fête."
+      },
+      {
+        "track_id": "5QO79kh1waicV47BqGRL3g",
+        "track_name": "Save Your Tears",
+        "artists": "The Weeknd",
+        "reason": "Pour une transition émotionnelle et dansante."
+      },
+      {
+        "track_id": "2K87XMYnUMqLcX3zvtAF4G",
+        "track_name": "Drag Me Down",
+        "artists": "One Direction",
+        "reason": "Pop dynamique qui colle à l'activité."
+      },
+      {
+        "track_id": "7ef4DlsgrMEH11cDZd32M6",
+        "track_name": "One Kiss (with Dua Lipa)",
+        "artists": "Calvin Harris;Dua Lipa",
+        "reason": "Idéal pour une fête ensoleillée."
+      },
+      {
+        "track_id": "3C0nOe05EIt1390bVABLyN",
+        "track_name": "On The Floor",
+        "artists": "Jennifer Lopez;Pitbull",
+        "reason": "Pour faire bouger tout le monde en fête."
+      },
+      {
+        "track_id": "7JJmb5XwzOO8jgpou264Ml",
+        "track_name": "There's Nothing Holdin' Me Back",
+        "artists": "Shawn Mendes",
+        "reason": "Énergie pure pour clore la fête en beauté."
+      },
+      {
+        "track_id": "6kex4EBAj0WHXDKZMEJaaF",
+        "track_name": "Swalla (feat. Nicki Minaj & Ty Dolla $ign)",
+        "artists": "Jason Derulo;Nicki Minaj;Ty Dolla $ign",
+        "reason": "Pour finir sur une note très dansante et festive."
+      }
+    ]
+  },
+  "P21": {
+    "model": "gemini-3.1-flash-lite",
+    "latencyMs": 3012,
+    "attempts": 1,
+    "invalidIds": 0,
+    "returned": 25,
+    "playlist_title": "Stormy Drive: High Voltage",
+    "ai_reasoning": "Pour répondre à l'humeur colérique et à l'activité en voiture sous l'orage, j'ai sélectionné des morceaux à très haute énergie (proche de 1.0) et une tonalité sombre. Le rythme soutenu aide à évacuer la tension tout en restant concentré sur la route.",
+    "picks": [
+      {
+        "track_id": "6oj95LjRQSKa5oY6aexgpa",
+        "track_name": "INEEDU",
+        "artists": "Teddy Killerz",
+        "reason": "Énergie maximale pour libérer la frustration au volant."
+      },
+      {
+        "track_id": "48vDCZIRmrFO33fH4QU4ij",
+        "track_name": "Smack My Bitch Up",
+        "artists": "The Prodigy",
+        "reason": "Un beat agressif pour correspondre à l'ambiance orageuse."
+      },
+      {
+        "track_id": "3nqpRRpUhwfo6BqibVqeuj",
+        "track_name": "IOU",
+        "artists": "Five Finger Death Punch",
+        "reason": "Puissance brute pour canaliser la colère en roulant."
+      },
+      {
+        "track_id": "44M12pkcMqqdbNNooHCZ6C",
+        "track_name": "Come And Get It",
+        "artists": "I Prevail",
+        "reason": "Rythme intense pour accompagner la conduite."
+      },
+      {
+        "track_id": "15zUfY9L1p7bN9JsgaTAP0",
+        "track_name": "Strife",
+        "artists": "Trivium",
+        "reason": "Parfait pour extérioriser la tension accumulée."
+      },
+      {
+        "track_id": "0AHHDAHFRaT82UVw5fMr1R",
+        "track_name": "Vice Grip",
+        "artists": "Parkway Drive",
+        "reason": "Une montée en puissance idéale pour la route."
+      },
+      {
+        "track_id": "1u6tmL5I0GbKimf7xigTtz",
+        "track_name": "Return To The Source",
+        "artists": "Audiofreq",
+        "reason": "Énergie pure pour rester alerte sous l'orage."
+      },
+      {
+        "track_id": "1fUacP7XP697l6ry01oO4d",
+        "track_name": "Antivist",
+        "artists": "Bring Me The Horizon",
+        "reason": "Un son percutant pour refléter ton état d'esprit."
+      },
+      {
+        "track_id": "3z1PkRAvO0Vhdz7d6epug3",
+        "track_name": "Made In Russia",
+        "artists": "Slaughter to Prevail",
+        "reason": "L'agressivité nécessaire pour ce trajet tendu."
+      },
+      {
+        "track_id": "6QhzpxVOPMeku3Yuz3aeEl",
+        "track_name": "Calloused",
+        "artists": "Gideon",
+        "reason": "Rythme soutenu pour évacuer le stress de la conduite."
+      },
+      {
+        "track_id": "2KvCLvH4Z749CQOgGSDKpl",
+        "track_name": "In Your Face",
+        "artists": "Children Of Bodom",
+        "reason": "Une intensité qui cadre avec l'orage extérieur."
+      },
+      {
+        "track_id": "5NySMSTJX1nwz4X6ydG5J9",
+        "track_name": "Soy el Fin",
+        "artists": "Plan 4",
+        "reason": "L'énergie sombre idéale pour une virée sous la pluie."
+      },
+      {
+        "track_id": "4dIoimQas4pY5JkvDF88B0",
+        "track_name": "Rebirth",
+        "artists": "Ingested",
+        "reason": "Un morceau lourd pour accompagner ton humeur."
+      },
+      {
+        "track_id": "5sykvfEJHupA8mjhhgylVk",
+        "track_name": "CHØKE ØN THE ASHES ØF YØUR HATE",
+        "artists": "Machine Head",
+        "reason": "La puissance des guitares pour se défouler en voiture."
+      },
+      {
+        "track_id": "2tbMiz9p19QbSJlbHiMs2y",
+        "track_name": "The Pride",
+        "artists": "Five Finger Death Punch",
+        "reason": "Un morceau énergique pour garder le cap."
+      },
+      {
+        "track_id": "6KrxqNJFgdSrJTnfDnPT82",
+        "track_name": "Unstoppable",
+        "artists": "Disturbed",
+        "reason": "Une dose de puissance pour traverser l'orage."
+      },
+      {
+        "track_id": "2I75GCnEOzCvNpxCR3XYZH",
+        "track_name": "Addicted to Pain",
+        "artists": "Alter Bridge",
+        "reason": "Une intensité brute pour calmer la colère."
+      },
+      {
+        "track_id": "5uqr3lCMWkyQx6yTvoMl4F",
+        "track_name": "Rational Gaze",
+        "artists": "Meshuggah",
+        "reason": "La précision rythmique pour rester concentré."
+      },
+      {
+        "track_id": "7jZR3qtgRMB79lzSmZHKS7",
+        "track_name": "Power Hour - Radio Edit",
+        "artists": "Technoboy;Tuneboy;DJ Isaac",
+        "reason": "Une montée en régime idéale pour le trajet."
+      },
+      {
+        "track_id": "4nsIK9L9kIGhxAXqSQkrJZ",
+        "track_name": "I'm Raving - Radio Edit",
+        "artists": "TNT;POPR3B3L",
+        "reason": "Un rythme frénétique pour libérer la tension."
+      },
+      {
+        "track_id": "6fgehsH9cp1ZMABoFAaoMu",
+        "track_name": "Faster 'n Further - Radio Edit",
+        "artists": "Noisecontrollers",
+        "reason": "Vitesse et intensité pour avancer sous l'orage."
+      },
+      {
+        "track_id": "32YMjckfKOLVITAfe6zK9F",
+        "track_name": "No Cure",
+        "artists": "Ran-D;Redixx",
+        "reason": "La force du hardstyle pour une conduite dynamique."
+      },
+      {
+        "track_id": "2oefmctoiEMHs6Cf6PmoHj",
+        "track_name": "Lambada (Your Love)",
+        "artists": "Da Tweekaz;Tony Junior;Sound Rush",
+        "reason": "Énergie constante pour ne pas faiblir au volant."
+      },
+      {
+        "track_id": "3RAFcUBrCNaboRXoP3S5t1",
+        "track_name": "Psychosocial",
+        "artists": "Slipknot",
+        "reason": "La densité sonore pour s'isoler des éléments extérieurs."
+      },
+      {
+        "track_id": "5NlW1Be0WYIOFp1gx1b7Kf",
+        "track_name": "Smack My Bitch Up - Noisia Remix",
+        "artists": "The Prodigy;Noisia",
+        "reason": "Une conclusion explosive pour finir ton trajet."
+      }
+    ]
+  },
+  "P22": {
+    "model": "gemini-3.1-flash-lite",
+    "latencyMs": 3848,
+    "attempts": 1,
+    "invalidIds": 0,
+    "returned": 25,
+    "playlist_title": "Flocons et Confidences",
+    "ai_reasoning": "Pour répondre à l'humeur rêveuse et à l'activité romantique par temps de neige, j'ai sélectionné des titres avec une forte composante acoustique et une énergie modérée. La progression suit un arc émotionnel allant de la mélancolie douce vers une chaleur réconfortante, idéale pour un moment à deux.",
+    "picks": [
+      {
+        "track_id": "0O0bttAxJKKWqAqY2Nq4mC",
+        "track_name": "Falling In Love",
+        "artists": "Cigarettes After Sex",
+        "reason": "Une ambiance feutrée parfaite pour une activité romantique au chaud."
+      },
+      {
+        "track_id": "7hVfHx6EnGhIwan7ZkqDcq",
+        "track_name": "Скажите, почему",
+        "artists": "Vladimir Troshin",
+        "reason": "La douceur acoustique idéale pour rêver en regardant la neige tomber."
+      },
+      {
+        "track_id": "52VIdyKqp1pJRSyUQaxKUA",
+        "track_name": "Everything I Own",
+        "artists": "Bread",
+        "reason": "Un folk chaleureux qui renforce l'intimité du moment."
+      },
+      {
+        "track_id": "66790TBuwlIrGxWWTVc6yl",
+        "track_name": "Day Is Done",
+        "artists": "Nick Drake",
+        "reason": "Une mélodie apaisante pour accompagner le calme de l'hiver."
+      },
+      {
+        "track_id": "7qEHsqek33rTcFNT9PFqLf",
+        "track_name": "Someone You Loved",
+        "artists": "Lewis Capaldi",
+        "reason": "La sensibilité vocale pour souligner le côté romantique de votre activité."
+      },
+      {
+        "track_id": "4Akic5cb5RHJrTdQZY7AfX",
+        "track_name": "No Plans",
+        "artists": "Jason Mraz",
+        "reason": "Une simplicité acoustique qui laisse place à la rêverie."
+      },
+      {
+        "track_id": "3Bnvv3wAKD7qftV4uHA8GG",
+        "track_name": "Coisas Dentro das Coisas",
+        "artists": "5 a Seco",
+        "reason": "Une atmosphère mélancolique et douce, propice aux confidences."
+      },
+      {
+        "track_id": "4MPkQ1BppSZR0PnZ5HWL0i",
+        "track_name": "Julia Dream",
+        "artists": "Pink Floyd",
+        "reason": "Le côté éthéré du morceau colle parfaitement à une activité de rêveur."
+      },
+      {
+        "track_id": "6NSlOEEtWlqvEFrjQsry77",
+        "track_name": "World Spins Madly On",
+        "artists": "The Weepies;Deb Talan;Steve Tannen",
+        "reason": "Une acoustique pure qui réchauffe l'ambiance intérieure."
+      },
+      {
+        "track_id": "5y8d8RHvxb0KiTa9Nq0xWp",
+        "track_name": "Morning Has Broken - Remastered 2021",
+        "artists": "Yusuf / Cat Stevens",
+        "reason": "Une touche de douceur classique pour un moment de complicité."
+      },
+      {
+        "track_id": "7iN1s7xHE4ifF5povM6A48",
+        "track_name": "Let It Be - Remastered 2009",
+        "artists": "The Beatles",
+        "reason": "Un classique intemporel qui apaise l'esprit."
+      },
+      {
+        "track_id": "5V7mTIcXVU9k2JNu0mE6vy",
+        "track_name": "Fall for You (Acoustic)",
+        "artists": "Secondhand Serenade",
+        "reason": "Le piano apporte la touche romantique nécessaire."
+      },
+      {
+        "track_id": "1FHCU1rDAeaPsBW9byjJ0Q",
+        "track_name": "12:51",
+        "artists": "krissy & ericka",
+        "reason": "Une mélodie légère pour un moment de détente partagé."
+      },
+      {
+        "track_id": "7DZ8n63a46dU6iUyN9OeRl",
+        "track_name": "The Way That I Love You - single version",
+        "artists": "Passenger",
+        "reason": "Une guitare acoustique qui souligne la tendresse de l'activité."
+      },
+      {
+        "track_id": "2b7aJhLWeh7TR7IJXI2pog",
+        "track_name": "Blue Side of Lonesome",
+        "artists": "George Jones;The Jordanaires",
+        "reason": "La mélancolie douce qui sied à une journée neigeuse."
+      },
+      {
+        "track_id": "5HaAOqKwmgyXNAZKGVhdsS",
+        "track_name": "Romaria - Remasterizado",
+        "artists": "Renato Teixeira",
+        "reason": "Une profondeur émotionnelle pour nourrir vos rêveries."
+      },
+      {
+        "track_id": "6sv7ZmasB6qSiF8hWJNpDG",
+        "track_name": "Still",
+        "artists": "Jeff Bernat",
+        "reason": "Le calme absolu pour rester dans votre bulle."
+      },
+      {
+        "track_id": "41CgzGD7xlgnJe14R4cqkL",
+        "track_name": "Paris in the Rain",
+        "artists": "Lauv",
+        "reason": "Un clin d'œil poétique à la pluie qui se transforme en neige."
+      },
+      {
+        "track_id": "6E9UwSfT80age2xknoMS7Y",
+        "track_name": "Tum Hi Aana (From \"Marjaavaan\")",
+        "artists": "Payal Dev;Jubin Nautiyal",
+        "reason": "Une intensité romantique qui monte progressivement."
+      },
+      {
+        "track_id": "73y649QhnXdcm6fRdvfraO",
+        "track_name": "Abhi Mujh Mein Kahin",
+        "artists": "Ajay-Atul;Sonu Nigam",
+        "reason": "Une voix profonde qui enveloppe le moment de douceur."
+      },
+      {
+        "track_id": "1B5Tp2Ml9nLlmTSJx8xVfI",
+        "track_name": "Always On My Mind",
+        "artists": "Elvis Presley",
+        "reason": "Un standard indémodable pour une atmosphère romantique."
+      },
+      {
+        "track_id": "25IiJu0DjOqsnQXgNHWp5i",
+        "track_name": "Will You Love Me Tomorrow",
+        "artists": "The Shirelles",
+        "reason": "Une mélodie nostalgique qui réchauffe les cœurs."
+      },
+      {
+        "track_id": "1PtJclc46wTk367PlsU6Uj",
+        "track_name": "I Have A Dream",
+        "artists": "ABBA",
+        "reason": "L'optimisme doux pour clore ce moment de rêve."
+      },
+      {
+        "track_id": "19Hg1UCZaCdpHB37L7x63X",
+        "track_name": "EVERYTHING",
+        "artists": "The Black Skirts",
+        "reason": "Une indie-pop qui capture parfaitement l'essence de votre activité."
+      },
+      {
+        "track_id": "4zdQnUf0viZCBLaRLtFzCn",
+        "track_name": "Último Romance",
+        "artists": "Roberta Campos",
+        "reason": "Une note finale folk pour prolonger ce moment de bonheur."
+      }
+    ]
+  },
+  "P23": {
+    "model": "gemini-3.1-flash-lite",
+    "latencyMs": 3179,
+    "attempts": 1,
+    "invalidIds": 0,
+    "returned": 25,
+    "playlist_title": "K-Pop High-Energy Kids Vibes",
+    "ai_reasoning": "La playlist privilégie les titres à haute énergie et positivité élevés pour correspondre au profil motivant. Les 8 titres de BTS (artiste favori) ont été inclus pour ancrer le style, complétés par une sélection rigoureuse de titres K-pop uptempo et deux morceaux ludiques adaptés à une activité avec des enfants.",
+    "picks": [
+      {
+        "track_id": "34OSqW5ULWxmCEMjJ1ZgVW",
+        "track_name": "Anpanman",
+        "artists": "BTS",
+        "reason": "Une énergie débordante idéale pour lancer une activité ludique."
+      },
+      {
+        "track_id": "1sz4drpDPpHVrPUgnXGaNn",
+        "track_name": "Boyz with Fun",
+        "artists": "BTS",
+        "reason": "Un rythme effréné qui plaira aux enfants en quête d'action."
+      },
+      {
+        "track_id": "5pjHS3EpHurMyIpB2QBnEd",
+        "track_name": "We Are Bulletproof Pt.2",
+        "artists": "BTS",
+        "reason": "Très motivant avec un tempo qui encourage le mouvement."
+      },
+      {
+        "track_id": "52d5NT69mkmr6WzvQJ9vHr",
+        "track_name": "21st Century Girl",
+        "artists": "BTS",
+        "reason": "Un morceau ultra positif pour maintenir la bonne humeur."
+      },
+      {
+        "track_id": "4a9tbd947vo9K8Vti9JwcI",
+        "track_name": "Boy With Luv (feat. Halsey)",
+        "artists": "BTS;Halsey",
+        "reason": "Une mélodie entraînante et joyeuse pour tous les âges."
+      },
+      {
+        "track_id": "4lAE47gj539h8R1yxPhhGG",
+        "track_name": "Airplane pt.2",
+        "artists": "BTS",
+        "reason": "Un groove irrésistible parfait pour danser en famille."
+      },
+      {
+        "track_id": "5QDLhrAOJJdNAmCTJ8xMyW",
+        "track_name": "Dynamite",
+        "artists": "BTS",
+        "reason": "Le tube feel-good par excellence pour booster l'ambiance."
+      },
+      {
+        "track_id": "3XYRV7ZSHqIRDG87DKTtry",
+        "track_name": "Permission to Dance",
+        "artists": "BTS",
+        "reason": "Un message simple et motivant pour inciter à la danse."
+      },
+      {
+        "track_id": "1NbtFH2EqLOhSxk5M3cQhQ",
+        "track_name": "Move Like the Dinosaurs",
+        "artists": "Pinkfong",
+        "reason": "Parfaitement adapté à une activité avec des enfants."
+      },
+      {
+        "track_id": "6O5IJlhJtlgKMoNFzinZgY",
+        "track_name": "Uptown Funk - From \"Alvin And The Chipmunks: The Road Chip\" Soundtrack",
+        "artists": "Alvin & The Chipmunks",
+        "reason": "Un classique revisité pour une session de jeu dynamique."
+      },
+      {
+        "track_id": "26OVhEqFDQH0Ij77QtmGP9",
+        "track_name": "YES or YES",
+        "artists": "TWICE",
+        "reason": "Une énergie pop contagieuse très entraînante."
+      },
+      {
+        "track_id": "3O8G8eVrhfXTGttyQ1xVuq",
+        "track_name": "CASE 143",
+        "artists": "Stray Kids",
+        "reason": "Un rythme soutenu qui maintient l'excitation au plus haut."
+      },
+      {
+        "track_id": "4gdiCHNbwugojBqr5Jt3pq",
+        "track_name": "WA DA DA",
+        "artists": "Kep1er",
+        "reason": "Très dansant, idéal pour se dépenser avec les enfants."
+      },
+      {
+        "track_id": "03UrZgTINDqvnUMbbIMhql",
+        "track_name": "Gangnam Style (강남스타일)",
+        "artists": "PSY",
+        "reason": "Un classique incontournable pour faire bouger toute la pièce."
+      },
+      {
+        "track_id": "2gYj9lubBorOPIVWsTXugG",
+        "track_name": "After LIKE",
+        "artists": "IVE",
+        "reason": "Une positivité rayonnante pour une ambiance joyeuse."
+      },
+      {
+        "track_id": "4pspYVQGFHLPEFgQPD1J7e",
+        "track_name": "WANNABE",
+        "artists": "ITZY",
+        "reason": "Un beat puissant qui motive instantanément."
+      },
+      {
+        "track_id": "52CBUrIdyf8tbZaUY9iawE",
+        "track_name": "After School",
+        "artists": "Weeekly",
+        "reason": "Un rythme ludique et très dynamique."
+      },
+      {
+        "track_id": "7eVu7FI02cTicLEgVtUvwF",
+        "track_name": "ZOO",
+        "artists": "TAEYONG;JENO;HENDERY;YANGYANG;GISELLE",
+        "reason": "Une intensité sonore qui stimule l'activité physique."
+      },
+      {
+        "track_id": "5joNJn9LUvYcamWwa2iYCL",
+        "track_name": "Nonstop",
+        "artists": "OH MY GIRL",
+        "reason": "Très joyeux, parfait pour une session de danse."
+      },
+      {
+        "track_id": "1Rrj7KyS2R6SP9CQMDJW1w",
+        "track_name": "VERY NICE",
+        "artists": "SEVENTEEN",
+        "reason": "Une énergie explosive pour finir en beauté."
+      },
+      {
+        "track_id": "7IkuRNVAjwXpZ2DheQHL4L",
+        "track_name": "FIRE",
+        "artists": "EXID",
+        "reason": "Un tempo rapide qui soutient l'activité."
+      },
+      {
+        "track_id": "0Z99Xe1lGBmq60RwJ5YU18",
+        "track_name": "PING PONG",
+        "artists": "HyunA&DAWN",
+        "reason": "Un morceau très fun avec une énergie débordante."
+      },
+      {
+        "track_id": "4fsQ0K37TOXa3hEQfjEic1",
+        "track_name": "ANTIFRAGILE",
+        "artists": "LE SSERAFIM",
+        "reason": "Très dansant et motivant pour les plus jeunes."
+      },
+      {
+        "track_id": "308Ir17KlNdlrbVLHWhlLe",
+        "track_name": "The Feels",
+        "artists": "TWICE",
+        "reason": "Une mélodie joyeuse qui fait toujours son effet."
+      },
+      {
+        "track_id": "3XZAvh2NCDQYHgJei35VQ1",
+        "track_name": "Up!",
+        "artists": "Kep1er",
+        "reason": "Un final pétillant pour clore la playlist sur une note positive."
+      }
+    ]
+  },
+  "P01": {
+    "model": "gemini-3.1-flash-lite",
+    "latencyMs": 24402,
+    "attempts": 1,
+    "invalidIds": 0,
+    "returned": 25,
+    "playlist_title": "Soleil & Party Vibes",
+    "ai_reasoning": "La sélection a été conçue pour maintenir une énergie haute (moyenne ~0.78) et une positivité maximale, parfaitement alignées avec l'ambiance joyeuse et festive demandée. J'ai privilégié des titres dance, latino et disco aux rythmes entraînants pour garantir une atmosphère de fête continue tout en respectant les contraintes acoustiques basses.",
+    "picks": [
+      {
+        "track_id": "0puqSsCdrsmI3HRlpRF5SB",
+        "track_name": "Celebration",
+        "artists": "Kool & The Gang",
+        "reason": "Un classique indémodable pour lancer la fête avec une énergie joyeuse."
+      },
+      {
+        "track_id": "2grjqo0Frpf2okIBiifQKs",
+        "track_name": "September",
+        "artists": "Earth, Wind & Fire",
+        "reason": "Le titre parfait pour célébrer sous le soleil avec une positivité immense."
+      },
+      {
+        "track_id": "6Uj1ctrBOjOas8xZXGqKk4",
+        "track_name": "Woman",
+        "artists": "Doja Cat",
+        "reason": "Pour maintenir une ambiance dansante et moderne lors de ta fête."
+      },
+      {
+        "track_id": "5nujrmhLynf4yMoMtj8AQF",
+        "track_name": "Levitating (feat. DaBaby)",
+        "artists": "Dua Lipa;DaBaby",
+        "reason": "Un incontournable pour faire monter l'énergie de tes invités."
+      },
+      {
+        "track_id": "39LLxExYz6ewLAcYrzQQyP",
+        "track_name": "Levitating",
+        "artists": "Dua Lipa",
+        "reason": "Le rythme idéal pour garder tout le monde sur la piste."
+      },
+      {
+        "track_id": "6JIC3hbC28JZKZ8AlAqX8h",
+        "track_name": "Cold Heart - PNAU Remix",
+        "artists": "Elton John;Dua Lipa;PNAU",
+        "reason": "Un remix ultra efficace pour une après-midi festive ensoleillée."
+      },
+      {
+        "track_id": "6cx06DFPPHchuUAcTxznu9",
+        "track_name": "Head & Heart (feat. MNEK)",
+        "artists": "Joel Corry;MNEK",
+        "reason": "Une montée en puissance pour booster l'ambiance de ta soirée."
+      },
+      {
+        "track_id": "3SCVtAJq8li6HlKfM4M08u",
+        "track_name": "Gimme the Light",
+        "artists": "Sean Paul",
+        "reason": "Une touche dancehall pour apporter du groove à ta playlist."
+      },
+      {
+        "track_id": "6mICuAdrwEjh6Y6lroV2Kg",
+        "track_name": "Chantaje (feat. Maluma)",
+        "artists": "Shakira;Maluma",
+        "reason": "La chaleur latine parfaite pour une météo ensoleillée."
+      },
+      {
+        "track_id": "5CSEaABQkS1hoLza0IpK2r",
+        "track_name": "Kala Chashma",
+        "artists": "Amar Arshi;Badshah;Neha Kakkar;Indeep Bakshi;Prem & Hardeep",
+        "reason": "Un hit explosif pour dynamiser ta fête avec beaucoup de positivité."
+      },
+      {
+        "track_id": "6q9XTgfWilsnyiFofvYrIF",
+        "track_name": "Garmi (From \"Street Dancer 3D\") (feat. Varun Dhawan)",
+        "artists": "Badshah;Neha Kakkar;Varun Dhawan",
+        "reason": "Le morceau idéal pour maintenir une énergie très élevée."
+      },
+      {
+        "track_id": "1OUPXna2MCgAt3VNmXJBtg",
+        "track_name": "Bola Rebola",
+        "artists": "Tropkillaz;J Balvin;Anitta;ZAAC",
+        "reason": "Un beat électronique irrésistible pour tes moments de danse."
+      },
+      {
+        "track_id": "42lpuSQmnLUM1ZXJVzIVOi",
+        "track_name": "KESI",
+        "artists": "Camilo",
+        "reason": "Pour insuffler une dose de bonheur pur à ton activité."
+      },
+      {
+        "track_id": "35UUpTmrcFXNIVIN26ujXl",
+        "track_name": "Relación - Remix",
+        "artists": "Sech;Daddy Yankee;J Balvin;ROSALÍA;Farruko",
+        "reason": "Un remix latino très dansant pour varier les plaisirs."
+      },
+      {
+        "track_id": "4XqXNU8MwPHwbgZmNXmAdc",
+        "track_name": "Junio",
+        "artists": "Maluma",
+        "reason": "Une ambiance estivale joyeuse qui colle parfaitement au soleil."
+      },
+      {
+        "track_id": "4aUnmZzTqfrETKCmE6zvaw",
+        "track_name": "Ela Já Tá Louca",
+        "artists": "Anderson Neiff;John Johnis",
+        "reason": "De l'énergie brute pour une fête qui ne s'arrête jamais."
+      },
+      {
+        "track_id": "2pUlBBWq8R10ylbBvZJV9j",
+        "track_name": "Bad To Me",
+        "artists": "Wizkid",
+        "reason": "Un rythme moderne qui encourage tout le monde à bouger."
+      },
+      {
+        "track_id": "5y7DaS3jAc9eZzcSOoUIwU",
+        "track_name": "Una Locura",
+        "artists": "Ozuna;J Balvin;Chencho Corleone",
+        "reason": "Une vibe festive et entraînante pour ta playlist."
+      },
+      {
+        "track_id": "3WMbD1OyfKuwWDWMNbPQ4g",
+        "track_name": "Daddy Cool",
+        "artists": "Boney M.",
+        "reason": "Un classique disco qui garantit une ambiance joyeuse."
+      },
+      {
+        "track_id": "6ztstiyZL6FXzh4aG46ZPD",
+        "track_name": "Boogie Wonderland",
+        "artists": "Earth, Wind & Fire;The Emotions",
+        "reason": "Pour faire danser tout le monde avec un sourire aux lèvres."
+      },
+      {
+        "track_id": "5M8e1as5YJkh02XWaM2J5L",
+        "track_name": "Super Freak",
+        "artists": "Rick James",
+        "reason": "Le groove parfait pour une fête sous le ciel dégagé."
+      },
+      {
+        "track_id": "2Foc5Q5nqNiosCNqttzHof",
+        "track_name": "Get Lucky (feat. Pharrell Williams & Nile Rodgers) - Radio Edit",
+        "artists": "Daft Punk;Pharrell Williams;Nile Rodgers",
+        "reason": "Un titre iconique pour maintenir l'énergie à son comble."
+      },
+      {
+        "track_id": "4r9jkMEnArtWGH2rL2FZl0",
+        "track_name": "A Tu Merced",
+        "artists": "Bad Bunny",
+        "reason": "Pour clore la session avec un rythme très dansant."
+      },
+      {
+        "track_id": "4aklsaE3ZpvAae04DhJeuL",
+        "track_name": "Tempted to Touch",
+        "artists": "Rupee",
+        "reason": "Une touche finale de dancehall pour une fête mémorable."
+      },
+      {
+        "track_id": "0rWlFiu0sMqLdtrViUwLT5",
+        "track_name": "Chop My Money - Remix",
+        "artists": "P-Square;Akon;May D",
+        "reason": "Un dernier coup de boost festif pour finir en beauté."
+      }
+    ]
+  },
+  "P16": {
+    "model": "gemini-3.1-flash-lite",
+    "latencyMs": 5552,
+    "attempts": 1,
+    "invalidIds": 0,
+    "returned": 25,
+    "playlist_title": "Jazz & Cuisine : L'accord Parfait",
+    "ai_reasoning": "J'ai sélectionné une majorité de titres jazz (priorité 1) avec une énergie modérée et un caractère acoustique marqué pour créer une atmosphère de fond idéale lors de la préparation d'un repas. La progression suit une courbe de positivité stable, idéale pour cuisiner sereinement.",
+    "picks": [
+      {
+        "track_id": "6egkvLCcA2onpiYgat3cB6",
+        "track_name": "L-O-V-E",
+        "artists": "Nat King Cole",
+        "reason": "Un classique jazz pour commencer la cuisine en douceur."
+      },
+      {
+        "track_id": "1YQWosTIljIvxAgHWTp7KP",
+        "track_name": "Take Five",
+        "artists": "The Dave Brubeck Quartet",
+        "reason": "Le rythme subtil de ce morceau accompagne parfaitement la découpe des légumes."
+      },
+      {
+        "track_id": "3XXlEXSJAA8dX7cWHakn7s",
+        "track_name": "L-O-V-E - Remastered 2004",
+        "artists": "Nat King Cole",
+        "reason": "Une version acoustique idéale pour une ambiance calme en cuisine."
+      },
+      {
+        "track_id": "7zkLpY72g6lKQbiHDqri1S",
+        "track_name": "Sunrise",
+        "artists": "Norah Jones",
+        "reason": "La douceur de Norah Jones pour une cuisine relaxante."
+      },
+      {
+        "track_id": "58Qq7oDXsKfuDlRM00ahoa",
+        "track_name": "A Sunday Kind Of Love",
+        "artists": "Etta James",
+        "reason": "L'acoustique pure de ce titre se marie bien avec le calme de la préparation."
+      },
+      {
+        "track_id": "7uki3SHvd09GpX4Fbq95Ui",
+        "track_name": "Don't Know Why",
+        "artists": "Norah Jones",
+        "reason": "Une mélodie apaisante pour rester concentré sur ses recettes."
+      },
+      {
+        "track_id": "0UsdtLayy7SqJ4rUsDMRk8",
+        "track_name": "Perhaps, Perhaps, Perhaps",
+        "artists": "Doris Day",
+        "reason": "Un tempo jazzy léger pour rythmer la cuisson."
+      },
+      {
+        "track_id": "4Tb3QKmIVOdLYHrN2oQz4h",
+        "track_name": "Something's Gotta Give - Single Version",
+        "artists": "Sammy Davis Jr.",
+        "reason": "Une énergie positive qui rend la cuisine plus joyeuse."
+      },
+      {
+        "track_id": "5vOVMNYDam6F6jtemqnNX2",
+        "track_name": "The Girl From Ipanema",
+        "artists": "Antônio Carlos Jobim;Frank Sinatra",
+        "reason": "Le Bossa Nova jazz pour une touche ensoleillée en cuisinant."
+      },
+      {
+        "track_id": "6yhLR2sVn1IfsScVrR4ocr",
+        "track_name": "Whatever Will Be, Will Be (Que Sera, Sera) (with Frank DeVol & His Orchestra)",
+        "artists": "Doris Day;Frank DeVol & His Orchestra",
+        "reason": "Une positivité rayonnante pour accompagner le dressage des plats."
+      },
+      {
+        "track_id": "5YuuJX4OkMGKuVhENvWxGv",
+        "track_name": "Linus And Lucy",
+        "artists": "Vince Guaraldi Trio",
+        "reason": "Un piano jazz enjoué qui apporte une bonne humeur en cuisine."
+      },
+      {
+        "track_id": "3VV5d66lAtFIusefvr1ssz",
+        "track_name": "Skating",
+        "artists": "Vince Guaraldi Trio",
+        "reason": "Une mélodie légère pour ne pas se laisser distraire par le feu."
+      },
+      {
+        "track_id": "1WP6duNM7NGiZf0QKx2ipb",
+        "track_name": "Don't Cry Baby",
+        "artists": "Living Room",
+        "reason": "Une ambiance feutrée parfaite pour une session cuisine solo."
+      },
+      {
+        "track_id": "0jX6dTvc8U8Nevz7XBYjzR",
+        "track_name": "Coffee Cup",
+        "artists": "Anthony Lazaro",
+        "reason": "Le titre parfait pour accompagner le café en fin de préparation."
+      },
+      {
+        "track_id": "18hPvq4l7aiolR6NenxBz6",
+        "track_name": "Love Letter",
+        "artists": "Anthony Lazaro;Sarah Kang",
+        "reason": "Une douceur jazz pour savourer le moment de préparer son repas."
+      },
+      {
+        "track_id": "3lyLqIn8mybyEFTs8JJaLf",
+        "track_name": "Home",
+        "artists": "Michael Bublé",
+        "reason": "Le côté chaleureux de Michael Bublé pour une cuisine accueillante."
+      },
+      {
+        "track_id": "4nbILrYODP667b3d66ZMzI",
+        "track_name": "Sway (Quien Sera)",
+        "artists": "Dean Martin",
+        "reason": "Un rythme jazz fluide pour garder le tempo en cuisinant."
+      },
+      {
+        "track_id": "4Z6PORkOT1A0ttMvnnYQzS",
+        "track_name": "Ain't That A Kick In The Head",
+        "artists": "Dean Martin",
+        "reason": "Un classique énergique mais doux pour finir la préparation."
+      },
+      {
+        "track_id": "0LCC2jKdlVLYW1A2kzRoRz",
+        "track_name": "I Go To Sleep",
+        "artists": "Peggy Lee",
+        "reason": "Une mélodie apaisante pour une fin de session cuisine décontractée."
+      },
+      {
+        "track_id": "64MgjDp6ijaLvS3T83JHX9",
+        "track_name": "That's Amore - Remastered",
+        "artists": "Dean Martin",
+        "reason": "La simplicité acoustique de Dean Martin pour le plaisir de cuisiner."
+      },
+      {
+        "track_id": "4CM2CpR5UpFoObTmuFOUIj",
+        "track_name": "Favela",
+        "artists": "Antônio Carlos Jobim",
+        "reason": "Un morceau très acoustique qui respecte le calme de l'activité."
+      },
+      {
+        "track_id": "4YBtyQJz3DXZaZjHiFN5Dd",
+        "track_name": "September In The Rain",
+        "artists": "Dinah Washington",
+        "reason": "Une atmosphère jazz mélancolique et belle pour finaliser un plat."
+      },
+      {
+        "track_id": "0oBudl7P9fqep8ghZpA6wH",
+        "track_name": "I've Got My Love to Keep Me Warm (with Antonia Bennett)",
+        "artists": "Tony Bennett;Antonia Bennett",
+        "reason": "Une orchestration douce pour accompagner le dressage."
+      },
+      {
+        "track_id": "30eNMlF5FIm7mlnIgwroHw",
+        "track_name": "Strawberries and Wine - Acoustic",
+        "artists": "Jaylon Ashaun",
+        "reason": "Un titre chill qui complète parfaitement l'ambiance jazz acoustique."
+      },
+      {
+        "track_id": "3gV0E3N4uOcoNsbxLkGWkp",
+        "track_name": "sincerely, yours",
+        "artists": "Nohidea",
+        "reason": "Une touche finale apaisante avant de passer à table."
+      }
+    ]
+  },
+  "P17": {
+    "model": "gemini-3.1-flash-lite",
+    "latencyMs": 3277,
+    "attempts": 1,
+    "invalidIds": 0,
+    "returned": 25,
+    "playlist_title": "Brume et Fourneaux",
+    "ai_reasoning": "La sélection équilibre des sonorités acoustiques et mélancoliques pour refléter l'humeur nostalgique, tout en maintenant un tempo stable idéal pour cuisiner sans précipitation.",
+    "picks": [
+      {
+        "track_id": "3FAJ6O0NOHQV8Mc5Ri6ENp",
+        "track_name": "Heartbreak Anniversary",
+        "artists": "Giveon",
+        "reason": "Une entrée en matière parfaite pour une cuisine nostalgique."
+      },
+      {
+        "track_id": "1k1Bqnv2R0uJXQN4u6LKYt",
+        "track_name": "Ain't No Sunshine",
+        "artists": "Bill Withers",
+        "reason": "Un classique intemporel qui accompagne idéalement la préparation d'un plat."
+      },
+      {
+        "track_id": "3cthRwQ2X0SNTaauD7tjn5",
+        "track_name": "富士山下",
+        "artists": "Eason Chan",
+        "reason": "La mélodie idéale pour une ambiance brumeuse."
+      },
+      {
+        "track_id": "0HKD13PLq2WicViBBhSrOl",
+        "track_name": "Out Of Reach",
+        "artists": "Gabrielle",
+        "reason": "Un rythme soutenu pour rester concentré sur ses fourneaux."
+      },
+      {
+        "track_id": "0BUuuEvNa5T4lMaewyiudB",
+        "track_name": "93 Million Miles",
+        "artists": "Jason Mraz",
+        "reason": "Une énergie acoustique qui réchauffe l'atmosphère."
+      },
+      {
+        "track_id": "2HCaIYjkvWSZzaSKUoOh3d",
+        "track_name": "Mr. Tambourine Man",
+        "artists": "The Byrds",
+        "reason": "Un morceau folk pour une cuisine décontractée."
+      },
+      {
+        "track_id": "7ruWC3ciPppmxlZnjOPhVn",
+        "track_name": "Ek Pyar Ka Naghma Hai - Shor",
+        "artists": "Jagjit Singh;Deepak Pandit;Laxmikant–Pyarelal",
+        "reason": "Une douceur mélancolique pour accompagner le mijotage."
+      },
+      {
+        "track_id": "78XXOxY988wZVJco4HzCji",
+        "track_name": "Dourado Dourado",
+        "artists": "Bala Desejo;Lucas Nunes;Zé Ibarra;Dora Morelenbaum;Julia Mestre",
+        "reason": "Des textures sonores riches pour une session cuisine inspirée."
+      },
+      {
+        "track_id": "0RfzQhbvtn5lOaKdhpAni7",
+        "track_name": "Me & Mr Jones",
+        "artists": "Amy Winehouse",
+        "reason": "Une voix soul pour donner du caractère à votre cuisine."
+      },
+      {
+        "track_id": "0C47mkZ7VGcnKBvEG7PiAP",
+        "track_name": "Abhi Na Jao Chhod Kar",
+        "artists": "Asha Bhosle;Mohammed Rafi",
+        "reason": "Un morceau nostalgique qui se marie bien à l'activité."
+      },
+      {
+        "track_id": "6ZQgooEk8PvsLxedYaT6Oa",
+        "track_name": "Across the Universe",
+        "artists": "Fiona Apple",
+        "reason": "Le piano apporte une touche de sérénité nécessaire."
+      },
+      {
+        "track_id": "1hZJcuz9iMoz6tLkFlIaUy",
+        "track_name": "Take My Breath Away",
+        "artists": "Berlin",
+        "reason": "Une ambiance synth-pop douce pour cuisiner en toute quiétude."
+      },
+      {
+        "track_id": "6ek9SiEj5a65WIs2EV7qiM",
+        "track_name": "Son Of A Preacher Man",
+        "artists": "Dusty Springfield",
+        "reason": "Un classique indémodable pour rythmer les gestes en cuisine."
+      },
+      {
+        "track_id": "4qeHV9T5N3S7KAKryZQp8s",
+        "track_name": "Older",
+        "artists": "Alec Benjamin",
+        "reason": "Une progression moderne qui colle parfaitement à l'énergie visée."
+      },
+      {
+        "track_id": "1JO1xLtVc8mWhIoE3YaCL0",
+        "track_name": "Happy Together",
+        "artists": "The Turtles",
+        "reason": "Un air folk qui apporte une touche de positivité."
+      },
+      {
+        "track_id": "44RW9FEY76mLQCRQUjT0Zt",
+        "track_name": "Change",
+        "artists": "Blind Melon",
+        "reason": "Une touche grunge acoustique pour une nostalgie assumée."
+      },
+      {
+        "track_id": "5Mm2tDgfdyaXhR3WqQykrf",
+        "track_name": "起风了",
+        "artists": "吳青峰",
+        "reason": "La mélodie parfaite pour une fin de journée brumeuse."
+      },
+      {
+        "track_id": "74RjCYWXEq02lyMumMTKDI",
+        "track_name": "How Long Will I Love You",
+        "artists": "Jon Boden;Sam Sweeney;Ben Coleman",
+        "reason": "Un morceau british qui accompagne la préparation du dîner."
+      },
+      {
+        "track_id": "4qsVPnhbvEooD1bSNqvvh0",
+        "track_name": "Let It Be - Remastered 2015",
+        "artists": "The Beatles",
+        "reason": "Un classique des Beatles pour une cuisine en douceur."
+      },
+      {
+        "track_id": "65GbQI9VDTs7vo6MJL2iJA",
+        "track_name": "Coming Home",
+        "artists": "Leon Bridges",
+        "reason": "Le blues parfait pour une atmosphère feutrée."
+      },
+      {
+        "track_id": "7mMzlK2pYVbgkUL1zaGGyV",
+        "track_name": "grateful",
+        "artists": "dhruv",
+        "reason": "Une vibe chill pour terminer la préparation."
+      },
+      {
+        "track_id": "4d2ZJ9W7dkQuITwUCTuD5n",
+        "track_name": "never knew a heart could break itself",
+        "artists": "Zach Hood",
+        "reason": "Une ballade pour les moments de mélancolie en cuisinant."
+      },
+      {
+        "track_id": "6sF70gMVf9jg8QEogyVqBl",
+        "track_name": "Pal Pal Dil Ke Paas - Blackmail / Soundtrack Version",
+        "artists": "Kishore Kumar",
+        "reason": "La nostalgie pure pour accompagner vos plats préférés."
+      },
+      {
+        "track_id": "7KBotkRcWIrSUZvs55WU1S",
+        "track_name": "Divin exil",
+        "artists": "Ben Mazué",
+        "reason": "Une touche française pour parfaire cette session culinaire."
+      },
+      {
+        "track_id": "0905H4LfLonSixp936vTHK",
+        "track_name": "Terrapin Station - Live at Hartford, CT, May 28, 1977",
+        "artists": "Grateful Dead",
+        "reason": "Une épopée instrumentale pour conclure la préparation."
+      }
+    ]
+  },
+  "P18": {
+    "model": "gemini-3.1-flash-lite",
+    "latencyMs": 5948,
+    "attempts": 1,
+    "invalidIds": 0,
+    "returned": 25,
+    "playlist_title": "Refuge Acoustique",
+    "ai_reasoning": "La sélection privilégie des titres acoustiques avec une énergie modérée et une positivité équilibrée, parfaits pour une séance de détente concentrée en intérieur.",
+    "picks": [
+      {
+        "track_id": "6sv7ZmasB6qSiF8hWJNpDG",
+        "track_name": "Still",
+        "artists": "Jeff Bernat",
+        "reason": "Une entrée douce pour se mettre en condition de détente."
+      },
+      {
+        "track_id": "1t1dBP7dnM0uA1HVdcGWm8",
+        "track_name": "Best Thing",
+        "artists": "Janine",
+        "reason": "Le rythme léger soutient une concentration paisible."
+      },
+      {
+        "track_id": "4ZlHqeXbItX1qC86aFUax1",
+        "track_name": "once in a moon",
+        "artists": "Sarah Kang",
+        "reason": "La texture acoustique est idéale pour s'isoler du bruit extérieur."
+      },
+      {
+        "track_id": "4IEGZYUSKkgWMy8vpp1Z7H",
+        "track_name": "end credits",
+        "artists": "Sarah Kang",
+        "reason": "Une mélodie minimaliste pour une relaxation profonde."
+      },
+      {
+        "track_id": "15lpqHrOIzQtIgPdx8ZEuM",
+        "track_name": "Father Forgive Me",
+        "artists": "Shiloh Dynasty;Unclenathannn",
+        "reason": "La simplicité instrumentale favorise la sérénité."
+      },
+      {
+        "track_id": "7jrWVwZkj9YeyTdeSB34oI",
+        "track_name": "Lo-fi Newsletter",
+        "artists": "Twinkz",
+        "reason": "Un morceau instrumental parfait pour rester concentré sans effort."
+      },
+      {
+        "track_id": "3mlMpmY8oZIBFc39D9zLbh",
+        "track_name": "The Long And Winding Road - Remastered 2009",
+        "artists": "The Beatles",
+        "reason": "Un classique intemporel pour une ambiance de lecture ou de repos."
+      },
+      {
+        "track_id": "5RgFlk1fcClZd0Y4SGYhqH",
+        "track_name": "She's Always a Woman",
+        "artists": "Billy Joel",
+        "reason": "Le piano apporte la chaleur nécessaire par temps pluvieux."
+      },
+      {
+        "track_id": "6dsmAUGQAng00srCMvfd8z",
+        "track_name": "As Tears Go By - Mono Version",
+        "artists": "The Rolling Stones",
+        "reason": "Une mélodie nostalgique qui s'accorde avec le calme intérieur."
+      },
+      {
+        "track_id": "5V7mTIcXVU9k2JNu0mE6vy",
+        "track_name": "Fall for You (Acoustic)",
+        "artists": "Secondhand Serenade",
+        "reason": "Le dépouillement acoustique aide à apaiser l'esprit."
+      },
+      {
+        "track_id": "4D4iN6ISkDuDAnILbHskAF",
+        "track_name": "Waipi'o Paeaea",
+        "artists": "Kuana Torres Kahele",
+        "reason": "Des sonorités de guitare pour une évasion mentale douce."
+      },
+      {
+        "track_id": "3N2rQn3AyLfkJGAS4viDAt",
+        "track_name": "Stormy Weather",
+        "artists": "Etta James",
+        "reason": "La profondeur du blues pour accompagner le rythme de la pluie."
+      },
+      {
+        "track_id": "7oONS5KyagKsvkl6oGvGxo",
+        "track_name": "The Wandering Kind (Prelude)",
+        "artists": "Josh Groban",
+        "reason": "Une atmosphère solennelle et calme pour se recentrer."
+      },
+      {
+        "track_id": "0rwES3EzICSovqZsrZpImi",
+        "track_name": "Oração Ao Tempo - Ao Vivo",
+        "artists": "Maria Bethânia",
+        "reason": "La douceur acoustique de la voix pour une détente totale."
+      },
+      {
+        "track_id": "1SWliBgqzayYYnvmxwbouX",
+        "track_name": "Happier Than Ever",
+        "artists": "Billie Eilish",
+        "reason": "Une intensité contenue propice à la réflexion."
+      },
+      {
+        "track_id": "2PN6TyqjtzffLkLhB4dgEC",
+        "track_name": "Jack Sparrow",
+        "artists": "Hans Zimmer",
+        "reason": "Une pièce instrumentale qui invite à la rêverie."
+      },
+      {
+        "track_id": "7cE35BjpKtOIMTqsKGL8z8",
+        "track_name": "I Don't Want to Talk About It",
+        "artists": "Everything But The Girl",
+        "reason": "Une mélodie apaisante pour un moment de pause."
+      },
+      {
+        "track_id": "4RJHyjSrcIGkFYpTkdkq2B",
+        "track_name": "Venus",
+        "artists": "Sleeping At Last",
+        "reason": "Une texture ambiante pour harmoniser votre espace de détente."
+      },
+      {
+        "track_id": "79nJj5dMyTsUzKvN5jUXsJ",
+        "track_name": "I Can't Stop Loving You",
+        "artists": "Ray Charles",
+        "reason": "La chaleur vocale pour un confort immédiat."
+      },
+      {
+        "track_id": "4uDT6Y5C2WrEFbgla3JmYO",
+        "track_name": "Thangum Karangal",
+        "artists": "Kester",
+        "reason": "Une mélodie acoustique pour maintenir un état de calme."
+      },
+      {
+        "track_id": "7JlIR1mle1FsPI6TQMaBPi",
+        "track_name": "Trem-Bala: Especial Mães",
+        "artists": "Ana Vilela",
+        "reason": "La simplicité de ce morceau favorise une relaxation sans distraction."
+      },
+      {
+        "track_id": "15NNe4V26FOiwagrNb4lbS",
+        "track_name": "Once Upon a December (From The \"Anastasia\" Soundtrack)",
+        "artists": "Liz Callaway",
+        "reason": "Une note mélancolique et douce pour clore la session."
+      },
+      {
+        "track_id": "2KX7ZC9JL8BAeFnCrcVRHE",
+        "track_name": "stay4ever (feat. Mounika.)",
+        "artists": "Powfu;Mounika.",
+        "reason": "Le côté épuré aide à prolonger votre moment de sérénité."
+      },
+      {
+        "track_id": "3iVvQHWCLGjfY3iFEwV9lO",
+        "track_name": "Next to you - from Parasyte",
+        "artists": "Ken Arai;NSZX",
+        "reason": "Une ambiance feutrée pour conclure votre temps de concentration."
+      },
+      {
+        "track_id": "2AMZun267ZIcYISHbsAV3y",
+        "track_name": "Det stora röda huset - med Kungliga Filharmonikerna",
+        "artists": "Benjamin Ingrosso;Royal Stockholm Philharmonic Orchestra",
+        "reason": "Un final orchestral tout en douceur."
+      }
+    ]
+  },
+  "P24": {
+    "model": "gemini-3.1-flash-lite",
+    "latencyMs": 4018,
+    "attempts": 1,
+    "invalidIds": 0,
+    "returned": 25,
+    "playlist_title": "Brume Urbaine",
+    "ai_reasoning": "Pour correspondre à une humeur sombre et une activité de détente par temps brumeux, j'ai sélectionné des morceaux à faible énergie et forte composante acoustique. Le choix privilégie une atmosphère intimiste et introspective, avec une progression lente et fluide.",
+    "picks": [
+      {
+        "track_id": "1v1oIWf2Xgh54kIWuKsDf6",
+        "track_name": "Runaway",
+        "artists": "AURORA",
+        "reason": "Une intro éthérée parfaite pour une ambiance sombre et calme."
+      },
+      {
+        "track_id": "3qpq58IwLwMtsZ667ch7BP",
+        "track_name": "someone who'll care",
+        "artists": "luca.;Walmoods",
+        "reason": "La douceur acoustique idéale pour se détendre."
+      },
+      {
+        "track_id": "41zXlQxzTi6cGAjpOXyLYH",
+        "track_name": "idontwannabeyouanymore",
+        "artists": "Billie Eilish",
+        "reason": "La mélancolie brute correspond à votre humeur actuelle."
+      },
+      {
+        "track_id": "4b3khTm3ufGRTyZwuYdasn",
+        "track_name": "Don't Let Me Go",
+        "artists": "Cigarettes After Sex",
+        "reason": "Une atmosphère ambiante pour se perdre dans ses pensées."
+      },
+      {
+        "track_id": "34dnNAUoIPcwnK0RtVMBWZ",
+        "track_name": "The Scientist",
+        "artists": "Tyler Ward;Lindsey Stirling;Kina Grannis",
+        "reason": "Une reprise acoustique apaisante pour une fin d'après-midi grise."
+      },
+      {
+        "track_id": "6cxe7wIuwH7ul9XI7D853w",
+        "track_name": "No Problem",
+        "artists": "Dvwn",
+        "reason": "Un rythme lent qui favorise la relaxation profonde."
+      },
+      {
+        "track_id": "5CZ40GBx1sQ9agT82CLQCT",
+        "track_name": "traitor",
+        "artists": "Olivia Rodrigo",
+        "reason": "La fragilité de ce titre complète votre besoin de calme."
+      },
+      {
+        "track_id": "0gplL1WMoJ6iYaPgMCL0gX",
+        "track_name": "Easy On Me",
+        "artists": "Adele",
+        "reason": "Une émotion posée qui s'accorde avec le temps brumeux."
+      },
+      {
+        "track_id": "0DuWDLjriRPjDRoPgaCslY",
+        "track_name": "Love In The Dark",
+        "artists": "Adele",
+        "reason": "La profondeur vocale idéale pour une détente solitaire."
+      },
+      {
+        "track_id": "798zLqTKxt9IzOjl3oF3KL",
+        "track_name": "Introvert",
+        "artists": "Tenno",
+        "reason": "Un morceau instrumental qui souligne le silence de la ville."
+      },
+      {
+        "track_id": "0AjcdGri5vhJsmZnduCEqd",
+        "track_name": "October Passed Me By",
+        "artists": "girl in red",
+        "reason": "Une mélodie nostalgique pour accompagner votre introspection."
+      },
+      {
+        "track_id": "4vBoopG4WzohMju1GUmwoi",
+        "track_name": "失落沙洲",
+        "artists": "LaLa Hsu",
+        "reason": "Une touche de langue étrangère pour une ambiance plus feutrée."
+      },
+      {
+        "track_id": "6PypGyiu0Y2lCDBN1XZEnP",
+        "track_name": "Everybody Hurts",
+        "artists": "R.E.M.",
+        "reason": "Un classique mélancolique qui résonne avec votre humeur."
+      },
+      {
+        "track_id": "5p0s4na5wJHnaNw9azmiQm",
+        "track_name": "Black Hole Sun - Recorded Live At Red Robinson Show Theatre, Vancouver, Canada on April 30, 2011",
+        "artists": "Chris Cornell",
+        "reason": "Une version acoustique live pour une authenticité brute."
+      },
+      {
+        "track_id": "2g3JAKjKruTL40VffoGLmg",
+        "track_name": "Blue Sunday",
+        "artists": "The Doors",
+        "reason": "Le côté psychédélique calme aide à s'évader."
+      },
+      {
+        "track_id": "35CoDqsVF0P2w8Lgir7wrs",
+        "track_name": "My All",
+        "artists": "Larissa Lambert",
+        "reason": "Une texture sonore douce pour apaiser l'esprit."
+      },
+      {
+        "track_id": "133kp8Z4SADHKea8OYyzgt",
+        "track_name": "Alone",
+        "artists": "JUNNY",
+        "reason": "La solitude évoquée ici s'aligne avec votre humeur."
+      },
+      {
+        "track_id": "6FmpBDrbKW6T0spUMFTgDC",
+        "track_name": "Roses Are Red (Violets Are Blue)",
+        "artists": "Jon Caryl",
+        "reason": "Un morceau triste mais apaisant pour votre moment détente."
+      },
+      {
+        "track_id": "0tUELgOuOJ3KCsYMDDsNvD",
+        "track_name": "Nothing Compares 2 U - Live At SiriusXM/2015",
+        "artists": "Chris Cornell",
+        "reason": "La puissance émotionnelle de ce live est très immersive."
+      },
+      {
+        "track_id": "59ew3BDqan1LlwZOuKA4TJ",
+        "track_name": "Stand By Me",
+        "artists": "Skylar Grey",
+        "reason": "La simplicité du piano pour un repos total."
+      },
+      {
+        "track_id": "6vzEUwK4CbcDMDvmJ09WsY",
+        "track_name": "De Volta Pro Aconchego",
+        "artists": "Elba Ramalho",
+        "reason": "Une sonorité acoustique douce qui invite au repos."
+      },
+      {
+        "track_id": "4WzQEkUYTBzo0DRnJfYPls",
+        "track_name": "We'll Make It Through",
+        "artists": "Ray LaMontagne",
+        "reason": "Un message de réconfort pour une fin de playlist sereine."
+      },
+      {
+        "track_id": "1Ytgo9ipdlTsf6wlg6sXf3",
+        "track_name": "在這座城市遺失了你 (戲劇《他們創業的那些鳥事》插曲)",
+        "artists": "告五人",
+        "reason": "L'ambiance urbaine de ce titre est parfaite pour Paris."
+      },
+      {
+        "track_id": "7wM4KQklV780wgvQZtL9QT",
+        "track_name": "Chistye pond",
+        "artists": "Igor Talkov",
+        "reason": "Une mélodie rêveuse pour clore ce moment de détente."
+      },
+      {
+        "track_id": "5ivF4eQBqJiVL5IAE9jRyl",
+        "track_name": "I Won't Give Up",
+        "artists": "Jason Mraz",
+        "reason": "Un dernier souffle acoustique pour revenir au calme."
+      }
+    ]
+  }
+}

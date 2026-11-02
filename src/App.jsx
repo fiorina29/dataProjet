@@ -11,10 +11,8 @@ import { TracksDataTable } from './components/TracksDataTable';
 import { RegistrationModal } from './components/RegistrationModal';
 import { LoginModal } from './components/LoginModal';
 import { GeminiAiTestModal } from './components/GeminiAiTestModal';
-import { rankTracksFromDataset } from './services/recommendationEngine';
-import { fetchAiStatus, fetchAiPlaylistPrediction } from './services/geminiService';
+import { fetchAiStatus, fetchAiPlaylistPrediction, fetchLocalPlaylist } from './services/geminiService';
 import { googleSignIn } from './services/authService';
-import { KAGGLE_SPOTIFY_TRACKS } from './data/kaggleSampleDataset';
 
 export default function App() {
   // Navigation
@@ -171,39 +169,41 @@ export default function App() {
     setHasGeneratedPlaylist(false);
     setRankedTracks([]);
 
+    const payload = {
+      utilisateur: {
+        age: userProfile?.age || 22,
+        genre_musical_prefere: userProfile?.genre_musical_prefere || 'Pas de préférence',
+        artiste_prefere: userProfile?.artiste_prefere,
+        ville: userProfile?.ville || weatherState.ville,
+      },
+      contexte: {
+        humeur: selectedMood,
+        contexte_activite: selectedContext,
+        meteo: weatherState.conditionId,
+      },
+      temperature: weatherState.temperature,
+      weatherDescription: weatherState.description,
+    };
+
     try {
-      const result = await fetchAiPlaylistPrediction({
-        utilisateur: {
-          age: userProfile?.age || 22,
-          genre_musical_prefere: userProfile?.genre_musical_prefere || 'Pas de préférence',
-          artiste_prefere: userProfile?.artiste_prefere,
-          ville: userProfile?.ville || weatherState.ville,
-        },
-        contexte: {
-          humeur: selectedMood,
-          contexte_activite: selectedContext,
-          meteo: weatherState.conditionId,
-        },
-        temperature: weatherState.temperature,
-        weatherDescription: weatherState.description,
-      });
-      const tracks = rankTracksFromDataset(
-        result.spotify_audio_features_targets,
-        result.genres_recommandes,
-        userProfile?.artiste_prefere,
-        userProfile?.genre_musical_prefere,
-        selectedContext,
-        selectedMood,
-        KAGGLE_SPOTIFY_TRACKS,
-        result.curated_tracks
-      );
+      let result;
+      try {
+        result = await fetchAiPlaylistPrediction(payload);
+      } catch (aiErr) {
+        // Secours : moteur local (similarité audio sans IA) si Gemini est indisponible
+        console.warn('Gemini indisponible, moteur local utilisé :', aiErr);
+        result = await fetchLocalPlaylist(payload);
+        if (requestId === generationRequestId.current) {
+          setGenerationError(`Gemini indisponible (${aiErr.message}). Playlist générée par le moteur local, sans IA.`);
+        }
+      }
       if (requestId !== generationRequestId.current) return;
-      setRankedTracks(tracks);
+      setRankedTracks(result.tracks);
       setHasGeneratedPlaylist(true);
     } catch (err) {
       if (requestId !== generationRequestId.current) return;
-      console.error('Gemini AI playlist generation failed:', err);
-      setGenerationError(err.message || "Impossible d'obtenir une playlist valide de l'IA.");
+      console.error('Playlist generation failed:', err);
+      setGenerationError(err.message || "Impossible d'obtenir une playlist valide.");
     } finally {
       if (requestId === generationRequestId.current) {
         setIsGenerating(false);

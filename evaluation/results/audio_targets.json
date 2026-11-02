@@ -1,0 +1,182 @@
+{
+  "humeurs": [
+    {
+      "id": "joyeux",
+      "label": "Joyeux / Solaire",
+      "target_valence": 0.85,
+      "target_energy": 0.72,
+      "target_danceability": 0.75,
+      "target_acousticness": 0.15
+    },
+    {
+      "id": "triste",
+      "label": "Mélancolique / Triste",
+      "target_valence": 0.2,
+      "target_energy": 0.3,
+      "target_danceability": 0.35,
+      "target_acousticness": 0.7
+    },
+    {
+      "id": "energetique",
+      "label": "Survolté / Énergie",
+      "target_valence": 0.75,
+      "target_energy": 0.9,
+      "target_danceability": 0.75,
+      "target_acousticness": 0.07
+    },
+    {
+      "id": "chill",
+      "label": "Paisible / Chill",
+      "target_valence": 0.55,
+      "target_energy": 0.35,
+      "target_danceability": 0.5,
+      "target_acousticness": 0.6
+    },
+    {
+      "id": "nostalgique",
+      "label": "Nostalgique / Rétro",
+      "target_valence": 0.45,
+      "target_energy": 0.45,
+      "target_danceability": 0.5,
+      "target_acousticness": 0.5
+    },
+    {
+      "id": "concentre",
+      "label": "Hyper-concentré",
+      "target_valence": 0.45,
+      "target_energy": 0.35,
+      "target_danceability": 0.35,
+      "target_acousticness": 0.65
+    },
+    {
+      "id": "stresse",
+      "label": "Besoin de déstresser",
+      "target_valence": 0.5,
+      "target_energy": 0.28,
+      "target_danceability": 0.4,
+      "target_acousticness": 0.7
+    },
+    {
+      "id": "amoureux",
+      "label": "Amoureux / Romantique",
+      "target_valence": 0.65,
+      "target_energy": 0.45,
+      "target_danceability": 0.6,
+      "target_acousticness": 0.45
+    },
+    {
+      "id": "colere",
+      "label": "Défouloir / Énervé",
+      "target_valence": 0.3,
+      "target_energy": 0.95,
+      "target_danceability": 0.55,
+      "target_acousticness": 0.03
+    },
+    {
+      "id": "reveur",
+      "label": "Rêveur / Flottant",
+      "target_valence": 0.5,
+      "target_energy": 0.35,
+      "target_danceability": 0.4,
+      "target_acousticness": 0.6
+    },
+    {
+      "id": "motivant",
+      "label": "Conquérant / Motivation",
+      "target_valence": 0.75,
+      "target_energy": 0.9,
+      "target_danceability": 0.75,
+      "target_acousticness": 0.07
+    },
+    {
+      "id": "sombre",
+      "label": "Nocturne / Sombre",
+      "target_valence": 0.22,
+      "target_energy": 0.5,
+      "target_danceability": 0.45,
+      "target_acousticness": 0.3
+    }
+  ],
+  "activites": [
+    {
+      "id": "voiture",
+      "label": "En voiture / Road Trip",
+      "target_valence": 0.55,
+      "target_energy": 0.65,
+      "target_danceability": 0.55,
+      "target_acousticness": 0.4
+    },
+    {
+      "id": "fete",
+      "label": "Fête / Soirée",
+      "target_valence": 0.75,
+      "target_energy": 0.78,
+      "target_danceability": 0.78,
+      "target_acousticness": 0.15
+    },
+    {
+      "id": "enfant",
+      "label": "Avec enfants / Famille",
+      "target_valence": 0.7,
+      "target_energy": 0.55,
+      "target_danceability": 0.55,
+      "target_acousticness": 0.4
+    },
+    {
+      "id": "sport",
+      "label": "Sport / Workout",
+      "target_valence": 0.55,
+      "target_energy": 0.85,
+      "target_danceability": 0.68,
+      "target_acousticness": 0.12
+    },
+    {
+      "id": "travail",
+      "label": "Travail / Études",
+      "target_valence": 0.55,
+      "target_energy": 0.45,
+      "target_danceability": 0.5,
+      "target_acousticness": 0.5
+    },
+    {
+      "id": "detente",
+      "label": "Détente / Cocon",
+      "target_valence": 0.55,
+      "target_energy": 0.35,
+      "target_danceability": 0.55,
+      "target_acousticness": 0.6
+    },
+    {
+      "id": "cuisine",
+      "label": "Cuisine / Repas",
+      "target_valence": 0.6,
+      "target_energy": 0.55,
+      "target_danceability": 0.55,
+      "target_acousticness": 0.4
+    },
+    {
+      "id": "sommeil",
+      "label": "Avant de dormir",
+      "target_valence": 0.5,
+      "target_energy": 0.2,
+      "target_danceability": 0.35,
+      "target_acousticness": 0.75
+    },
+    {
+      "id": "marche",
+      "label": "Balade / Plein air",
+      "target_valence": 0.55,
+      "target_energy": 0.6,
+      "target_danceability": 0.55,
+      "target_acousticness": 0.4
+    },
+    {
+      "id": "romantique",
+      "label": "Dîner romantique",
+      "target_valence": 0.55,
+      "target_energy": 0.5,
+      "target_danceability": 0.55,
+      "target_acousticness": 0.45
+    }
+  ]
+}

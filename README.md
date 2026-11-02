@@ -5,7 +5,8 @@ Application web académique et full-stack combinant :
 - **Humeur du moment** (12 émotions : Joyeux, Énergétique, Nostalgique, etc.) & **Contexte d'activité** (voiture, fête, enfants, sport, etc.)
 - **Météo en direct** par géolocalisation de l'appareil (GPS / Open-Meteo)
 - **Moteur d'IA Google Gemini (Google AI Studio)** pour le raisonnement musicologique, l'inférence des attributs audio Spotify (valence, énergie, dansabilité, acoustique) et la curation des titres
-- **Dataset Kaggle [Almost Million Songs Dataset 2025 (16 Features)](https://www.kaggle.com/datasets/anantsinghal786/almost-million-songs-dataset-2025-16-features)** par Anant Singhal, respectant à 100% les 16 caractéristiques acoustiques Spotify
+- **Dataset Kaggle [Spotify Tracks Dataset](https://www.kaggle.com/datasets/maharshipandya/-spotify-tracks-dataset)** (maharshipandya) : 114 000 titres, 114 genres, caractéristiques audio Spotify (valence, énergie, dansabilité, acoustique, tempo…) — fichier `data/dataset.csv`
+- **Module d'évaluation** (`evaluation/`) : comparaison chiffrée avec deux systèmes de référence et figures
 - **Règle stricte** : Génération de 20 titres minimum par playlist en un clic
 - **Export direct** vers Spotify Web & YouTube Music
 
@@ -98,6 +99,8 @@ Ouvrez votre navigateur web et rendez-vous sur :
 | `npm run start` | Lance le serveur Express en mode production avec `tsx server.jsx` |
 | `npm run lint` | Analyse les sources JSX sans générer de fichiers (`tsc --noEmit`) |
 | `npm run clean` | Supprime le dossier de build `dist/` |
+| `npm run evaluate` | Évalue les 5 systèmes sur 24 profils (`-- --no-gemini` pour sans IA) |
+| `python evaluation/analyze.py` | Tableaux et figures de l'évaluation |
 
 ---
 
@@ -108,11 +111,71 @@ Ouvrez votre navigateur web et rendez-vous sur :
 ├── index.html                # Point d'entrée HTML
 ├── package.json              # Dépendances et scripts de build
 ├── server.jsx                # Serveur Backend Express avec SDK @google/genai
+├── data/dataset.csv          # Spotify Tracks Dataset (Kaggle, 114 000 lignes)
+├── evaluation/               # Évaluation hors ligne (profils, métriques, tests, figures)
 ├── src/
 │   ├── App.jsx               # Composant racine orchestrant l'état et l'affichage
 │   ├── components/           # Composants UI React (Sélecteur météo, Table unique de morceaux, Modales)
-│   ├── data/                 # Dataset Kaggle (plus de 130 titres avec 20 caractéristiques audio)
-│   ├── services/             # Appels API (Gemini, Open-Meteo, Moteur de ranking)
+│   ├── data/
+│   │   ├── datasetLoader.js  # Lecture + nettoyage de data/dataset.csv (serveur)
+│   │   ├── moodwaveRules.js  # Humeur/activité/météo -> cibles audio, familles de genres, règles d'activité
+│   │   ├── recommender.js    # Classement final (distance audio + préférences + choix de l'IA)
+│   │   └── uiOptions.js      # Humeurs, activités, météos affichées dans l'interface
+│   ├── server/
+│   │   └── playlistPipeline.js # Pipeline complet : candidats -> Gemini -> validation -> classement
+│   ├── services/             # Appels API côté navigateur (Gemini, catalogue, Open-Meteo, YouTube)
 │   └── main.jsx              # Point d'entrée React
 └── vite.config.jsx           # Configuration Vite & Tailwind CSS v4
 ```
+
+---
+
+## 📊 Dataset
+
+| | |
+|---|---|
+| Source | [Spotify Tracks Dataset — Kaggle (maharshipandya)](https://www.kaggle.com/datasets/maharshipandya/-spotify-tracks-dataset) |
+| Fichier | `data/dataset.csv` (20 Mo) |
+| Taille brute | 114 000 lignes × 21 colonnes, 114 genres (1 000 titres par genre) |
+| Nettoyage | 1 ligne incomplète et 157 lignes invalides (tempo ou durée nuls) supprimées → 113 842 lignes |
+| Doublons | un même titre est listé sous plusieurs genres → regroupés en **81 021 titres uniques** (champ `all_genres`) |
+| Variables utilisées | `valence`, `energy`, `danceability`, `acousticness`, `tempo`, `loudness`, `explicit`, `popularity`, `track_genre`, `artists` |
+
+Le CSV est lu une seule fois au démarrage du serveur (≈ 2 s). Le navigateur ne reçoit que la liste des genres et des 3 000 artistes les plus populaires (`/api/catalog/meta`) et les playlists générées.
+
+## 🧠 Pipeline de recommandation
+
+1. **Cibles audio** (`computeAudioTargets`) : l'humeur fixe un vecteur (valence, énergie, dansabilité, acoustique), l'activité le contraint (ex. fête : énergie ≥ 0,78) et la météo l'ajuste (pluie : valence −0,07).
+2. **Pré-sélection** (`buildCandidatePool`) : ~150 candidats parmi 81 000 — titres de l'artiste favori, du genre favori, des genres voisins, puis les plus proches de l'ambiance (distance euclidienne pondérée + a priori de popularité).
+3. **Gemini** : choisit 25 identifiants parmi les candidats, les ordonne et justifie chaque choix (sortie JSON contrainte par un schéma). Le serveur rejette tout identifiant inventé et relance si moins de 20 sont valides : le LLM ne peut pas halluciner de titres.
+4. **Classement final** (`rankTracksFromDataset`) : règles strictes par activité (pas de titre explicite avec des enfants, pas de titre calme au sport…), pénalités hors genre favori, bonus artiste favori (8 titres max.), choix de Gemini en tête, suppression des versions en double.
+
+Sans clé Gemini ou si l'API échoue, l'interface bascule automatiquement sur le **moteur local** (étapes 1, 2 et 4).
+
+## 📈 Évaluation
+
+```bash
+npm run evaluate                  # 5 systèmes, nécessite GEMINI_API_KEY (réponses mises en cache)
+npm run evaluate -- --no-gemini   # systèmes sans IA uniquement
+pip install -r evaluation/requirements.txt
+python evaluation/analyze.py      # -> evaluation/results/summary.md + evaluation/figures/*.png
+```
+
+**Protocole** : 24 profils de test (`evaluation/profiles.js`) couvrant les 12 humeurs, les 10 activités, 6 météos, 12 genres et 8 artistes favoris. Chaque système produit une playlist de 20 titres.
+
+| Système | Description |
+|---|---|
+| Aléatoire | 20 titres tirés au hasard (référence basse) |
+| Popularité (genre) | les 20 titres les plus populaires du genre favori, sans tenir compte du contexte |
+| MoodWave local | pipeline sans IA |
+| Gemini (brut) | les 20 premiers choix de Gemini |
+| MoodWave + Gemini | pipeline complet, tel que vu par l'utilisateur |
+
+**Métriques** : distance moyenne au vecteur cible, écart par caractéristique, précision du genre favori, titres de l'artiste favori, diversité des artistes, taux de violation des règles d'activité, popularité, identifiants invalides renvoyés par Gemini, latence.
+
+Les résultats et figures fournis dans `evaluation/` ont été produits **sans Gemini** ; relancez `npm run evaluate` avec votre clé pour ajouter les deux colonnes Gemini.
+
+## 👥 Auteurs
+
+- _Prénom Nom_ — _rôle_ — _email_
+- _Prénom Nom_ — _rôle_ — _email_

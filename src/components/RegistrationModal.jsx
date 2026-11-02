@@ -9,7 +9,7 @@ import {
   UserCheck,
   AlertCircle,
 } from 'lucide-react';
-import { KAGGLE_ARTISTS, KAGGLE_GENRES } from '../data/kaggleSampleDataset';
+import { useCatalogMeta } from '../services/catalogService';
 
 export const RegistrationModal = ({
   isOpen,
@@ -18,6 +18,7 @@ export const RegistrationModal = ({
   onSaveProfile,
   isInitialSignUp = false,
 }) => {
+  const { genres: KAGGLE_GENRES, artists: KAGGLE_ARTISTS } = useCatalogMeta();
   const [nom, setNom] = useState(initialProfile?.nom || 'Dupont');
   const [prenom, setPrenom] = useState(initialProfile?.prenom || 'Alexandre');
   const [email, setEmail] = useState(initialProfile?.email || 'alexandre.dupont@email.com');
@@ -47,7 +48,7 @@ export const RegistrationModal = ({
     );
     setArtistePref(initialProfile?.artiste_prefere || 'Daft Punk');
     setError('');
-  }, [isOpen, initialProfile]);
+  }, [isOpen, initialProfile, KAGGLE_GENRES]);
 
   if (!isOpen) return null;
 
