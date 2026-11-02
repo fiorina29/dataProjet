@@ -8,24 +8,16 @@ import { Sparkles } from 'lucide-react';
 import { TopBar } from './components/TopBar';
 import { MoodAndWeatherSelector } from './components/MoodAndWeatherSelector';
 import { TracksDataTable } from './components/TracksDataTable';
-import { MyAccountPage } from './components/MyAccountPage';
 import { RegistrationModal } from './components/RegistrationModal';
 import { LoginModal } from './components/LoginModal';
 import { GeminiAiTestModal } from './components/GeminiAiTestModal';
-import {
-  rankTracksFromDataset,
-} from './services/recommendationEngine';
+import { rankTracksFromDataset } from './services/recommendationEngine';
 import { fetchAiStatus, fetchAiPlaylistPrediction } from './services/geminiService';
-import {
-  initAuth,
-  googleSignIn,
-  logout as googleLogout,
-  verifyYouTubeAccount,
-} from './services/authService';
+import { googleSignIn } from './services/authService';
 import { KAGGLE_SPOTIFY_TRACKS } from './data/kaggleSampleDataset';
 
 export default function App() {
-  // Navigation: 'generator' | 'account'
+  // Navigation
   const [activeTab, setActiveTab] = useState('generator');
 
   // User Profile
@@ -72,14 +64,6 @@ export default function App() {
     lastUpdated: new Date(),
   });
 
-  // YouTube account status
-  const [authStatus, setAuthStatus] = useState({
-    youtube: {
-      isConnected: false,
-      displayName: 'Non connecté',
-    },
-  });
-
   // AI Engine State
   const [aiStatus, setAiStatus] = useState({
     status: 'checking',
@@ -103,37 +87,6 @@ export default function App() {
   useEffect(() => {
     loadAiStatus();
   }, [loadAiStatus]);
-
-  // Handle Firebase Auth Listener on Mount
-  useEffect(() => {
-    const unsubscribe = initAuth(
-      async (user, token) => {
-        if (token) {
-          const account = await verifyYouTubeAccount(token, user);
-          setAuthStatus((prev) => ({
-            ...prev,
-            youtube: {
-              isConnected: Boolean(account.isConnected),
-              displayName: user.displayName || user.email || 'YouTube Connecté',
-            },
-          }));
-        }
-      },
-      () => {
-        setAuthStatus((prev) => ({
-          ...prev,
-          youtube: {
-            isConnected: false,
-            displayName: 'Non connecté',
-          },
-        }));
-      }
-    );
-
-    return () => {
-      if (typeof unsubscribe === 'function') unsubscribe();
-    };
-  }, []);
 
   // Google Sign-In with YouTube scope handler
   const handleGoogleSignIn = useCallback(async () => {
@@ -162,50 +115,14 @@ export default function App() {
       setUserProfile(updatedProfile);
       localStorage.setItem('moodwave_user_profile_v2', JSON.stringify(updatedProfile));
 
-      setAuthStatus((prev) => ({
-        ...prev,
-        youtube: {
-          isConnected: Boolean(account?.isConnected),
-          displayName: displayName || user.email || 'YouTube',
-        },
-      }));
-
       return authData;
     }
   }, [userProfile]);
-
-  // Toggle YouTube Connection
-  const handleToggleYoutube = useCallback(async () => {
-    if (authStatus.youtube.isConnected) {
-      await googleLogout();
-      setAuthStatus((prev) => ({
-        ...prev,
-        youtube: {
-          isConnected: false,
-          displayName: 'Non connecté',
-        },
-      }));
-    } else {
-      await handleGoogleSignIn();
-    }
-  }, [authStatus.youtube.isConnected, handleGoogleSignIn]);
 
   // Save profile handler
   const handleSaveProfile = (profile) => {
     setUserProfile(profile);
     localStorage.setItem('moodwave_user_profile_v2', JSON.stringify(profile));
-    setActiveTab('generator');
-  };
-
-  const handleLogout = async () => {
-    await googleLogout();
-    setUserProfile(null);
-    setYoutubeAccountInfo(null);
-    setAuthStatus((prev) => ({
-      ...prev,
-      youtube: { isConnected: false, displayName: 'Non connecté' },
-    }));
-    localStorage.removeItem('moodwave_user_profile_v2');
     setActiveTab('generator');
   };
 
@@ -299,11 +216,9 @@ export default function App() {
       {/* 1. Header Navigation */}
       <TopBar
         profile={userProfile}
-        activeTab={activeTab}
         onSelectTab={setActiveTab}
         onOpenSignUp={() => setIsSignUpModalOpen(true)}
         onOpenLogin={() => setIsLoginModalOpen(true)}
-        onLogout={handleLogout}
       />
 
       {/* 2. Main Page Content */}
@@ -408,20 +323,6 @@ export default function App() {
                 />
               </>
             )}
-          </div>
-        )}
-
-        {/* Account View */}
-        {activeTab === 'account' && userProfile && (
-          <div className="animate-in fade-in duration-200">
-            <MyAccountPage
-              profile={userProfile}
-              authStatus={authStatus}
-              onEditProfile={() => setIsSignUpModalOpen(true)}
-              onToggleYoutube={handleToggleYoutube}
-              onGoogleSignIn={handleGoogleSignIn}
-              onGoToGenerator={() => setActiveTab('generator')}
-            />
           </div>
         )}
       </main>

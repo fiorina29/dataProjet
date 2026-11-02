@@ -142,7 +142,7 @@ export const MoodAndWeatherSelector = ({
               <span>Générateur en direct</span>
             </div>
             <h2 className="text-2xl font-black tracking-tight">
-              Bonjour {profile.prenom || profile.nom} !
+              Bonjour !
             </h2>
             <p className="text-xs text-white/90 mt-1 max-w-xl">
               Choisissez votre humeur et votre moment actuel. La musique s'ajuste instantanément
@@ -411,15 +411,6 @@ export const MoodAndWeatherSelector = ({
             <span className="px-2 py-0.5 rounded-full bg-emerald-50 text-emerald-700 font-bold border border-emerald-200">
               20 titres min.
             </span>
-            {onOpenAiTest && (
-              <button
-                type="button"
-                onClick={onOpenAiTest}
-                className="text-violet-600 underline hover:text-violet-800 font-bold ml-1"
-              >
-                Tester l'API
-              </button>
-            )}
           </div>
         </div>
 

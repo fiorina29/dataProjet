@@ -349,7 +349,7 @@ async function startServer() {
     if (port !== PORT) {
       console.warn(`Port ${PORT} is already in use; using ${port} instead.`);
     }
-    console.log(`MoodWave Server running at http://0.0.0.0:${port} (Gemini AI active - Strict Mode)`);
+    console.log(`MoodWave Server running at http://localhost:${port} (Gemini AI active - Strict Mode)`);
   });
 }
 startServer().catch((err) => {

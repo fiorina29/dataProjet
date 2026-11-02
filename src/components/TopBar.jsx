@@ -1,13 +1,11 @@
 import React from 'react';
-import { Music, User, UserPlus } from 'lucide-react';
+import { Music, UserPlus } from 'lucide-react';
 
 export const TopBar = ({
   profile,
-  activeTab,
   onSelectTab,
   onOpenSignUp,
   onOpenLogin,
-  onLogout,
 }) => {
   return (
     <header className="sticky top-0 z-30 flex items-center justify-between gap-8 border-b border-slate-200/80 bg-white/85 px-6 py-3.5 backdrop-blur-md shadow-xs">
@@ -26,51 +24,9 @@ export const TopBar = ({
         </button>
       </div>
 
-      {/* Zone 2: Navigation Links */}
-      <nav className="flex items-center gap-6 text-sm font-semibold text-slate-600">
-        <button
-          onClick={() => onSelectTab('generator')}
-          className={`whitespace-nowrap transition-colors ${
-            activeTab === 'generator'
-              ? 'text-violet-600 font-bold'
-              : 'hover:text-slate-900'
-          }`}
-        >
-          Générateur
-        </button>
-        {profile && (
-          <button
-            onClick={() => onSelectTab('account')}
-            className={`whitespace-nowrap transition-colors ${
-              activeTab === 'account'
-                ? 'text-violet-600 font-bold'
-                : 'hover:text-slate-900'
-            }`}
-          >
-            Mon Compte
-          </button>
-        )}
-      </nav>
-
-      {/* Zone 3: Auth Buttons */}
+      {/* Zone 2: Auth Buttons */}
       <div className="flex items-center gap-2.5 shrink-0">
-        {profile ? (
-          <div className="flex items-center gap-2">
-            <button
-              onClick={() => onSelectTab('account')}
-              className="flex items-center gap-2 rounded-xl bg-slate-100 hover:bg-slate-200/80 px-3 py-1.5 text-xs font-bold text-slate-800 transition-colors"
-            >
-              <User className="h-3.5 w-3.5 text-violet-600" />
-              <span>{profile.prenom || profile.nom}</span>
-            </button>
-            <button
-              onClick={onLogout}
-              className="text-xs text-slate-400 hover:text-slate-700 font-medium px-2 py-1 transition-colors"
-            >
-              Déconnexion
-            </button>
-          </div>
-        ) : (
+        {!profile && (
           <div className="flex items-center gap-2">
             <button
               onClick={onOpenLogin}
