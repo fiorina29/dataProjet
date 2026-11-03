@@ -403,7 +403,7 @@ export const MoodAndWeatherSelector = ({
           <div className="flex items-center gap-2 justify-center sm:justify-start text-[11px] text-slate-600">
             <span className="flex items-center gap-1 font-semibold text-violet-700">
               <Sparkles className="h-3 w-3 text-violet-500" />
-              Moteur : {isAiMode ? 'Google AI Studio (Gemini 3.8 Flash)' : 'Algorithme Local'}
+              Moteur : {isAiMode ? 'Gemini 3.1 Flash-Lite' : 'Algorithme Local'}
             </span>
             <span className="px-2 py-0.5 rounded-full bg-emerald-50 text-emerald-700 font-bold border border-emerald-200">
               20 titres min.

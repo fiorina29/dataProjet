@@ -19,7 +19,7 @@ Le moteur combine :
 
 | Nom | Formation | Contribution |
 |---|---|---|
-| **Cloé GOACOLOU** | CY Tech — ING3, option BI | Conception, développement, évaluation, rapport |
+| **Chloé GOACOLOU** | CY Tech — ING3, option BI | Conception, développement, évaluation, rapport |
 | **Fiorina ROYCEE** | CY Tech — ING3, option BI | Conception, développement, évaluation, rapport |
 
 
