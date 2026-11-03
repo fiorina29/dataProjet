@@ -2,6 +2,7 @@
 
 > Projet de Machine Learning / LLM — **CY Tech, ING3 option Business Intelligence**
 > Dépôt : <https://github.com/fiorina29/dataProjet>
+> Vidéo : <https://youtu.be/MzRsNuxIPag>
 
 MoodWave génère en un clic une playlist de **20 titres minimum** adaptée à l'utilisateur :
 son **humeur** (12 émotions), son **activité** (10 contextes : fête, sport, sommeil, enfants…),
