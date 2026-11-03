@@ -53,6 +53,7 @@ APP_URL="http://localhost:3001"
 ```
 > Sans clé Gemini, l'application fonctionne quand même : elle bascule sur le **moteur local** (sans IA).
 > Le fichier `.env` est exclu de Git par `.gitignore`. Ne le publiez jamais.
+> Les clés sont disponibles dans le rapport pdf.
 
 ### 4. Installer et démarrer
 ```bash
